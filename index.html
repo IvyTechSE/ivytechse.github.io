@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Den Totala 90-talsupplevelsen</title>
+
+  <!-- Exempel: Ljud med autoplay (kan blockeras i vissa webbläsare) -->
+  <audio id="bg-music" src="007theme.mp3" loop autoplay></audio>
+
+  <style>
+    /* Minimal eller "kaotisk" CSS, i sann 90-talsanda */
+    body {
+      background: url("bakgrundsbild.gif") repeat #ff00ff;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    .blink-text {
+      /* Fallback för blink om taggen inte stöds */
+      animation: blinkAnimation 1s infinite;
+    }
+    @keyframes blinkAnimation {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+    h1, h2, h3, h4 {
+      text-align: center;
+      margin: 10px;
+    }
+
+    marquee {
+      /* Kan eventuellt justeras mer om du vill. */
+    }
+
+    /* Exempel på klassen random-color om du vill slumpa runt färger (kräver lite JS).
+       Här sätter vi bara en specifik kulör. */
+    .random-color {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+<center>
+  <h1>
+    <font color="#ff0000">V</font>
+    <font color="#00ff00">Ä</font>
+    <font color="#0000ff">L</font>
+    <font color="#ffff00">K</font>
+    <font color="#ff00ff">O</font>
+    <font color="#00ffff">M</font>
+    <font color="#ff8800">M</font>
+    <font color="#ff0088">E</font>
+    <font color="#00ff88">N</font>
+    <font color="#0088ff">!</font>
+  </h1>
+  <h2 class="blink-text"><blink>Under Konstruktion!</blink></h2>
+</center>
+
+<marquee behavior="scroll" direction="left" scrollamount="5">
+  <font size="5">
+    *** Vi bygger om – men kika gärna runt ändå! ***
+  </font>
+</marquee>
+
+<center>
+    <table border="5" cellpadding="10" cellspacing="2" bgcolor="#ffcc00">
+      <tr>
+        <td align="center">
+          <font face="Comic Sans MS" size="4">
+            <blink><b>Klicka för att starta musik</b></blink><br>
+            <button style="font-size: 1em; margin-top: 10px; cursor: pointer;"
+                    onclick="document.getElementById('bg-music').play()">
+              <b>Starta Musik!</b>
+            </button>
+          </font>
+        </td>
+      </tr>
+    </table>
+</center>
+
+<center>
+  <img src="hamster-dance.gif" alt="Dancing Hamster">
+  <img src="hamster-dance.gif" alt="Dancing Hamster">
+  <img src="under_construction.gif" alt="Under Construction">
+  <img src="under_construction.webp" alt="Under Construction">
+  <img src="skull-skullgif.webp" alt="Skull">
+  <img src="hamster-dance.gif" alt="Dancing Hamster">
+  <img src="hamster-dance.gif" alt="Dancing Hamster">
+</center>
+
+<hr size="5" color="#ff0000" noshade>
+
+<center>
+  <font size="6" color="#00ff00"><b>Ta det lugnt!</b></font>
+  <p class="blink-text">
+    Vi fixar lite smågrejer.<br>Kom tillbaka snart!
+  </p>
+</center>
+
+<marquee behavior="alternate" direction="right" scrollamount="3" bgcolor="#ffff00">
+  <font size="4" color="#ff00ff">Snart öppnar vi!</font>
+</marquee>
+
+<center>
+  <h4>Kontakta oss!</h4>
+  <table border="5" cellpadding="10" cellspacing="2" bgcolor="#ffcc00">
+    <tr>
+      <td align="center">
+        <font size="4" color="#ff0000"><b>Camilla Nilsson</b></font><br>
+        <a href="mailto:camilla@ivytech.se">
+          <font size="3" color="#0000ff">camilla@ivytech.se</font>
+        </a><br>
+        <a href="https://www.linkedin.com/in/camilla-nilsson-5479174/" target="_blank">LinkedIn</a>
+      </td>
+      <td align="center">
+        <font size="4" color="#ff0000"><b>Anna Funke</b></font><br>
+        <a href="mailto:anna.funke@ivytech.se">
+          <font size="3" color="#0000ff">anna.funke@ivytech.se</font>
+        </a><br>
+        <a href="https://www.linkedin.com/in/anna-funke-88482995/" target="_blank">LinkedIn</a>
+      </td>
+    </tr>
+  </table>
+</center>
+
+<hr size="5" color="#0000ff" noshade>
+
+<center>
+  <p>Du är besökare nummer:</p>
+  <img src="broken.jpg" alt="Besöksräknare">
+</center>
+
+<marquee behavior="slide" direction="up" scrollamount="2">
+  <font size="4" color="#ff0000">
+    <b>Missa inte vårt forum!</b><br>
+    <a href="https://www.linkedin.com/company/ivy-technology-ab/" target="_blank">Gå till forumet!</a>
+  </font>
+</marquee>
+
+<center>
+  <h3><blink><font color="#00ff00">Tack för att du kikade in!</font></blink></h3>
+  <img src="shooting-star.gif" alt="Star">
+</center>
+
+</body>
+</html>

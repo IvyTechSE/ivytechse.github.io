@@ -2,149 +2,94 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <title>Den Totala 90-talsupplevelsen</title>
-
-  <!-- Exempel: Ljud med autoplay (kan blockeras i vissa webbläsare) -->
-  <audio id="bg-music" src="007theme.mp3" loop autoplay></audio>
-
+  <title>Under konstruktion</title>
   <style>
-    /* Minimal eller "kaotisk" CSS, i sann 90-talsanda */
-    body {
-      background: url("bakgrundsbild.gif") repeat #ff00ff;
-      color: #000000;
+   * {
       margin: 0;
       padding: 0;
-      font-family: "Comic Sans MS", cursive, sans-serif;
+      box-sizing: border-box;
     }
 
-    .blink-text {
-      /* Fallback för blink om taggen inte stöds */
-      animation: blinkAnimation 1s infinite;
-    }
-    @keyframes blinkAnimation {
-      0%, 50% { opacity: 1; }
-      50.01%, 100% { opacity: 0; }
-    }
-
-    h1, h2, h3, h4 {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212; 
+      color: #ffffff;
       text-align: center;
-      margin: 10px;
+      padding: 50px;
     }
 
-    marquee {
-      /* Kan eventuellt justeras mer om du vill. */
+    .construction-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #1E1E1E;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
-    /* Exempel på klassen random-color om du vill slumpa runt färger (kräver lite JS).
-       Här sätter vi bara en specifik kulör. */
-    .random-color {
-      color: #ff0000;
+    .construction-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 200px; 
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .links {
+      margin: 20px 0;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #00acee;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #1da1f2;
+    }
+
+    .code-sample-info {
+      margin-top: 20px;
+      font-size: 0.95em;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
+  <div class="construction-container">
+    <h1 class="construction-title">Vi bygger upp!</h1>
+    <img
+      src="ivy-logo.png"
+      alt="Företagslogga"
+      class="logo"
+    />
+    <p>
+      Just nu håller vi på att fixa vår webbplats för att kunna ge er bästa möjliga upplevelse.
+      Håll utkik – vi är snart tillbaka!
+    </p>
 
-<center>
-  <h1>
-    <font color="#ff0000">V</font>
-    <font color="#00ff00">Ä</font>
-    <font color="#0000ff">L</font>
-    <font color="#ffff00">K</font>
-    <font color="#ff00ff">O</font>
-    <font color="#00ffff">M</font>
-    <font color="#ff8800">M</font>
-    <font color="#ff0088">E</font>
-    <font color="#00ff88">N</font>
-    <font color="#0088ff">!</font>
-  </h1>
-  <h2 class="blink-text"><blink>Under Konstruktion!</blink></h2>
-</center>
+    <div class="links">
+      <a href="https://www.linkedin.com/company/ivy-technology-ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/IvyTechSE/toll-calculator" target="_blank" rel="noopener noreferrer">GitHub</a>
+	  <a href="mailto:info@ivytech.se">Maila oss</a>
+	  <a href="old-school.html" target="_blank" rel="noopener noreferrer">Känn dig mer hemma här!</a>
+    </div>
 
-<marquee behavior="scroll" direction="left" scrollamount="5">
-  <font size="5">
-    *** Vi bygger om – men kika gärna runt ändå! ***
-  </font>
-</marquee>
-
-<center>
-    <table border="5" cellpadding="10" cellspacing="2" bgcolor="#ffcc00">
-      <tr>
-        <td align="center">
-          <font face="Comic Sans MS" size="4">
-            <blink><b>Klicka för att starta musik</b></blink><br>
-            <button style="font-size: 1em; margin-top: 10px; cursor: pointer;"
-                    onclick="document.getElementById('bg-music').play()">
-              <b>Starta Musik!</b>
-            </button>
-          </font>
-        </td>
-      </tr>
-    </table>
-</center>
-
-<center>
-  <img src="hamster-dance.gif" alt="Dancing Hamster">
-  <img src="hamster-dance.gif" alt="Dancing Hamster">
-  <img src="underconstruction.gif" alt="Under Construction">
-  <img src="under_construction.webp" alt="Under Construction">
-  <img src="skull-skullgif.webp" alt="Skull">
-  <img src="hamster-dance.gif" alt="Dancing Hamster">
-  <img src="hamster-dance.gif" alt="Dancing Hamster">
-</center>
-
-<hr size="5" color="#ff0000" noshade>
-
-<center>
-  <font size="6" color="#00ff00"><b>Ta det lugnt!</b></font>
-  <p class="blink-text">
-    Vi fixar lite smågrejer.<br>Kom tillbaka snart!
-  </p>
-</center>
-
-<marquee behavior="alternate" direction="right" scrollamount="3" bgcolor="#ffff00">
-  <font size="4" color="#ff00ff">Snart öppnar vi!</font>
-</marquee>
-
-<center>
-  <h4>Kontakta oss!</h4>
-  <table border="5" cellpadding="10" cellspacing="2" bgcolor="#ffcc00">
-    <tr>
-      <td align="center">
-        <font size="4" color="#ff0000"><b>Camilla Nilsson</b></font><br>
-        <a href="mailto:camilla@ivytech.se">
-          <font size="3" color="#0000ff">camilla@ivytech.se</font>
-        </a><br>
-        <a href="https://www.linkedin.com/in/camilla-nilsson-5479174/" target="_blank">LinkedIn</a>
-      </td>
-      <td align="center">
-        <font size="4" color="#ff0000"><b>Anna Funke</b></font><br>
-        <a href="mailto:anna.funke@ivytech.se">
-          <font size="3" color="#0000ff">anna.funke@ivytech.se</font>
-        </a><br>
-        <a href="https://www.linkedin.com/in/anna-funke-88482995/" target="_blank">LinkedIn</a>
-      </td>
-    </tr>
-  </table>
-</center>
-
-<hr size="5" color="#0000ff" noshade>
-
-<center>
-  <p>Du är besökare nummer:</p>
-  <img src="broken.jpg" alt="Besöksräknare">
-</center>
-
-<marquee behavior="slide" direction="up" scrollamount="2">
-  <font size="4" color="#ff0000">
-    <b>Missa inte vårt forum!</b><br>
-    <a href="https://www.linkedin.com/company/ivy-technology-ab/" target="_blank">Gå till forumet!</a>
-  </font>
-</marquee>
-
-<center>
-  <h3><blink><font color="#00ff00">Tack för att du kikade in!</font></blink></h3>
-  <img src="shooting-star.gif" alt="Star">
-</center>
-
+    <div class="code-sample-info">
+      <p>
+        Är du intresserad av att söka jobb hos oss? Kika på vårt GitHub-repo och lämna ett kodprov.
+        Vi hör av oss så snart vi kan!
+      </p>
+    </div>	
+  </div>  
 </body>
 </html>

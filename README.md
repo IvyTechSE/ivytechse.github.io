@@ -1,36 +1,36 @@
-# Ivy Technology – Next.js statisk sida
+# Ivy Technology – Next.js static site
 
-En svensk, tillgänglig one-page sajt för Ivy Technology. Byggd med Next.js (app router), designad för WCAG 2.2 AA, och klar för GitHub Pages via statisk export.
+An accessible one-page site for Ivy Technology. Built with Next.js (app router), designed for WCAG 2.2 AA, and ready for GitHub Pages via static export.
 
-## Kom igång
+## Get started
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Bygg och exportera för GitHub Pages
+## Build and export for GitHub Pages
 
 ```bash
 npm run build
-# lägger exporten i out/
+# places the export in out/
 ```
 
-Deploya `out/` med GitHub Pages (se arbetsflöde i `.github/workflows` om du lägger till det).
+Deploy `out/` with GitHub Pages (see workflow in `.github/workflows` if you add it).
 
-## Viktiga färger
-- Forest `#596e5c` (primär)
-- Sand `#F1EADA` (ljus bakgrund/highlight)
-- Stone `#E2E2DE` (bakgrund)
-- Midnight `#2E333A`, Onyx `#1C1C1B` (text/kontrast)
+## Key colors
+- Forest `#596e5c` (primary)
+- Sand `#F1EADA` (light background/highlight)
+- Stone `#E2E2DE` (background)
+- Midnight `#2E333A`, Onyx `#1C1C1B` (text/contrast)
 
-## Tillgänglighet
-- Semantisk struktur med `header/nav/main/section/footer`
-- Synligt fokusläge, tangentbordsnavigerbar mobilmeny
-- Formulär med etiketter, felmeddelanden nära fält och `aria-live`
-- Respekt för `prefers-reduced-motion`
+## Accessibility
+- Semantic structure with `header/nav/main/section/footer`
+- Visible focus states, keyboard-navigable mobile menu
+- Forms with labels, inline errors, and `aria-live`
+- Respects `prefers-reduced-motion`
 
-## Att göra om du vill fortsätta
-- Lägg till riktiga bilder (använd `next/image`) och uppdatera alt-texter.
-- Justera copy och lägg till fler case.
-- Lägg till GitHub Actions för Pages-deploy (t.ex. `actions/upload-pages-artifact` + `deploy-pages`).
+## Next steps
+- Add real images (use `next/image`) and update alt text.
+- Refine copy and add more case studies.
+- Add GitHub Actions for Pages deploy (e.g., `actions/upload-pages-artifact` + `deploy-pages`).

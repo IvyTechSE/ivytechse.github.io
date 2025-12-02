@@ -14,10 +14,11 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build
-      - name: Preview Pages
-        uses: rajyan/preview-pages@v1.3.37
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install and build
+        uses: ./.github/actions/build
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
         with:
-          path: out
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source-dir: ./build/

@@ -34,6 +34,7 @@ export function HeaderNav({ activeId, menuOpen, onToggle, onNavClick }: Props) {
                 <a
                   className={activeId === item.id ? "active" : ""}
                   href={`#${item.id}`}
+                  aria-current={activeId === item.id ? "page" : undefined}
                   onClick={onNavClick}
                 >
                   {item.label}

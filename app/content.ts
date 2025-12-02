@@ -1,59 +1,67 @@
 export const navItems = [
   { id: "tjanster", label: "Tjänster" },
   { id: "arbetssatt", label: "Arbetssätt" },
-  // { id: 'case', label: 'Exempel' },
   { id: "om-ivy", label: "Vårt gäng" },
   { id: "kontakt", label: "Kontakt" },
 ];
 
 export const hero = {
-  eyebrow: 'Göteborg · Digitala produkter · Tillgänglighet',
-  title: 'Det är vår kompetens som skapar lösningar – men det är människorna som gör skillnad',
-  body:
-    'Vi är nyfikna systemutvecklare som älskar teknik – men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.',
-  primaryCta: { label: 'Prata med oss', href: '#kontakt' },
-  secondaryCta: { label: 'Mejla oss', href: 'mailto:hello@ivytech.se' }
+  eyebrow: "Göteborg · Digitala produkter · Tillgänglighet",
+  title: "Kompetens bygger lösningar, människor bygger värde",
+  body: "Vi är nyfikna systemutvecklare som älskar teknik – men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.",
+  primaryCta: { label: "Kontakta oss", href: "mailto:hello@ivytech.se" },
+  secondaryCta: { label: "Läs om vårt arbetssätt", href: "#arbetssatt" },
 };
 
 export const services = [
   {
-    title: 'Systemarkitektur',
-    body:
-      'Vi designar skalbara, hållbara system som håller över tid – tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.',
-    icon: '🏗️',
-    alt: 'Ikon för systemarkitektur'
+    title: "Systemarkitektur",
+    body: "Vi designar skalbara, hållbara system som håller över tid – tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.",
+    icon: "🏗️",
+    alt: "Ikon för systemarkitektur",
   },
   {
-    title: 'Systemutveckling – frontend och backend',
-    body:
-      'Vi bygger moderna gränssnitt och robusta tjänster, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.',
-    icon: '💻',
-    alt: 'Ikon för systemutveckling'
+    title: "Systemutveckling – frontend och backend",
+    body: "Vi bygger moderna gränssnitt och robusta tjänster, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.",
+    icon: "💻",
+    alt: "Ikon för systemutveckling",
   },
   {
-    title: 'AI i praktiken',
-    body:
-      'Vi använder AI som verktyg i vardagen – för analys, automatisering, test och kodstöd – och hjälper er att göra detsamma på riktigt, inte bara i teorin.',
-    icon: '🤖',
-    alt: 'Ikon för AI'
-  }
+    title: "AI i praktiken",
+    body: "Vi använder AI som verktyg i vardagen – för analys, automatisering, test och kodstöd – och hjälper er att göra detsamma på riktigt, inte bara i teorin.",
+    icon: "🤖",
+    alt: "Ikon för AI",
+  },
 ];
 
 export const steps = [
   {
-    title: 'Riktigt samarbete',
-    body: 'Vi jobbar nära era team med genuint engagemang. Kod är ett verktyg, inte ett mål i sig.'
+    title: "Riktigt samarbete",
+    body: "Vi jobbar nära era team med genuint engagemang. Kod är ett verktyg, inte ett mål i sig.",
   },
   {
-    title: 'Teknik och människor',
-    body:
-      'Vi kombinerar teknisk höjd med hög social kompetens. Beslut tas tillsammans – för hållbara lösningar.'
+    title: "Teknik och människor",
+    body: "Vi kombinerar teknisk höjd med hög social kompetens. Beslut tas tillsammans – för hållbara lösningar.",
   },
   {
-    title: 'Balans och utveckling',
-    body:
-      'När vi mår bra gör vi vårt bästa jobb. Vi prioriterar balans, frihet och lärande, vilket ger bättre resultat.'
-  }
+    title: "Balans och utveckling",
+    body: "När vi mår bra gör vi vårt bästa jobb. Vi prioriterar balans, frihet och lärande, vilket ger bättre resultat.",
+  },
+];
+
+export const story = [
+  {
+    title: "Vi lyssnar in på riktigt",
+    body: "En gemensam förståelse för målgrupp, tillgänglighet och affärsmål. Vi kartlägger hinder och sätter ramarna tillsammans med er.",
+  },
+  {
+    title: "Vi bygger tillsammans",
+    body: "Tvärfunktionella team, tydliga beslut och design som växer hållbart. Vi prototypar tidigt och justerar innan det blir dyrt.",
+  },
+  {
+    title: "Vi levererar och lär",
+    body: "Lanseringar utan dramatik, med mätbara effekter och dokumentation. Vi lämnar över kunskap och finns kvar som partner när ni behöver.",
+  },
 ];
 
 export const cases = [

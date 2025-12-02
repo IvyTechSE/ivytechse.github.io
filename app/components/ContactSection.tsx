@@ -3,16 +3,22 @@ import { contact } from '../content';
 
 export function ContactSection() {
   return (
-    <section id="kontakt" className="section" aria-labelledby="kontakt-title">
+    <section
+      id="kontakt"
+      className="section contact reveal-on-scroll"
+      aria-labelledby="kontakt-title"
+    >
       <div className="container">
         <div className="contact-card">
           <div className="contact-body">
-            <h2 className="eyebrow" style={{ color: 'var(--sand)' }}>
+            <h2
+              id="kontakt-title"
+              className="eyebrow"
+              style={{ color: "var(--sand)" }}
+            >
               {contact.title}
             </h2>
-            <p id="kontakt-title" style={{ color: 'var(--sand)' }}>
-              {contact.body}
-            </p>
+            <p style={{ color: "var(--sand)" }}>{contact.body}</p>
             <a className="button contact-button" href={contact.cta.href}>
               {contact.cta.label}
             </a>

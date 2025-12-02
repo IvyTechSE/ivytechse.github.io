@@ -53,12 +53,7 @@ p {
 
 a {
   color: var(--midnight);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+ }
 
 :focus-visible {
   outline: 3px solid var(--forest);
@@ -407,11 +402,46 @@ section {
   padding: 1.2rem 1.2rem 1.4rem;
 }
 
+.profile-body a:not(.linkedin-icon) {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  font-weight: 700;
+  transition: color 150ms ease, text-decoration-color 150ms ease, transform 150ms ease;
+}
+
+.profile-body a:not(.linkedin-icon):hover {
+  font-weight: 800;
+}
+
 .profile-photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+}
+
+.linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--midnight);
+  color: var(--sand);
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.linkedin-icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(30, 35, 40, 0.15);
+}
+
+.linkedin-icon:focus-visible {
+  outline: 3px solid var(--forest);
+  outline-offset: 3px;
 }
 
 .contact-card {

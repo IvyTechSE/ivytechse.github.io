@@ -5,35 +5,35 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 const organizationLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Ivy Technology',
-  url: 'https://ivytechse.github.io',
-  logo: 'https://ivytechse.github.io/logo.svg',
-  email: 'hello@ivytech.se',
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Ivy Technology",
+  url: "https://ivytechse.github.io",
+  logo: "https://ivytechse.github.io/images/logo.svg",
+  email: "hello@ivytech.se",
   address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Göteborg',
-    addressCountry: 'Sverige'
-  }
+    "@type": "PostalAddress",
+    addressLocality: "Göteborg",
+    addressCountry: "Sverige",
+  },
 };
 
 export const metadata: Metadata = {
-  title: 'Ivy Technology | Tillgängliga digitala lösningar',
+  title: "Ivy Technology | Tillgängliga digitala lösningar",
   description:
-    'Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.',
-  metadataBase: new URL('https://ivytechse.github.io'),
+    "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
+  metadataBase: new URL("https://ivytechse.github.io"),
   openGraph: {
-    title: 'Ivy Technology | Tillgängliga digitala lösningar',
+    title: "Ivy Technology | Tillgängliga digitala lösningar",
     description:
-      'Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.',
-    url: 'https://ivytechse.github.io',
-    siteName: 'Ivy Technology',
-    images: ['/og-image.svg'],
-    locale: 'sv_SE',
-    type: 'website'
+      "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
+    url: "https://ivytechse.github.io",
+    siteName: "Ivy Technology",
+    images: ["/images/og-image.svg"],
+    locale: "sv_SE",
+    type: "website",
   },
-  alternates: { canonical: 'https://ivytechse.github.io' }
+  alternates: { canonical: "https://ivytechse.github.io" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

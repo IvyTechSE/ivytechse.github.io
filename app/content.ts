@@ -1,9 +1,9 @@
 export const navItems = [
-  { id: 'tjanster', label: 'Tjänster' },
-  { id: 'arbetssatt', label: 'Arbetssätt' },
-  { id: 'case', label: 'Exempel' },
-  { id: 'om-ivy', label: 'Vårt gäng' },
-  { id: 'kontakt', label: 'Kontakt' }
+  { id: "tjanster", label: "Tjänster" },
+  { id: "arbetssatt", label: "Arbetssätt" },
+  // { id: 'case', label: 'Exempel' },
+  { id: "om-ivy", label: "Vårt gäng" },
+  { id: "kontakt", label: "Kontakt" },
 ];
 
 export const hero = {
@@ -76,48 +76,67 @@ export const cases = [
 
 export const team = [
   {
-    name: 'Camilla',
-    role: 'Kundansvarig & rådgivare',
+    name: "Jesper Dahlbeck",
+    role: "Systemarkitekt",
     intro:
-      'Din första kontakt hos oss. Ser till att vi förstår behoven och håller ihop samarbetet.',
-    email: 'camilla@ivytech.se',
+      "Designar hållbara, skalbara system med fokus på både teknik och människor.",
+    email: "jesper.dahlbeck@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/jesper-dahlbeck-1b598b24/",
+    photo: "/images/jesper-dahlbeck.png",
   },
   {
-    name: 'Joel',
-    role: 'Software Developer',
+    name: "Joel Karlsson",
+    role: "Software Developer",
     intro:
-      'Bygger stabila, moderna lösningar i hela stacken med fokus på kvalitet och tempo.',
-    email: 'joel.karlsson@ivytech.se'
+      "Bygger hållbara, skalbara system med fokus på kvalitet och användarupplevelse.",
+    email: "joel.karlsson@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/joel-karlsson-2a51181b/",
+    photo: "/images/joel-karlsson.png",
   },
   {
-    name: 'Anna',
-    role: 'UX & Tillgänglighet',
-    intro: 'Säkrar WCAG 2.2 i praktiken och tar fram tydliga flöden som fler kan använda.',
-    email: 'anna@ivytech.se'
+    name: "Anna Funke",
+    role: "VD & Grundare",
+    intro:
+      "Driver företaget med fokus på människor, kultur och hållbara samarbeten.",
+    email: "anna.funke@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/anna-funke-88482995/",
+    photo: "/images/anna-funke.png",
   },
   {
-    name: 'Erik',
-    role: 'Systemarkitekt',
-    intro: 'Skapar riktning och struktur i komplexa miljöer och leder tekniska beslut framåt.',
-    email: 'erik@ivytech.se'
+    name: "Oskar Berntsson",
+    role: "Systemarkitekt",
+    intro:
+      "Designar skalbara, hållbara system med fokus på både teknik och team.",
+    email: "oskar.berntsson@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/oscar-berntsson-80b01885/",
+    photo: "/images/oskar-berntsson.png",
   },
   {
-    name: 'Lina',
-    role: 'Data & AI',
-    intro: 'Integrerar AI i vardagen – analys, automatisering och kodstöd som förstärker teamen.',
-    email: 'lina@ivytech.se'
+    name: "Ylva Pyykkö",
+    role: "Systemutvecklare",
+    intro:
+      "Bygger robusta, skalbara system med fokus på hållbarhet och kvalitet i varje steg.",
+    email: "ylva.pyykko@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/ylva-pyykk%C3%B6-105ba32/",
+    photo: "/images/ylva-pyykko.png",
   },
   {
-    name: 'Omar',
-    role: 'Backendutvecklare',
-    intro: 'Designar robusta tjänster och API:er som tål last och är enkla att vidareutveckla.',
-    email: 'omar@ivytech.se'
-  }
+    name: "Joakim Larsson",
+    role: "Frontendutvecklare & Tillgänglighetsexpert",
+    intro:
+      "Bygger tillgängliga, responsiva gränssnitt med fokus på användarupplevelse och WCAG.",
+    email: "joakim.larsson@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/joakimlarsson92/",
+    photo: "/images/joakim-larsson.png",
+  },
 ];
 
 export const contact = {
-  title: 'Kontakt',
-  body: 'Vill du veta mer om oss, eller är du nyfiken på att samarbeta? Hör gärna av dig till Anna så berättar hon mer!',
-  cta: { label: 'Säg hej', href: 'mailto:camilla@ivytech.se' },
-  image: { src: '/anna.svg', alt: 'Anna, UX & Tillgänglighet på Ivy Technology' }
+  title: "Kontakt",
+  body: "Vill du veta mer om oss, eller är du nyfiken på att samarbeta? Hör gärna av dig till Anna så berättar hon mer!",
+  cta: { label: "Säg hej", href: "mailto:hello@ivytech.se" },
+  image: {
+    src: "/images/profile_placeholder.svg",
+    alt: "Profilbild  Ivy Technology",
+  },
 };

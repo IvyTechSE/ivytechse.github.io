@@ -25,14 +25,14 @@ export function HeaderNav({ activeId, menuOpen, onToggle, onNavClick }: Props) {
           onClick={onToggle}
         >
           Meny
-          <span aria-hidden="true">{menuOpen ? '–' : '+'}</span>
+          <span aria-hidden="true">{menuOpen ? "–" : "+"}</span>
         </button>
         <nav aria-label="Huvudmeny">
-          <ul id="huvudmeny" className={`nav-list ${menuOpen ? 'open' : ''}`}>
+          <ul id="huvudmeny" className={`nav-list ${menuOpen ? " open" : ""}`}>
             {items.map((item) => (
               <li key={item.id}>
                 <a
-                  className={activeId === item.id ? 'active' : ''}
+                  className={activeId === item.id ? "active" : ""}
                   href={`#${item.id}`}
                   onClick={onNavClick}
                 >

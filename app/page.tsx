@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
 
 type FieldErrors = Partial<Record<string, string>>;
 
@@ -152,14 +153,14 @@ export default function Home() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             Meny
-            <span aria-hidden="true">{menuOpen ? '–' : '+'}</span>
+            <span aria-hidden="true">{menuOpen ? "–" : "+"}</span>
           </button>
           <nav aria-label="Huvudmeny">
-            <ul id="huvudmeny" className={`nav-list ${menuOpen ? 'open' : ''}`}>
+            <ul id="huvudmeny" className={`nav-list ${menuOpen ? "open" : ""}`}>
               {navItems.map((item) => (
                 <li key={item.id}>
                   <a
-                    className={activeId === item.id ? 'active' : ''}
+                    className={activeId === item.id ? "active" : ""}
                     href={`#${item.id}`}
                     onClick={handleNavClick}
                   >
@@ -173,14 +174,22 @@ export default function Home() {
       </header>
 
       <main id="main">
-        <section id="hero" className="section hero" aria-labelledby="hero-title">
+        <section
+          id="hero"
+          className="section hero"
+          aria-labelledby="hero-title"
+        >
           <div className="container hero-grid">
             <div className="stack">
-              <p className="eyebrow">Göteborg · Digitala produkter · Tillgänglighet</p>
-              <h1 id="hero-title">Digitala lösningar som förenar teknik och tillgänglighet</h1>
+              <p className="eyebrow">
+                Göteborg · Digitala produkter · Tillgänglighet
+              </p>
+              <h1 id="hero-title">
+                Digitala lösningar som förenar teknik och tillgänglighet
+              </h1>
               <p className="lede">
-                Ivy Technology hjälper er att bygga snabba, tillgängliga och hållbara webbapplikationer
-                som fungerar för alla användare.
+                Ivy Technology hjälper er att bygga snabba, tillgängliga och
+                hållbara webbapplikationer som fungerar för alla användare.
               </p>
               <div className="actions cluster">
                 <a className="button primary" href="#kontakt">
@@ -190,11 +199,6 @@ export default function Home() {
                   Kontakta oss
                 </a>
               </div>
-              <ul className="proof-list">
-                <li>Specialiserade på frontend och tillgänglighet</li>
-                <li>Erfarenhet från e-handel, bokningsflöden och offentlig sektor</li>
-                <li>Certifierad inom digital tillgänglighet (WAS, IAAP)</li>
-              </ul>
             </div>
             <div className="hero-visual" aria-hidden="true">
               <div className="glass-card">
@@ -206,13 +210,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="tjanster" className="section" aria-labelledby="tjanster-title">
+        <section
+          id="tjanster"
+          className="section"
+          aria-labelledby="tjanster-title"
+        >
           <div className="container stack">
             <p className="eyebrow">Tjänster</p>
             <h2 id="tjanster-title">Vad vi erbjuder</h2>
             <div className="grid">
               {services.map((service) => (
-                <article key={service.title} className="card lift" aria-labelledby={`${service.title}-title`}>
+                <article
+                  key={service.title}
+                  className="card lift"
+                  aria-labelledby={`${service.title}-title`}
+                >
                   <div className="icon" role="img" aria-label={service.alt}>
                     {service.icon}
                   </div>
@@ -224,17 +236,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="arbetssatt" className="section" aria-labelledby="arbetssatt-title">
+        <section
+          id="arbetssatt"
+          className="section"
+          aria-labelledby="arbetssatt-title"
+        >
           <div className="container stack">
             <p className="eyebrow">Arbetssätt</p>
             <h2 id="arbetssatt-title">Så jobbar vi</h2>
             <p className="lede">
-              Vi kombinerar analys, design och utveckling, samarbetar nära ert team och utgår från tydliga mål
-              för både användare och affär.
+              Vi kombinerar analys, design och utveckling, samarbetar nära ert
+              team och utgår från tydliga mål för både användare och affär.
             </p>
             <div className="steps">
               {steps.map((step) => (
-                <article key={step.title} className="card" aria-label={step.title}>
+                <article
+                  key={step.title}
+                  className="card"
+                  aria-label={step.title}
+                >
                   <h3>{step.title}</h3>
                   <p>{step.body}</p>
                 </article>
@@ -274,9 +294,10 @@ export default function Home() {
               <p className="eyebrow">Om Ivy</p>
               <h2 id="om-title">Om Ivy Technology</h2>
               <p className="lede">
-                Ivy är ett mindre konsultbolag med djup expertis inom frontend, tillgänglighet och
-                insiktsdriven utveckling. Vi hjälper beslutsfattare att modernisera digitala produkter med
-                fokus på hastighet, kvalitet och inkludering.
+                Ivy är ett mindre konsultbolag med djup expertis inom frontend,
+                tillgänglighet och insiktsdriven utveckling. Vi hjälper
+                beslutsfattare att modernisera digitala produkter med fokus på
+                hastighet, kvalitet och inkludering.
               </p>
             </div>
             <article className="card profile" aria-label="Grundare">
@@ -288,123 +309,49 @@ export default function Home() {
                 <div>
                   <h3>Ida Andersson</h3>
                   <p className="eyebrow">Grundare · WAS certifierad</p>
-                  <p>15+ år inom frontend, tillgänglighet och produktteam i Sverige.</p>
+                  <p>
+                    15+ år inom frontend, tillgänglighet och produktteam i
+                    Sverige.
+                  </p>
                 </div>
               </div>
             </article>
           </div>
         </section>
 
-        <section id="kontakt" className="section" aria-labelledby="kontakt-title">
-          <div className="container stack">
-            <p className="eyebrow">Kontakt</p>
-            <h2 id="kontakt-title">Kontakta oss</h2>
-            <p>Berätta kort om ert behov så återkommer vi med förslag på upplägg.</p>
-            <form className="form" noValidate onSubmit={handleSubmit} aria-describedby="form-status">
-              <div className="form-grid">
-                <label>
-                  Namn
-                  <input
-                    name="namn"
-                    type="text"
-                    aria-invalid={!!formErrors.namn}
-                    aria-describedby={formErrors.namn ? 'err-namn' : undefined}
-                    autoComplete="name"
-                  />
-                  {formErrors.namn && (
-                    <span id="err-namn" className="error" role="alert">
-                      {formErrors.namn}
-                    </span>
-                  )}
-                </label>
-                <label>
-                  Företag
-                  <input
-                    name="foretag"
-                    type="text"
-                    aria-invalid={!!formErrors.foretag}
-                    aria-describedby={formErrors.foretag ? 'err-foretag' : undefined}
-                    autoComplete="organization"
-                  />
-                  {formErrors.foretag && (
-                    <span id="err-foretag" className="error" role="alert">
-                      {formErrors.foretag}
-                    </span>
-                  )}
-                </label>
-                <label>
-                  E-post
-                  <input
-                    name="epost"
-                    type="email"
-                    inputMode="email"
-                    aria-invalid={!!formErrors.epost}
-                    aria-describedby={formErrors.epost ? 'err-epost' : undefined}
-                    autoComplete="email"
-                  />
-                  {formErrors.epost && (
-                    <span id="err-epost" className="error" role="alert">
-                      {formErrors.epost}
-                    </span>
-                  )}
-                </label>
-                <label>
-                  Telefon
-                  <input name="telefon" type="tel" inputMode="tel" autoComplete="tel" />
-                </label>
-              </div>
-              <label>
-                Meddelande
-                <textarea
-                  name="meddelande"
-                  rows={4}
-                  aria-invalid={!!formErrors.meddelande}
-                  aria-describedby={formErrors.meddelande ? 'err-meddelande' : undefined}
-                />
-                {formErrors.meddelande && (
-                  <span id="err-meddelande" className="error" role="alert">
-                    {formErrors.meddelande}
-                  </span>
-                )}
-              </label>
-              <label className="checkbox">
-                <input
-                  name="godkann"
-                  type="checkbox"
-                  aria-invalid={!!formErrors.godkann}
-                  aria-describedby={formErrors.godkann ? 'err-godkann' : undefined}
-                />
-                <span>
-                  Jag godkänner hantering av mina personuppgifter.{' '}
-                  <a href="#integritet">Läs mer</a>
-                </span>
-              </label>
-              {formErrors.godkann && (
-                <span id="err-godkann" className="error" role="alert">
-                  {formErrors.godkann}
-                </span>
-              )}
-              <div className="cluster">
-                <button type="submit" className="button primary">
-                  Skicka meddelande
-                </button>
-                <a href="mailto:hello@ivytech.se" className="button ghost">
-                  E-posta oss
+        <section
+          id="kontakt"
+          className="section"
+          aria-labelledby="kontakt-title"
+        >
+          <div className="container">
+            <div className="contact-card">
+              <div className="contact-body">
+                <h2 className="eyebrow" style={{ color: "var(--sand)" }}>
+                  Kontakt
+                </h2>
+                <p id="kontakt-title" style={{ color: "var(--sand)" }}>
+                  Vill du veta mer om oss, eller är du nyfiken på att samarbeta?
+                  Hör gärna av dig till Anna så berättar hon mer!
+                </p>
+                <a
+                  className="button contact-button"
+                  href="mailto:hello@ivytech.se"
+                >
+                  Säg hej
                 </a>
               </div>
-              {submitted && (
-                <p className="success" role="status">
-                  Tack! Vi återkommer inom en arbetsdag.
-                </p>
-              )}
-              <p id="integritet">
-                Vi använder uppgifterna endast för att kontakta er om ert ärende. Inga uppgifter delas med tredje
-                part och raderas på begäran.
-              </p>
-              <div id="form-status" aria-live="polite" className="sr-only">
-                {submitted ? 'Formuläret skickades.' : ''}
+              <div className="contact-media">
+                <Image
+                  src="/anna.svg"
+                  alt="Anna, rådgivare på Ivy Technology"
+                  width={220}
+                  height={220}
+                  className="contact-image"
+                  priority
+                />
               </div>
-            </form>
+            </div>
           </div>
         </section>
       </main>

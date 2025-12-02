@@ -3,91 +3,71 @@
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 
-type FieldErrors = Partial<Record<string, string>>;
-
 const navItems = [
-  { id: 'tjanster', label: 'Tjänster' },
-  { id: 'arbetssatt', label: 'Arbetssätt' },
-  { id: 'case', label: 'Case' },
-  { id: 'om-ivy', label: 'Om Ivy' },
-  { id: 'kontakt', label: 'Kontakt' }
+  { id: "tjanster", label: "Tjänster" },
+  { id: "arbetssatt", label: "Arbetssätt" },
+  { id: "case", label: "Exempel" },
+  { id: "om-ivy", label: "Vårt gäng" },
+  { id: "kontakt", label: "Kontakt" },
 ];
 
 const services = [
   {
-    title: 'Frontendutveckling',
-    body:
-      'Vi bygger moderna webbgränssnitt med fokus på prestanda, kvalitet och långsiktig förvaltning med ramverk som React och moderna byggkedjor.',
-    icon: '💻',
-    alt: 'Ikon för frontendutveckling'
+    title: "Systemarkitektur",
+    body: "Vi designar skalbara, hållbara system som håller över tid – tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.",
+    icon: "🏗️",
+    alt: "Ikon för systemarkitektur",
   },
   {
-    title: 'Tillgänglighet och inkluderande design',
-    body:
-      'Vi granskar och förbättrar lösningar mot WCAG 2.2 AA, utbildar team och skapar mönster som fungerar för fler.',
-    icon: '♿',
-    alt: 'Ikon för tillgänglighet'
+    title: "Systemutveckling – frontend och backend",
+    body: "Vi bygger moderna gränssnitt och robusta tjänster, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.",
+    icon: "💻",
+    alt: "Ikon för systemutveckling",
   },
   {
-    title: 'Arkitektur och tekniskt ledarskap',
-    body:
-      'Vi stöttar beslut kring frontendarkitektur, designsystem, kodstandarder och processer som håller över tid.',
-    icon: '🧭',
-    alt: 'Ikon för arkitektur'
+    title: "AI i praktiken",
+    body: "Vi använder AI som verktyg i vardagen – för analys, automatisering, test och kodstöd – och hjälper er att göra detsamma på riktigt, inte bara i teorin.",
+    icon: "🤖",
+    alt: "Ikon för AI",
   },
-  {
-    title: 'Rådgivning och workshops',
-    body:
-      'Förstudier, koncept och faciliterade workshops som prioriterar rätt insatser för både användare och affär.',
-    icon: '🧠',
-    alt: 'Ikon för rådgivning'
-  }
 ];
 
 const steps = [
   {
-    title: 'Förstå behoven',
-    body:
-      'Insikter från användare, data och nuvarande lösning. Vi kartlägger risker, mål och krav på tillgänglighet.'
+    title: "Riktigt samarbete",
+    body: "Vi jobbar nära era team med genuint engagemang. Kod är ett verktyg, inte ett mål i sig.",
   },
   {
-    title: 'Designa lösningen',
-    body:
-      'Skisser, prototyper och komponenter med tydliga mönster, testade för WCAG 2.2 AA och verkliga scenarier.'
+    title: "Teknik och människor",
+    body: "Vi kombinerar teknisk höjd med hög social kompetens. Beslut tas tillsammans – för hållbara lösningar.",
   },
   {
-    title: 'Bygga och förbättra',
-    body:
-      'Implementering, tester med användare och uppföljning i data. Vi förbättrar iterativt tillsammans med ert team.'
-  }
+    title: "Balans och utveckling",
+    body: "När vi mår bra gör vi vårt bästa jobb. Vi prioriterar balans, frihet och lärande, vilket ger bättre resultat.",
+  },
 ];
 
 const cases = [
   {
-    title: 'Bokningsflöde för verkstadstjänster',
-    body:
-      'Tydligare steg, mobilanpassning och tillgängliga formulär. Högre konvertering och färre avhopp.',
-    tags: ['Frontend', 'Tillgänglighet', 'Dataanalys']
+    title: "Systemarkitektur i skala",
+    body: "Tydliga strukturer och riktning för teamen, med skalbara lösningar som håller över tid.",
+    tags: ["Arkitektur", "Ledarskap", "Skalbarhet"],
   },
   {
-    title: 'E-handel för heminredning',
-    body:
-      'Snabbare produktlistor, förbättrad filtrering och optimerade bilder. Kortare laddtider och ökad försäljning.',
-    tags: ['Prestanda', 'UX', 'React']
+    title: "Tillgängliga upplevelser",
+    body: "Responsiva gränssnitt, WCAG 2.2 i praktiken och tydliga flöden som fler kan använda.",
+    tags: ["Frontend", "Tillgänglighet", "UX"],
   },
   {
-    title: 'Offentlig självservice',
-    body:
-      'Tillgängliga formulär och tydliga statusmeddelanden. Bättre upplevelse för skärmläsare och mobil.',
-    tags: ['WCAG 2.2', 'Formulär', 'Inkluderande design']
-  }
+    title: "AI i vardagen",
+    body: "Automatisering, analys och kodstöd där AI förstärker människan – inte ersätter den.",
+    tags: ["AI", "Produktivitet", "Automation"],
+  },
 ];
 
 export default function Home() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [formErrors, setFormErrors] = useState<FieldErrors>({});
-  const [submitted, setSubmitted] = useState(false);
 
   const sectionIds = useMemo(() => navItems.map((item) => item.id), []);
 
@@ -100,7 +80,7 @@ export default function Home() {
           }
         });
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: 0.2 }
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0.2 }
     );
 
     sectionIds.forEach((id) => {
@@ -110,29 +90,6 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, [sectionIds]);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const errors: FieldErrors = {};
-
-    const required = ['namn', 'foretag', 'epost', 'meddelande'];
-    required.forEach((field) => {
-      if (!data.get(field)) errors[field] = 'Fältet är obligatoriskt.';
-    });
-
-    const email = data.get('epost')?.toString() || '';
-    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      errors.epost = 'Ange en giltig e-postadress.';
-    }
-
-    if (!data.get('godkann')) {
-      errors.godkann = 'Du måste godkänna hantering av personuppgifter.';
-    }
-
-    setFormErrors(errors);
-    setSubmitted(Object.keys(errors).length === 0);
-  };
 
   const handleNavClick = () => {
     setMenuOpen(false);
@@ -185,18 +142,20 @@ export default function Home() {
                 Göteborg · Digitala produkter · Tillgänglighet
               </p>
               <h1 id="hero-title">
-                Digitala lösningar som förenar teknik och tillgänglighet
+                Det är vår kompetens som skapar lösningar – men det är
+                människorna som gör skillnad
               </h1>
               <p className="lede">
-                Ivy Technology hjälper er att bygga snabba, tillgängliga och
-                hållbara webbapplikationer som fungerar för alla användare.
+                Vi är nyfikna systemutvecklare som älskar teknik – men vi gillar
+                människor ännu mer. Vi jobbar nära er, som en del av teamet, för
+                att lösa riktiga problem och skapa smarta digitala lösningar.
               </p>
               <div className="actions cluster">
                 <a className="button primary" href="#kontakt">
-                  Boka ett möte
+                  Prata med oss
                 </a>
                 <a className="button ghost" href="mailto:hello@ivytech.se">
-                  Kontakta oss
+                  Mejla oss
                 </a>
               </div>
             </div>
@@ -217,7 +176,9 @@ export default function Home() {
         >
           <div className="container stack">
             <p className="eyebrow">Tjänster</p>
-            <h2 id="tjanster-title">Vad vi erbjuder</h2>
+            <h2 id="tjanster-title">
+              Erfarna konsulter. Människor du vill jobba med.
+            </h2>
             <div className="grid">
               {services.map((service) => (
                 <article
@@ -245,8 +206,9 @@ export default function Home() {
             <p className="eyebrow">Arbetssätt</p>
             <h2 id="arbetssatt-title">Så jobbar vi</h2>
             <p className="lede">
-              Vi kombinerar analys, design och utveckling, samarbetar nära ert
-              team och utgår från tydliga mål för både användare och affär.
+              Vi tror på balans, frihet och utveckling. När vi mår bra gör vi
+              vårt bästa jobb – och det märks i resultaten vi skapar tillsammans
+              med er.
             </p>
             <div className="steps">
               {steps.map((step) => (
@@ -291,28 +253,41 @@ export default function Home() {
         <section id="om-ivy" className="section" aria-labelledby="om-title">
           <div className="container about-grid">
             <div className="stack">
-              <p className="eyebrow">Om Ivy</p>
-              <h2 id="om-title">Om Ivy Technology</h2>
+              <p className="eyebrow">Vårt gäng</p>
+              <h2 id="om-title">Människorna bakom lösningarna</h2>
               <p className="lede">
-                Ivy är ett mindre konsultbolag med djup expertis inom frontend,
-                tillgänglighet och insiktsdriven utveckling. Vi hjälper
-                beslutsfattare att modernisera digitala produkter med fokus på
-                hastighet, kvalitet och inkludering.
+                Vi är ett glatt gäng som tror på balans, frihet och utveckling.
+                Vi möter er med nyfikenhet och hög social kompetens – och bygger
+                med teknik som håller.
               </p>
             </div>
-            <article className="card profile" aria-label="Grundare">
+            <article className="card profile" aria-label="Joel, utvecklare">
               <div className="profile-row">
-                {/* Byt till riktig bild och next/image i produktion */}
                 <div className="avatar" aria-hidden="true">
-                  IA
+                  J
                 </div>
                 <div>
-                  <h3>Ida Andersson</h3>
-                  <p className="eyebrow">Grundare · WAS certifierad</p>
+                  <h3>Joel</h3>
+                  <p className="eyebrow">Software Developer</p>
+                  <p>Bygger stabila, moderna lösningar i hela stacken.</p>
+                  <a href="mailto:joel.karlsson@ivytech.se">
+                    joel.karlsson@ivytech.se
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article className="card profile" aria-label="Camilla, kontakt">
+              <div className="profile-row">
+                <div className="avatar" aria-hidden="true">
+                  C
+                </div>
+                <div>
+                  <h3>Camilla</h3>
+                  <p className="eyebrow">Kontakt · ivytech.se</p>
                   <p>
-                    15+ år inom frontend, tillgänglighet och produktteam i
-                    Sverige.
+                    Hör av dig om du vill veta mer eller bli en del av teamet.
                   </p>
+                  <a href="mailto:camilla@ivytech.se">camilla@ivytech.se</a>
                 </div>
               </div>
             </article>
@@ -332,11 +307,11 @@ export default function Home() {
                 </h2>
                 <p id="kontakt-title" style={{ color: "var(--sand)" }}>
                   Vill du veta mer om oss, eller är du nyfiken på att samarbeta?
-                  Hör gärna av dig till Anna så berättar hon mer!
+                  Hör gärna av dig till Camilla så berättar hon mer!
                 </p>
                 <a
                   className="button contact-button"
-                  href="mailto:hello@ivytech.se"
+                  href="mailto:camilla@ivytech.se"
                 >
                   Säg hej
                 </a>

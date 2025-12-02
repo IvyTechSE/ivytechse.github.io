@@ -111,29 +111,6 @@ export default function Home() {
     return () => observer.disconnect();
   }, [sectionIds]);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const errors: FieldErrors = {};
-
-    const required = ['namn', 'foretag', 'epost', 'meddelande'];
-    required.forEach((field) => {
-      if (!data.get(field)) errors[field] = 'Fältet är obligatoriskt.';
-    });
-
-    const email = data.get('epost')?.toString() || '';
-    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      errors.epost = 'Ange en giltig e-postadress.';
-    }
-
-    if (!data.get('godkann')) {
-      errors.godkann = 'Du måste godkänna hantering av personuppgifter.';
-    }
-
-    setFormErrors(errors);
-    setSubmitted(Object.keys(errors).length === 0);
-  };
-
   const handleNavClick = () => {
     setMenuOpen(false);
   };

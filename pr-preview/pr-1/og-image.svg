@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#E2E2DE"/>
+  <rect x="80" y="110" width="1040" height="410" rx="36" fill="#F1EADA" stroke="#596E5C" stroke-width="6"/>
+  <rect x="120" y="150" width="340" height="320" rx="24" fill="#596E5C"/>
+  <path d="M170 425L250 270H300L380 425H330L275 322L220 425H170Z" fill="#F1EADA"/>
+  <text x="500" y="220" fill="#1C1C1B" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="58" font-weight="800">Ivy Technology</text>
+  <text x="500" y="280" fill="#2E333A" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600">
+    Digitala lösningar som förenar teknik och tillgänglighet
+  </text>
+  <text x="500" y="340" fill="#1C1C1B" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="500">
+    Frontend · Tillgänglighet · Inkluderande design
+  </text>
+  <rect x="500" y="380" width="240" height="60" rx="16" fill="#596E5C"/>
+  <text x="520" y="420" fill="#F1EADA" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700">
+    Boka ett möte
+  </text>
+  <rect x="760" y="380" width="240" height="60" rx="16" fill="#2E333A"/>
+  <text x="780" y="420" fill="#F1EADA" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="700">
+    Kontakta oss
+  </text>
+</svg>

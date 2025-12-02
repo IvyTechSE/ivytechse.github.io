@@ -1,0 +1,22 @@
+name: Preview Pages
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-pages
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/build
+      - name: Preview Pages
+        uses: rajyan/preview-pages@v1.3.37
+        with:
+          path: out
+          github_token: ${{ secrets.GITHUB_TOKEN }}

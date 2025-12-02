@@ -13,7 +13,7 @@ npm run dev
 
 ```bash
 npm run build
-# places the export in out/
+# places the export in out/ (using output: export)
 ```
 
 Deploy `out/` with GitHub Pages (see workflow in `.github/workflows` if you add it).

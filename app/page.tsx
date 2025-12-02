@@ -87,7 +87,6 @@ export default function Home() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [formErrors, setFormErrors] = useState<FieldErrors>({});
-  const [submitted, setSubmitted] = useState(false);
 
   const sectionIds = useMemo(() => navItems.map((item) => item.id), []);
 

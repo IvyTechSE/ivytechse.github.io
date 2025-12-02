@@ -20,8 +20,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: out
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          force: false
+          clean-exclude: pr-preview
+          folder: out

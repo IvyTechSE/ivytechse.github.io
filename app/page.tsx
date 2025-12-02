@@ -65,6 +65,51 @@ const cases = [
   },
 ];
 
+const team = [
+  {
+    name: "Camilla",
+    role: "Kundansvarig & rådgivare",
+    intro:
+      "Din första kontakt hos oss. Ser till att vi förstår behoven och håller ihop samarbetet.",
+    email: "camilla@ivytech.se",
+  },
+  {
+    name: "Joel",
+    role: "Software Developer",
+    intro:
+      "Bygger stabila, moderna lösningar i hela stacken med fokus på kvalitet och tempo.",
+    email: "joel.karlsson@ivytech.se",
+  },
+  {
+    name: "Anna",
+    role: "UX & Tillgänglighet",
+    intro:
+      "Säkrar WCAG 2.2 i praktiken och tar fram tydliga flöden som fler kan använda.",
+    email: "anna@ivytech.se",
+  },
+  {
+    name: "Erik",
+    role: "Systemarkitekt",
+    intro:
+      "Skapar riktning och struktur i komplexa miljöer och leder tekniska beslut framåt.",
+    email: "erik@ivytech.se",
+  },
+  {
+    name: "Lina",
+    role: "Data & AI",
+    intro:
+      "Integrerar AI i vardagen – analys, automatisering och kodstöd som förstärker teamen.",
+    email: "lina@ivytech.se",
+  },
+  {
+    name: "Omar",
+    role: "Backendutvecklare",
+    intro:
+      "Designar robusta tjänster och API:er som tål last och är enkla att vidareutveckla.",
+    email: "omar@ivytech.se",
+  },
+];
+
 export default function Home() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -251,46 +296,41 @@ export default function Home() {
         </section>
 
         <section id="om-ivy" className="section" aria-labelledby="om-title">
-          <div className="container about-grid">
+          <div className="container stack">
             <div className="stack">
               <p className="eyebrow">Vårt gäng</p>
               <h2 id="om-title">Människorna bakom lösningarna</h2>
               <p className="lede">
-                Vi är ett glatt gäng som tror på balans, frihet och utveckling.
-                Vi möter er med nyfikenhet och hög social kompetens – och bygger
-                med teknik som håller.
+                Vi är sex personer idag och växer långsamt till 20–30 för att
+                behålla kultur och kvalitet. Vi möter er med nyfikenhet, hög
+                social kompetens och teknik som håller.
               </p>
             </div>
-            <article className="card profile" aria-label="Joel, utvecklare">
-              <div className="profile-row">
-                <div className="avatar" aria-hidden="true">
-                  J
-                </div>
-                <div>
-                  <h3>Joel</h3>
-                  <p className="eyebrow">Software Developer</p>
-                  <p>Bygger stabila, moderna lösningar i hela stacken.</p>
-                  <a href="mailto:joel.karlsson@ivytech.se">
-                    joel.karlsson@ivytech.se
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article className="card profile" aria-label="Camilla, kontakt">
-              <div className="profile-row">
-                <div className="avatar" aria-hidden="true">
-                  C
-                </div>
-                <div>
-                  <h3>Camilla</h3>
-                  <p className="eyebrow">Kontakt · ivytech.se</p>
-                  <p>
-                    Hör av dig om du vill veta mer eller bli en del av teamet.
-                  </p>
-                  <a href="mailto:camilla@ivytech.se">camilla@ivytech.se</a>
-                </div>
-              </div>
-            </article>
+            <div className="grid team-grid">
+              {team.map((person) => (
+                <article
+                  key={person.email}
+                  className="card profile"
+                  aria-label={`${person.name}, ${person.role}`}
+                >
+                  <div className="profile-row">
+                    <div className="profile-photo" aria-hidden="true">
+                      {person.name.charAt(0)}
+                    </div>
+                    <div className="profile-body">
+                      <h3>{person.name}</h3>
+                      <p className="eyebrow">{person.role}</p>
+                      <p>{person.intro}</p>
+                      <a href={`mailto:${person.email}`}>{person.email}</a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p>
+              Nyfiken på att bli en del av teamet? Hör av dig till{" "}
+              <a href="mailto:camilla@ivytech.se">camilla@ivytech.se</a>.
+            </p>
           </div>
         </section>
 

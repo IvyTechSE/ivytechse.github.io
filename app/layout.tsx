@@ -40,6 +40,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sv">
       <body className={inter.className}>
+        {process.env.NODE_ENV === 'production' && (
+          <div className="under-construction" role="status" aria-live="polite">
+            🚧 Webbplatsen är under uppbyggnad. Vissa delar är tillfälliga.
+          </div>
+        )}
         <a className="skip-link" href="#main">
           Hoppa till innehåll
         </a>

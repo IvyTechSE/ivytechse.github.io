@@ -57,7 +57,7 @@ body {
     ),
     linear-gradient(180deg, var(--sand) 0%, var(--sand) 60%, var(--sand) 100%);
   color: var(--onyx);
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Sora", system-ui, -apple-system, sans-serif;
   line-height: 1.7;
   font-size: 17px;
   min-height: 100vh;
@@ -74,7 +74,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), "Inter", system-ui, -apple-system, sans-serif;
+  font-family: var(--font-display), "Sora", system-ui, -apple-system, sans-serif;
   letter-spacing: -0.02em;
   color: var(--onyx);
 }

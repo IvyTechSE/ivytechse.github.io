@@ -1,10 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Sora } from "next/font/google";
 import { RevealInitializer } from './components/RevealInitializer';
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], display: 'swap', variable: '--font-display' });
+const sora = Sora({ subsets: ["latin"], display: "swap" });
 
 const organizationLd = {
   "@context": "https://schema.org",
@@ -41,8 +40,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sv">
-      <body className={`${inter.className} ${spaceGrotesk.variable}`}>
-        {process.env.NODE_ENV === 'production' && (
+      <body className={`${sora.className}`}>
+        {process.env.NODE_ENV === "production" && (
           <div className="under-construction" role="status" aria-live="polite">
             🚧 Webbplatsen är under uppbyggnad. Vissa delar är tillfälliga.
           </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { navItems } from '../content';
 
 export function Footer() {
@@ -5,14 +6,16 @@ export function Footer() {
     <footer className="section footer" aria-label="Sidfot">
       <div className="container footer-grid">
         <div>
-          <div className="logo">Ivy Technology</div>
+          <Link className="logo" href="/" aria-label="Ivy Technology">
+            Ivy Technology
+          </Link>
           <p>Göteborg, Sverige</p>
         </div>
         <div className="footer-links">
           {navItems.map((item) => (
-            <a key={item.id} href={`#${item.id}`}>
+            <Link key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="footer-contact">

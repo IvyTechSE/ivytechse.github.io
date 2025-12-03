@@ -1,16 +1,16 @@
 export const navItems = [
-  { id: "tjanster", label: "Tjänster" },
-  { id: "arbetssatt", label: "Arbetssätt" },
-  { id: "om-ivy", label: "Vårt gäng" },
-  { id: "kontakt", label: "Kontakt" },
+  { href: "/", label: "Hem" },
+  { href: "/tjanster", label: "Tjänster" },
+  { href: "/arbetssatt", label: "Arbetssätt" },
+  { href: "/om-ivy", label: "Vårt gäng" },
 ];
 
 export const hero = {
   eyebrow: "Göteborg · Digitala produkter · Tillgänglighet",
   title: "Kompetens bygger lösningar, människor bygger värde",
   body: "Vi är nyfikna systemutvecklare som älskar teknik – men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.",
-  primaryCta: { label: "Kontakta oss", href: "mailto:hello@ivytech.se" },
-  secondaryCta: { label: "Läs om vårt arbetssätt", href: "#arbetssatt" },
+  primaryCta: { label: "Kontakta oss", href: "#kontakt" },
+  secondaryCta: { label: "Mejla oss", href: "mailto:hello@ivytech.se" },
 };
 
 export const services = [

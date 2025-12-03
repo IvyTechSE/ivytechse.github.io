@@ -4,8 +4,8 @@ import { hero } from "../content";
 const heroShots = [
   { src: "/images/anna-funke.png", alt: "Anna Funke i möte med kund" },
   {
-    src: "/images/oskar-berntsson.png",
-    alt: "Oskar Berntsson planerar system",
+    src: "/images/oscar-berntsson.png",
+    alt: "Oscar Berntsson planerar system",
   },
   {
     src: "/images/joel-karlsson.png",

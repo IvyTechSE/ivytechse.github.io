@@ -30,7 +30,7 @@ export function HeaderNav({ onContactClick }: Props) {
           />
         </Link>
         <button
-          className="menu-toggle"
+          className="button ghost"
           type="button"
           aria-expanded={menuOpen}
           aria-controls="huvudmeny"

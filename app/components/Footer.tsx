@@ -1,13 +1,20 @@
 import Link from "next/link";
 import { navItems } from '../content';
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="section footer" aria-label="Sidfot">
       <div className="container footer-grid">
         <div>
-          <Link className="logo" href="/" aria-label="Ivy Technology">
-            Ivy Technology
+          <Link className="logo" aria-label="Ivy Technology" href="/">
+            <Image
+              src="/images/ivy-logo-white.svg"
+              alt="Ivy Technology logotyp"
+              width={48}
+              height={28}
+              priority
+            />
           </Link>
         </div>
         <div className="footer-links">

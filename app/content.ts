@@ -93,7 +93,7 @@ export const team = [
   },
   {
     name: "Joel Karlsson",
-    role: "Software Developer",
+    role: "Systemutvecklare",
     intro:
       "Bygger hållbara, skalbara system med fokus på kvalitet och användarupplevelse.",
     email: "joel.karlsson@ivytech.se",

@@ -1,20 +1,23 @@
-import Image from "next/image";
-import { hero } from "../content";
+"use client";
 
-const heroShots = [
-  { src: "/images/anna-funke.png", alt: "Anna Funke i möte med kund" },
-  {
-    src: "/images/oscar-berntsson.png",
-    alt: "Oscar Berntsson planerar system",
-  },
-  {
-    src: "/images/joel-karlsson.png",
-    alt: "Joel Karlsson i dialog med teamet",
-  },
-  { src: "/images/ylva-pyykko.png", alt: "Ylva Pyykkö i samtal utomhus" },
-];
+import Image from "next/image";
+import { useMemo } from "react";
+import { hero, team } from "../content";
 
 export function HeroSection() {
+  const heroShots = useMemo(() => {
+    const photos = team
+      .filter((person) => person.photo)
+      .map((person) => ({
+        src: person.photo as string,
+        alt: `${person.name} – ${person.role}`,
+      }));
+
+    return [...photos]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 4);
+  }, []);
+
   return (
     <section
       id="hero"

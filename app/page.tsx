@@ -2,7 +2,7 @@ import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
 import { HeaderNav } from "./components/HeaderNav";
 import { HeroSection } from "./components/HeroSection";
-import { StorySection } from "./components/StorySection";
+import { ServicesSection } from "./components/ServicesSection";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <HeaderNav />
       <main id="main">
         <HeroSection />
-        <StorySection />
+        <ServicesSection />
         <ContactSection />
       </main>
       <Footer />

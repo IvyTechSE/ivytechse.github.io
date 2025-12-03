@@ -1,5 +1,4 @@
 export const navItems = [
-  { href: "/", label: "Hem" },
   { href: "/tjanster", label: "Tjänster" },
   { href: "/arbetssatt", label: "Arbetssätt" },
   { href: "/om-ivy", label: "Vårt gäng" },
@@ -66,20 +65,20 @@ export const story = [
 
 export const cases = [
   {
-    title: 'Systemarkitektur i skala',
-    body: 'Tydliga strukturer och riktning för teamen, med skalbara lösningar som håller över tid.',
-    tags: ['Arkitektur', 'Ledarskap', 'Skalbarhet']
+    title: "Systemarkitektur i skala",
+    body: "Tydliga strukturer och riktning för teamen, med skalbara lösningar som håller över tid.",
+    tags: ["Arkitektur", "Ledarskap", "Skalbarhet"],
   },
   {
-    title: 'Tillgängliga upplevelser',
-    body: 'Responsiva gränssnitt, WCAG 2.2 i praktiken och tydliga flöden som fler kan använda.',
-    tags: ['Frontend', 'Tillgänglighet', 'UX']
+    title: "Tillgängliga upplevelser",
+    body: "Responsiva gränssnitt, WCAG 2.2 i praktiken och tydliga flöden som fler kan använda.",
+    tags: ["Frontend", "Tillgänglighet", "UX"],
   },
   {
-    title: 'AI i vardagen',
-    body: 'Automatisering, analys och kodstöd där AI förstärker människan – inte ersätter den.',
-    tags: ['AI', 'Produktivitet', 'Automation']
-  }
+    title: "AI i vardagen",
+    body: "Automatisering, analys och kodstöd där AI förstärker människan – inte ersätter den.",
+    tags: ["AI", "Produktivitet", "Automation"],
+  },
 ];
 
 export const team = [
@@ -111,13 +110,13 @@ export const team = [
     photo: "/images/anna-funke.png",
   },
   {
-    name: "Oskar Berntsson",
+    name: "Oscar Berntsson",
     role: "Systemarkitekt",
     intro:
       "Designar skalbara, hållbara system med fokus på både teknik och team.",
-    email: "oskar.berntsson@ivytech.se",
+    email: "oscar.berntsson@ivytech.se",
     linkedin: "https://www.linkedin.com/in/oscar-berntsson-80b01885/",
-    photo: "/images/oskar-berntsson.png",
+    photo: "/images/oscar-berntsson.png",
   },
   {
     name: "Ylva Pyykkö",

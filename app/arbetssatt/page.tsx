@@ -11,11 +11,12 @@ export default function ApproachPage() {
       <main id="main">
         <section className="section page-hero">
           <div className="container stack">
-            <p className="eyebrow pill">Arbetssätt</p>
+            <p className="eyebrow">Arbetssätt</p>
             <h1>Balans, frihet och utveckling.</h1>
             <p className="lede">
-              Vi jobbar nära era team, tar beslut tillsammans och skapar hållbara lösningar som känns lugna och
-              förutsägbara – även när tempot är högt.
+              Vi jobbar nära era team, tar beslut tillsammans och skapar
+              hållbara lösningar som känns lugna och förutsägbara – även när
+              tempot är högt.
             </p>
             <a className="button primary" href="#kontakt">
               Kontakta oss

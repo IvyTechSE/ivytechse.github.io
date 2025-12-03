@@ -9,7 +9,6 @@ export function Footer() {
           <Link className="logo" href="/" aria-label="Ivy Technology">
             Ivy Technology
           </Link>
-          <p>Göteborg, Sverige</p>
         </div>
         <div className="footer-links">
           {navItems.map((item) => (

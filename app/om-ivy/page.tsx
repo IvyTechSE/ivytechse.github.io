@@ -10,11 +10,12 @@ export default function TeamPage() {
       <main id="main">
         <section className="section page-hero">
           <div className="container stack">
-            <p className="eyebrow pill">Vårt gäng</p>
+            <p className="eyebrow">Vårt gäng</p>
             <h1>Teamet som gör skillnad.</h1>
             <p className="lede">
-              Vi grundades i Göteborg och kombinerar teknik med människofokus. Vi växer hållbart för att behålla
-              kultur, kvalitet och närhet till våra kunder.
+              Vi grundades i Göteborg och kombinerar teknik med människofokus.
+              Vi växer hållbart för att behålla kultur, kvalitet och närhet till
+              våra kunder.
             </p>
             <a className="button primary" href="#kontakt">
               Kontakta oss

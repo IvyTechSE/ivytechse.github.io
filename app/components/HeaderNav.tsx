@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
 import { navItems } from "../content";
+import Image from "next/image";
 
 type Props = {
   onContactClick?: () => void;
@@ -20,7 +21,13 @@ export function HeaderNav({ onContactClick }: Props) {
     <header className="site-header" aria-label="Sidhuvud">
       <div className="container header-inner">
         <Link className="logo" aria-label="Ivy Technology" href="/">
-          Ivy Technology
+          <Image
+            src="/images/ivy-logo-black.svg"
+            alt="Ivy Technology logotyp"
+            width={48}
+            height={28}
+            priority
+          />
         </Link>
         <button
           className="menu-toggle"
@@ -48,7 +55,7 @@ export function HeaderNav({ onContactClick }: Props) {
             ))}
             <li className="nav-contact">
               <a
-                className="button ghost contact-nav-button"
+                className="button primary contact-nav-button"
                 href="#kontakt"
                 onClick={() => {
                   handleNavClick();

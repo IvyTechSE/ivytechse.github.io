@@ -30,9 +30,6 @@ export function HeroSection() {
             <a className="button primary" href={hero.primaryCta.href}>
               {hero.primaryCta.label}
             </a>
-            <a className="button ghost" href={hero.secondaryCta.href}>
-              {hero.secondaryCta.label}
-            </a>
           </div>
         </div>
         <div className="hero-visual" aria-hidden="true">

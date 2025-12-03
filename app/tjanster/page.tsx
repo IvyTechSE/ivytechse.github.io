@@ -11,11 +11,11 @@ export default function ServicesPage() {
       <main id="main">
         <section className="section page-hero">
           <div className="container stack">
-            <p className="eyebrow pill">Våra tjänster</p>
+            <p className="eyebrow">Våra tjänster</p>
             <h1>Erfarna konsulter. Människor du vill jobba med.</h1>
             <p className="lede">
-              Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller – för organisationen och för
-              användarna.
+              Strategi, design och engineering i samma gäng. Vi bygger lösningar
+              som håller – för organisationen och för användarna.
             </p>
             <a className="button primary" href="#kontakt">
               Kontakta oss

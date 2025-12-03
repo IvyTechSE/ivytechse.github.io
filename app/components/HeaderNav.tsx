@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { navItems } from "../content";
 import Image from "next/image";
 
@@ -11,7 +11,6 @@ type Props = {
 };
 
 export function HeaderNav({ onContactClick }: Props) {
-  const items = useMemo(() => navItems, []);
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -30,7 +29,7 @@ export function HeaderNav({ onContactClick }: Props) {
           />
         </Link>
         <button
-          className="button ghost"
+          className="button ghost menu-toggle"
           type="button"
           aria-expanded={menuOpen}
           aria-controls="huvudmeny"
@@ -41,7 +40,7 @@ export function HeaderNav({ onContactClick }: Props) {
         </button>
         <nav aria-label="Huvudmeny">
           <ul id="huvudmeny" className={`nav-list ${menuOpen ? " open" : ""}`}>
-            {items.map((item) => (
+            {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   className={pathname === item.href ? "active" : ""}

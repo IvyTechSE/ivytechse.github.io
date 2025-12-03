@@ -196,17 +196,6 @@ section {
   color: var(--ink);
 }
 
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  background: var(--pill);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  color: var(--ink);
-}
-
 .card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -282,25 +271,15 @@ section {
 }
 
 .logo {
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  font-family: var(--font-display), "Inter", system-ui, sans-serif;
   display: inline-flex;
   align-items: center;
-  width: 2em;
-}
-@media (max-width: 720px) {
-  .logo {
-    margin-left: 1em;
-  }
+  gap: 0.6rem;
+  color: var(--ink);
 }
 
-.logo svg {
+.logo img {
   display: block;
-  height: auto;
-  width: 1rem;
+  width: 2em;
 }
 
 .nav-list {
@@ -416,32 +395,8 @@ nav[aria-label="Huvudmeny"] {
   color: var(--ink);
 }
 
-.hero-highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.hero-highlights li {
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  color: var(--ink);
-  padding: 0.55rem 0.85rem;
-  border-radius: 12px;
-  font-weight: 600;
-}
-
 .contact {
   margin-bottom: 0;
-}
-
-.contact .pill {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.28);
-  color: #fff;
 }
 
 .hero-visual {

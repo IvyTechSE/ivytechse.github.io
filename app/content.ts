@@ -18,20 +18,70 @@ export const services = [
     body: "Vi designar skalbara, hållbara system som håller över tid – tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.",
     icon: "🏗️",
     alt: "Ikon för systemarkitektur",
+    href: "/tjanster/systemarkitektur",
   },
   {
     title: "Systemutveckling – frontend och backend",
     body: "Vi bygger moderna gränssnitt och robusta tjänster, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.",
     icon: "💻",
     alt: "Ikon för systemutveckling",
+    href: "/tjanster/systemutveckling",
   },
   {
     title: "AI i praktiken",
     body: "Vi använder AI som verktyg i vardagen – för analys, automatisering, test och kodstöd – och hjälper er att göra detsamma på riktigt, inte bara i teorin.",
     icon: "🤖",
     alt: "Ikon för AI",
+    href: "/tjanster/ai-i-praktiken",
   },
 ];
+
+export const serviceDetails: Record<
+  string,
+  {
+    title: string;
+    intro: string;
+    sections: { heading: string; body: string }[];
+  }
+> = {
+  systemarkitektur: {
+    title: "Systemarkitektur",
+    intro:
+      "Vi designar skalbara, hållbara system som håller över tid – både tekniskt och organisatoriskt. Våra arkitekter har förmågan att se helheten, sätta struktur och skapa lösningar som är tydliga att bygga vidare på.",
+    sections: [
+      {
+        heading: "Teknik och människor",
+        body: "För oss handlar arkitektur inte bara om teknik, utan också om människor. I rollen ingår ofta att leda andra utvecklare, driva tekniska beslut framåt och skapa samsyn mellan team, verksamhet och ledning. Vi är vana att ta ansvar – och skapa riktning.",
+      },
+    ],
+  },
+  systemutveckling: {
+    title: "Systemutveckling – frontend och backend",
+    intro:
+      "Vi bygger stabila, moderna lösningar i hela stacken – från responsiva gränssnitt till robusta backendtjänster. Våra utvecklare är vana att jobba i komplexa miljöer, med både nyutveckling och vidareutveckling av befintliga system.",
+    sections: [
+      {
+        heading: "Tillgänglighet och kvalitet",
+        body: "Inom frontend har vi särskild kompetens inom tillgänglighet. Vi ser till att det vi bygger kan användas av alla, oavsett förutsättningar – för oss är det inte ett tillval, utan en självklar del av god utveckling.",
+      },
+      {
+        heading: "Arbetssätt som håller",
+        body: "Vi föredrar att arbeta testdrivet, agilt och nära kunden – kod för oss är ett verktyg för att lösa riktiga behov, inte ett mål i sig.",
+      },
+    ],
+  },
+  "ai-i-praktiken": {
+    title: "AI i praktiken",
+    intro:
+      "Vi följer utvecklingen inom AI med stort intresse – men ännu viktigare, vi använder det aktivt. Många av våra konsulter har redan integrerat AI som ett naturligt verktyg i sitt dagliga arbete: för analys, automatisering, testning, kodstöd och mycket mer.",
+    sections: [
+      {
+        heading: "Praktisk nytta",
+        body: "Vi hjälper gärna våra kunder att utforska vad AI kan göra i praktiken – på riktigt. Inte bara i teorin. Det handlar inte om att byta ut människor – utan om att förstärka dem.",
+      },
+    ],
+  },
+};
 
 export const steps = [
   {
@@ -143,7 +193,7 @@ export const contact = {
   body: "Vill du veta mer om oss, eller är du nyfiken på att samarbeta? Hör gärna av dig till Anna så berättar hon mer!",
   cta: { label: "Säg hej", href: "mailto:hello@ivytech.se" },
   image: {
-    src: "/images/profile_placeholder.svg",
+    src: "/images/anna-funke.png",
     alt: "Profilbild  Ivy Technology",
   },
 };

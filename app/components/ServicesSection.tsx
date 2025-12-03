@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { services } from '../content';
 
 export function ServicesSection() {
@@ -33,9 +34,9 @@ export function ServicesSection() {
                 <h3 id={`${service.title}-title`}>{service.title}</h3>
                 <p>{service.body}</p>
               </div>
-              <span className="card-arrow">
+              <Link className="card-arrow" href={service.href}>
                 Läs mer <span aria-hidden="true">↗</span>
-              </span>
+              </Link>
             </article>
           ))}
         </div>

@@ -2,16 +2,12 @@
 @import "modern-normalize/modern-normalize.css";
 
 :root {
-  --sand: #ede3d4;
-  --sand-strong: #e3d6c2;
-  --surface: #f7f2e8;
-  --ink: #1f211d;
-  --muted: #4d524a;
-  --forest: #4f6b5f;
-  --forest-strong: #2e4b3c;
-  --pill: #d8dde2;
-  --stone: #cfd3d8;
-  --accent: #9fb3c6;
+  --forest: #596e5c;
+  --sand: #F1EADA;
+  --ash: #979086;
+  --midnight: #2E333A;
+  --onyx: #1C1C1B;
+  --stone: #E2E2DE;
   --radius: 18px;
   --shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   --shadow-strong: 0 18px 44px rgba(0, 0, 0, 0.14);
@@ -51,16 +47,16 @@ body {
   margin: 0;
   background: radial-gradient(
       circle at 12% 14%,
-      rgba(79, 107, 95, 0.06),
+      rgba(89, 110, 92, 0.06),
       transparent 32%
     ),
     radial-gradient(
       circle at 82% 12%,
-      rgba(159, 179, 198, 0.12),
+      rgba(226, 226, 222, 0.4),
       transparent 30%
     ),
-    linear-gradient(180deg, #f8f3ea 0%, #ede3d4 60%, #ede3d4 100%);
-  color: var(--ink);
+    linear-gradient(180deg, var(--sand) 0%, var(--sand) 60%, var(--sand) 100%);
+  color: var(--onyx);
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   line-height: 1.7;
   font-size: 17px;
@@ -78,10 +74,9 @@ p {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), "Inter", system-ui, -apple-system,
-    sans-serif;
+  font-family: var(--font-display), "Inter", system-ui, -apple-system, sans-serif;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 h1 {
@@ -100,24 +95,24 @@ h3 {
 }
 
 p {
-  color: var(--muted);
+  color: var(--midnight);
   max-width: 72ch;
 }
 
 a {
-  color: var(--forest);
+  color: var(--midnight);
   font-weight: 700;
-  text-decoration-color: rgba(79, 107, 95, 0.35);
+  text-decoration-color: rgba(46, 51, 58, 0.35);
 }
 
 a:hover {
-  color: var(--forest-strong);
-  text-decoration-color: var(--forest-strong);
+  color: var(--forest);
+  text-decoration-color: var(--forest);
 }
 
 ::selection {
   background: rgba(159, 179, 198, 0.35);
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 :focus-visible {
@@ -188,12 +183,12 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--midnight);
 }
 
 .lede {
   font-size: 1.18rem;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .card {
@@ -225,7 +220,7 @@ section {
   font-weight: 800;
   border: 1px solid rgba(0, 0, 0, 0.12);
   background: #fff;
-  color: var(--ink);
+  color: var(--onyx);
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease,
     color 150ms ease, border-color 150ms ease;
@@ -236,11 +231,11 @@ section {
   background: var(--forest);
   color: #fff;
   border-color: var(--forest);
-  box-shadow: 0 14px 30px rgba(79, 107, 95, 0.28);
+  box-shadow: 0 14px 30px rgba(89, 110, 92, 0.28);
 }
 
 .button.ghost {
-  background: var(--surface);
+  background: var(--sand);
   border-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -250,14 +245,14 @@ section {
 }
 
 .button:focus-visible {
-  box-shadow: 0 0 0 4px rgba(79, 107, 95, 0.3);
+  box-shadow: 0 0 0 4px rgba(89, 110, 92, 0.3);
 }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 998;
-  background: rgba(237, 227, 212, 0.9);
+  background: rgba(241, 234, 218, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
@@ -274,12 +269,12 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .logo img {
   display: block;
-  width: 2em;
+  width: 1.5em;
 }
 
 .nav-list {
@@ -298,12 +293,12 @@ section {
   gap: 0.4rem;
   padding: 0.6rem 0.95rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .nav-list a.active,
 .nav-list a:focus-visible {
-  background: #cfd3d8;
+  background: var(--stone);
   border-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -321,8 +316,8 @@ section {
 .menu-toggle {
   display: none;
   justify-self: end;
-  background: #e6ecf1;
-  color: var(--ink);
+  background: var(--stone);
+  color: var(--onyx);
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
@@ -392,7 +387,7 @@ nav[aria-label="Huvudmeny"] {
 .hero-copy p,
 .hero-copy .eyebrow,
 .hero-copy .lede {
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .contact {
@@ -467,13 +462,13 @@ nav[aria-label="Huvudmeny"] {
   display: grid;
   gap: 0.85rem;
   align-content: start;
-  background: #e7ebf0;
+  background: var(--stone);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: none;
 }
 
 .service-card:nth-of-type(2n) {
-  background: #dfe5ec;
+  background: var(--stone);
 }
 
 .service-icon {
@@ -481,7 +476,7 @@ nav[aria-label="Huvudmeny"] {
   height: 52px;
   border-radius: 14px;
   background: #fff;
-  color: var(--ink);
+  color: var(--onyx);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -495,7 +490,7 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .service-body p {
-  color: var(--muted);
+  color: var(--midnight);
 }
 
 .card-arrow {
@@ -503,7 +498,7 @@ nav[aria-label="Huvudmeny"] {
   align-items: center;
   gap: 0.35rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .steps {
@@ -528,8 +523,8 @@ nav[aria-label="Huvudmeny"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--pill);
-  color: var(--ink);
+  background: var(--stone);
+  color: var(--midnight);
   font-weight: 800;
   font-size: 1.05rem;
 }
@@ -576,7 +571,7 @@ nav[aria-label="Huvudmeny"] {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--forest), var(--accent));
+  background: linear-gradient(135deg, var(--forest), var(--forest));
   box-shadow: 0 0 0 6px rgba(79, 107, 95, 0.16);
   margin-top: 0.2rem;
 }
@@ -592,8 +587,8 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .tag {
-  background: var(--pill);
-  color: var(--ink);
+  background: var(--stone);
+  color: var(--onyx);
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   font-size: 0.92rem;
@@ -601,12 +596,12 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .cases .card {
-  background: #e7ebf0;
+  background: var(--stone);
   box-shadow: none;
 }
 
 .cases .card:nth-of-type(2n) {
-  background: #dfe5ec;
+  background: var(--stone);
 }
 
 .cases .card .tags {
@@ -617,7 +612,7 @@ nav[aria-label="Huvudmeny"] {
   padding: 0;
   overflow: hidden;
   background: #fff;
-  color: var(--ink);
+  color: var(--onyx);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: var(--shadow);
 }
@@ -646,7 +641,7 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .profile-body p {
-  color: var(--muted);
+  color: var(--midnight);
 }
 
 .profile-heading {
@@ -667,11 +662,11 @@ nav[aria-label="Huvudmeny"] {
   font-weight: 700;
   transition: color 150ms ease, text-decoration-color 150ms ease,
     transform 150ms ease;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .profile-links a:not(.linkedin-icon):hover {
-  color: var(--forest-strong);
+  color: var(--forest);
 }
 
 .linkedin-icon {
@@ -681,8 +676,8 @@ nav[aria-label="Huvudmeny"] {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--pill);
-  color: var(--ink);
+  background: var(--stone);
+  color: var(--onyx);
   font-weight: 800;
   text-decoration: none;
   transition: transform 150ms ease, box-shadow 150ms ease;
@@ -701,7 +696,7 @@ nav[aria-label="Huvudmeny"] {
 
 .join-us {
   font-weight: 700;
-  color: var(--ink);
+  color: var(--onyx);
 }
 
 .contact {
@@ -713,7 +708,7 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .contact-card {
-  background: linear-gradient(135deg, #4f6b5f, #2e4b3c);
+  background: var(--forest);
   border-radius: 26px;
   padding: clamp(1.8rem, 3vw, 2.6rem);
   display: grid;
@@ -735,9 +730,9 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .contact-button {
-  background: #e6ecf1;
-  color: var(--ink);
-  border-color: #e6ecf1;
+  background: var(--stone);
+  color: var(--onyx);
+  border-color: var(--stone);
 }
 
 .contact-button:hover {
@@ -778,13 +773,13 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .footer {
-  background: var(--forest-strong);
-  color: #f2efe9;
+  background: var(--onyx);
+  color: var(--sand);
   padding: 2.8rem 0;
 }
 
 .footer a {
-  color: #f2efe9;
+  color: var(--sand);
   font-weight: 700;
 }
 
@@ -793,7 +788,7 @@ nav[aria-label="Huvudmeny"] {
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   align-items: start;
-  color: #f2efe9;
+  color: var(--sand);
 }
 
 .footer-links,
@@ -836,8 +831,8 @@ nav[aria-label="Huvudmeny"] {
   z-index: 1000;
   width: 100%;
   padding: 0.75rem 1rem;
-  background: var(--forest-strong);
-  color: #f2efe9;
+  background: var(--forest);
+  color: var(--sand);
   text-align: center;
   font-weight: 700;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);

@@ -13,6 +13,7 @@ export function Footer() {
               alt="Ivy Technology logotyp"
               width={48}
               height={28}
+              sizes="48px"
               priority
             />
           </Link>

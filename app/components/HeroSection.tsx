@@ -26,7 +26,6 @@ export function HeroSection() {
     >
       <div className="container hero-grid">
         <div className="stack hero-copy">
-          <p className="eyebrow">{hero.eyebrow}</p>
           <h1 id="hero-title">{hero.title}</h1>
           <p className="lede">{hero.body}</p>
           <div className="actions cluster">
@@ -42,7 +41,14 @@ export function HeroSection() {
                 key={shot.src}
                 className={`collage-item collage-${index + 1}`}
               >
-                <Image src={shot.src} alt={shot.alt} width={320} height={420} />
+                <Image
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={320}
+                  height={420}
+                  sizes="(min-width: 1100px) 320px, (min-width: 768px) 50vw, 90vw"
+                  priority={index === 0}
+                />
               </figure>
             ))}
           </div>

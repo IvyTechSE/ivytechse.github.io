@@ -1,6 +1,5 @@
 export const navItems = [
-  { href: "/tjanster", label: "Tjänster" },
-  { href: "/arbetssatt", label: "Arbetssätt" },
+  { href: "/tjanster", label: "Vad vi gör" },
   { href: "/om-ivy", label: "Vårt gäng" },
 ];
 

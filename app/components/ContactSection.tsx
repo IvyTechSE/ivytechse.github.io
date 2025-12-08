@@ -31,6 +31,7 @@ export function ContactSection() {
                 width={220}
                 height={220}
                 className="contact-image"
+                sizes="(min-width: 900px) 200px, 38vw"
                 priority
               />
             ) : (

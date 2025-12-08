@@ -34,9 +34,6 @@ export function ServicesSection() {
                 <h3 id={`${service.title}-title`}>{service.title}</h3>
                 <p>{service.body}</p>
               </div>
-              <Link className="card-arrow" href={service.href}>
-                Läs mer <span aria-hidden="true">↗</span>
-              </Link>
             </article>
           ))}
         </div>

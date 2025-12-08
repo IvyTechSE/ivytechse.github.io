@@ -2,7 +2,7 @@ import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
 import { ServicesSection } from "../components/ServicesSection";
-import { CasesSection } from "../components/CasesSection";
+import { ApproachSection } from "../components/ApproachSection";
 
 export default function ServicesPage() {
   return (
@@ -23,7 +23,7 @@ export default function ServicesPage() {
           </div>
         </section>
         <ServicesSection />
-        <CasesSection />
+        <ApproachSection />
         <ContactSection />
       </main>
       <Footer />

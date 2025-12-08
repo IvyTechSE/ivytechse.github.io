@@ -18,7 +18,7 @@ export default function TeamPage() {
               våra kunder.
             </p>
             <a className="button primary" href="#kontakt">
-              Kontakta oss
+              Bli en del av vårt gäng
             </a>
           </div>
         </section>

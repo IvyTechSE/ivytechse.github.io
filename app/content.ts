@@ -187,6 +187,33 @@ export const team = [
   },
 ];
 
+export const workShowcase = {
+  eyebrow: "Vardagen på Ivy",
+  title: "Så här jobbar vi på riktigt",
+  body: "Vi är nära varandra och våra kunder – med tydliga ritualer, gemensamma demos och en kultur som gör det lätt att säga vad man tycker. Här är ett axplock från vår vardag.",
+  cta: { label: "Möt vårt gäng", href: "/om-ivy" },
+  cards: [
+    {
+      title: "Bygger tillsammans",
+      meta: "Parprogrammering, mobbning och gemensamma code reviews",
+      detail:
+        "Vi sitter tätt med design, produkt och test för att lösa problemen ihop.",
+      image:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+      tone: "stone",
+    },
+    {
+      title: "Lyfter varandra",
+      meta: "Veckovisa kunskapsdelningar och retros varje sprint",
+      detail:
+        "Vi investerar tid i lärande, mentorskapspar och öppna demo-pass.",
+      image:
+        "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=1600&q=80",
+      tone: "stone",
+    },
+  ],
+};
+
 export const contact = {
   title: "Kontakt",
   body: "Vill du veta mer om oss, eller är du nyfiken på att samarbeta? Hör gärna av dig till Anna så berättar hon mer!",

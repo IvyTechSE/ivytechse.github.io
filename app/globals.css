@@ -493,6 +493,85 @@ nav[aria-label="Huvudmeny"] {
   color: var(--midnight);
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(1.6rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.work-visual {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  justify-items: start;
+}
+
+.work-circle {
+  position: absolute;
+  inset: 8% auto auto -12%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(var(--forest-rgb), 0.18),
+    rgba(var(--sand-rgb), 0.5)
+  );
+  border-radius: 50%;
+  filter: blur(0.4px);
+  z-index: 0;
+}
+
+.work-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.9rem 1.2rem;
+  align-items: center;
+  padding: 0;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(var(--black-rgb), 0.08);
+  overflow: hidden;
+  width: min(520px, 100%);
+  z-index: 1;
+}
+
+.work-card.stone {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--stone-rgb), 0.95),
+    rgba(var(--sand-rgb), 0.14)
+  );
+}
+
+.work-card-image {
+  width: 240px;
+  aspect-ratio: 5 / 6;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work-card-body {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.2rem 1.35rem 1.2rem 0.4rem;
+}
+
+.work-card-meta {
+  color: var(--midnight);
+  font-weight: 700;
+}
+
+.work-copy {
+  justify-items: start;
+}
+
 .card-arrow {
   display: inline-flex;
   align-items: center;
@@ -755,6 +834,19 @@ nav[aria-label="Huvudmeny"] {
   }
   .grid {
     grid-template-columns: 1fr;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-visual {
+    order: 2;
+    width: 100%;
+  }
+  .work-copy {
+    order: 1;
+  }
+  .work-card {
+    width: 100%;
   }
   .nav-list a {
     padding: 0.55rem 0.75rem;

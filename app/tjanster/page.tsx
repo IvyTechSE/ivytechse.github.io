@@ -3,6 +3,7 @@ import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
+import { workShowcase } from "../content";
 
 export default function ServicesPage() {
   return (
@@ -23,6 +24,40 @@ export default function ServicesPage() {
           </div>
         </section>
         <ServicesSection />
+        <section
+          className="section work-culture reveal-on-scroll"
+          aria-labelledby="work-culture-title"
+        >
+          <div className="container work-grid">
+            <div className="work-visual">
+              <div className="work-circle" aria-hidden="true" />
+              {workShowcase.cards.map((card, index) => (
+                <article
+                  key={card.title}
+                  className={`work-card ${card.tone} reveal-on-scroll`}
+                  style={{ ["--delay" as string]: `${index * 80}ms` }}
+                  aria-label={card.title}
+                >
+                  <div className="work-card-image">
+                    <img src={card.image} alt={card.title} loading="lazy" />
+                  </div>
+                  <div className="work-card-body">
+                    <h3>{card.title}</h3>
+                    <p>{card.detail}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="work-copy stack">
+              <p className="eyebrow">{workShowcase.eyebrow}</p>
+              <h2 id="work-culture-title">{workShowcase.title}</h2>
+              <p className="lede">{workShowcase.body}</p>
+              <a className="button ghost" href={workShowcase.cta.href}>
+                {workShowcase.cta.label}
+              </a>
+            </div>
+          </div>
+        </section>
         <ApproachSection />
         <ContactSection />
       </main>

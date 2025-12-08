@@ -8,7 +8,7 @@ export function ContactSection() {
       className="section contact reveal-on-scroll"
       aria-labelledby="kontakt-title"
     >
-      <div className="container">
+      <div className="container contact">
         <div className="contact-card">
           <div className="contact-body">
             <h2

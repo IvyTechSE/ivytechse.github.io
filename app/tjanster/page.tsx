@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
@@ -36,15 +37,22 @@ export default function ServicesPage() {
                   key={card.title}
                   className={`work-card ${card.tone} reveal-on-scroll`}
                   style={{ ["--delay" as string]: `${index * 80}ms` }}
-                  aria-label={card.title}
-                >
-                  <div className="work-card-image">
-                    <img src={card.image} alt={card.title} loading="lazy" />
-                  </div>
-                  <div className="work-card-body">
-                    <h3>{card.title}</h3>
-                    <p>{card.detail}</p>
-                  </div>
+              aria-label={card.title}
+            >
+              <div className="work-card-image">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={800}
+                  height={960}
+                  sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
+                  loading="lazy"
+                />
+              </div>
+              <div className="work-card-body">
+                <h3>{card.title}</h3>
+                <p>{card.detail}</p>
+              </div>
                 </article>
               ))}
             </div>

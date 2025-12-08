@@ -149,6 +149,11 @@ a:hover {
   margin: 0 auto;
 }
 
+.container.contact {
+  max-width: 50em;
+}
+
+
 section {
   scroll-margin-top: 110px;
 }
@@ -804,6 +809,8 @@ nav[aria-label="Huvudmeny"] {
   background: var(--stone);
   color: var(--onyx);
   border-color: var(--stone);
+  max-width: fit-content;
+  padding-inline: 4em;
 }
 
 .contact-button:hover {

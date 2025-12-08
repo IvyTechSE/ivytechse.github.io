@@ -6,16 +6,13 @@ import { hero, team } from "../content";
 
 export function HeroSection() {
   const heroShots = useMemo(() => {
-    const photos = team
+    return team
       .filter((person) => person.photo)
+      .slice(0, 4)
       .map((person) => ({
         src: person.photo as string,
         alt: `${person.name} – ${person.role}`,
       }));
-
-    return [...photos]
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 4);
   }, []);
 
   return (

@@ -11,12 +11,10 @@ export function ServicesSection() {
       <div className="container stack">
         <div className="stack">
           <p className="eyebrow">Våra tjänster</p>
-          <h2 id="tjanster-title">
-            Erfarna konsulter. Människor du vill jobba med.
-          </h2>
+          <h2 id="tjanster-title">Vi tar ansvar från idé till drift</h2>
           <p className="lede">
-            Strategi, form och engineering i samma gäng. Vi bygger lösningar som
-            håller – för organisationen och för användarna.
+            Vi kliver in där ni behöver oss som mest: struktur i arkitekturen,
+            fart i utvecklingen och praktiskt stöd med AI. Alltid nära era team.
           </p>
         </div>
         <div className="grid service-grid">

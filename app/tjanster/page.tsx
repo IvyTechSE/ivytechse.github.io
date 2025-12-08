@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
-import { workShowcase } from "../content";
+import { servicesPageHero, workShowcase } from "../content";
 
 export default function ServicesPage() {
   return (
@@ -13,14 +13,11 @@ export default function ServicesPage() {
       <main id="main">
         <section className="section page-hero">
           <div className="container stack">
-            <p className="eyebrow">Våra tjänster</p>
-            <h1>Erfarna konsulter. Människor du vill jobba med.</h1>
-            <p className="lede">
-              Strategi, design och engineering i samma gäng. Vi bygger lösningar
-              som håller – för organisationen och för användarna.
-            </p>
-            <a className="button primary" href="#kontakt">
-              Kontakta oss
+            <p className="eyebrow">{servicesPageHero.eyebrow}</p>
+            <h1>{servicesPageHero.title}</h1>
+            <p className="lede">{servicesPageHero.lede}</p>
+            <a className="button primary" href={servicesPageHero.primaryCta.href}>
+              {servicesPageHero.primaryCta.label}
             </a>
           </div>
         </section>
@@ -37,22 +34,22 @@ export default function ServicesPage() {
                   key={card.title}
                   className={`work-card ${card.tone} reveal-on-scroll`}
                   style={{ ["--delay" as string]: `${index * 80}ms` }}
-              aria-label={card.title}
-            >
-              <div className="work-card-image">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  width={800}
-                  height={960}
-                  sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
-                  loading="lazy"
-                />
-              </div>
-              <div className="work-card-body">
-                <h3>{card.title}</h3>
-                <p>{card.detail}</p>
-              </div>
+                  aria-label={card.title}
+                >
+                  <div className="work-card-image">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      width={800}
+                      height={960}
+                      sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="work-card-body">
+                    <h3>{card.title}</h3>
+                    <p>{card.detail}</p>
+                  </div>
                 </article>
               ))}
             </div>

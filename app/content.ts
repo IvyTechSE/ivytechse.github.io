@@ -11,6 +11,21 @@ export const hero = {
   secondaryCta: { label: "Mejla oss", href: "mailto:hello@ivytech.se" },
 };
 
+export const servicesSectionIntro = {
+  eyebrow: "Våra tjänster",
+  title: "Vi tar ansvar från idé till drift",
+  lede:
+    "Vi kliver in där ni behöver oss som mest: struktur i arkitekturen, fart i utvecklingen och praktiskt stöd med AI. Alltid nära era team.",
+};
+
+export const servicesPageHero = {
+  eyebrow: "Våra tjänster",
+  title: "Erfarna konsulter. Människor du vill jobba med.",
+  lede:
+    "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller – för organisationen och för användarna.",
+  primaryCta: { label: "Kontakta oss", href: "#kontakt" },
+};
+
 export const services = [
   {
     title: "Systemarkitektur",
@@ -82,6 +97,61 @@ export const serviceDetails: Record<
   },
 };
 
+export const serviceDetailPageCopy = {
+  heroEyebrow: "Tjänster",
+  cta: {
+    primary: { label: "Kontakta oss", href: "#kontakt" },
+    secondary: { label: "Alla tjänster", href: "/tjanster" },
+  },
+  meta: [
+    "Senior kompetens i komplexa miljöer",
+    "Tillgänglighet och kvalitet som standard",
+    "Teknikagnostiska och pragmatiska",
+  ],
+  strengths: [
+    {
+      title: "Seniora konsulter",
+      body: "Vi har lång erfarenhet av komplexa miljöer och tar ansvar för helheten: teknik, säkerhet och team.",
+    },
+    {
+      title: "Tillgänglighet och kvalitet",
+      body: "WCAG, robusta tester och mätbara kvalitetskrav är en naturlig del av varje leverans.",
+    },
+    {
+      title: "Teknikbredd",
+      body: "Vi rör oss säkert mellan arkitektur, backend, frontend och AI-stöd – beroende på vad uppdraget kräver.",
+    },
+  ],
+  strengthsIntro: {
+    eyebrow: "Kompetens",
+    title: "Kvalitet och höjd i varje disciplin",
+    lede: "Vi kliver in med erfarenhet, inte mallar. Fokus ligger på robust kod, tydlighet och säkerhet.",
+  },
+  proofIntro: {
+    eyebrow: "Bevis på kvalitet",
+    title: "Det här kan ni förvänta er",
+    lede: "Varje uppdrag har sina processer, men vår leverans präglas alltid av tydlighet och hållbarhet.",
+  },
+  proofPoints: [
+    {
+      title: "Stabilitet i drift",
+      body: "Skalbara lösningar som är lätta att övervaka, felsöka och vidareutveckla utan drama.",
+    },
+    {
+      title: "Tydliga beslut",
+      body: "Arkitektur- och designval dokumenteras och förankras så att fler kan bidra och bygga vidare.",
+    },
+    {
+      title: "Snabb effekt",
+      body: "Vi hittar de små leverablerna som gör skillnad tidigt – en prototyp, ett API, ett mätetal – så ni ser värdet direkt.",
+    },
+    {
+      title: "Kunskap som stannar",
+      body: "Vi lämnar efter oss testbar kod, dokumentation och ett team som känner sig trygga i att äga lösningen.",
+    },
+  ],
+};
+
 export const steps = [
   {
     title: "Riktigt samarbete",
@@ -97,6 +167,13 @@ export const steps = [
   },
 ];
 
+export const approachIntro = {
+  eyebrow: "Arbetssätt",
+  title: "Så jobbar vi",
+  lede:
+    "Vi tror på balans, frihet och utveckling. När vi mår bra gör vi vårt bästa jobb – och det märks i resultaten vi skapar tillsammans med er.",
+};
+
 export const story = [
   {
     title: "Vi lyssnar in på riktigt",
@@ -111,6 +188,13 @@ export const story = [
     body: "Lanseringar utan dramatik, med mätbara effekter och dokumentation. Vi lämnar över kunskap och finns kvar som partner när ni behöver.",
   },
 ];
+
+export const storyIntro = {
+  eyebrow: "Resan",
+  title: "Från idé till trygg drift",
+  lede:
+    "En lugn, mänsklig process som ger fart utan att tappa kontrollen. Vi håller ihop helheten så att ni kan vara trygga i varje steg.",
+};
 
 export const cases = [
   {
@@ -129,6 +213,15 @@ export const cases = [
     tags: ["AI", "Produktivitet", "Automation"],
   },
 ];
+
+export const casesIntro = {
+  eyebrow: "Kundcase",
+  title: "Riktiga projekt. Riktiga resultat.",
+  lede:
+    "Vi hjälper företag och organisationer att skapa smarta digitala lösningar som är tillgängliga, högpresterande och användarvänliga för alla.",
+  readMoreLabel: "Läs mer",
+  cta: { label: "Utforska fler kundcase", href: "#kontakt" },
+};
 
 export const team = [
   {
@@ -187,6 +280,17 @@ export const team = [
   },
 ];
 
+export const teamIntro = {
+  eyebrow: "Vårt gäng",
+  title: "Människorna bakom lösningarna",
+  lede:
+    "Vi är människor som håller ihop och värnar om ett arbetssätt där välmående, utveckling och kvalitet får ta plats. Hos oss hittar du en trygg gemenskap där nyfikenhet och omtanke skapar förutsättningar för riktigt bra arbete.",
+  joinUs: {
+    text: "Nyfiken på att bli en del av teamet? Hör av dig till",
+    email: "anna.funke@ivytech.se",
+  },
+};
+
 export const workShowcase = {
   eyebrow: "Vardagen på Ivy",
   title: "Så här jobbar vi på riktigt",
@@ -218,8 +322,28 @@ export const contact = {
   title: "Kontakt",
   body: "Vill du veta mer om oss, eller är du nyfiken på att samarbeta? Hör gärna av dig till Anna så berättar hon mer!",
   cta: { label: "Säg hej", href: "mailto:hello@ivytech.se" },
+  email: "hello@ivytech.se",
   image: {
     src: "/images/anna-funke.png",
-    alt: "Profilbild  Ivy Technology",
+    alt: "Anna Funke, VD på Ivy Technology",
   },
 };
+
+export const approachPageHero = {
+  eyebrow: "Arbetssätt",
+  title: "Balans, frihet och utveckling.",
+  lede:
+    "Vi jobbar nära era team, tar beslut tillsammans och skapar hållbara lösningar som känns lugna och förutsägbara – även när tempot är högt.",
+  primaryCta: { label: "Kontakta oss", href: "#kontakt" },
+};
+
+export const teamPageHero = {
+  eyebrow: "Vårt gäng",
+  title: "Teamet som gör skillnad.",
+  lede:
+    "Vi grundades i Göteborg och kombinerar teknik med människofokus. Vi växer hållbart för att behålla kultur, kvalitet och närhet till våra kunder.",
+  primaryCta: { label: "Bli en del av vårt gäng", href: "#kontakt" },
+};
+
+export const siteNotice =
+  "🚧 Webbplatsen är under uppbyggnad. Vissa delar är tillfälliga.";

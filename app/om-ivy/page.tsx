@@ -2,6 +2,7 @@ import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
 import { TeamSection } from "../components/TeamSection";
+import { teamPageHero } from "../content";
 
 export default function TeamPage() {
   return (
@@ -10,15 +11,11 @@ export default function TeamPage() {
       <main id="main">
         <section className="section page-hero">
           <div className="container stack">
-            <p className="eyebrow">Vårt gäng</p>
-            <h1>Teamet som gör skillnad.</h1>
-            <p className="lede">
-              Vi grundades i Göteborg och kombinerar teknik med människofokus.
-              Vi växer hållbart för att behålla kultur, kvalitet och närhet till
-              våra kunder.
-            </p>
-            <a className="button primary" href="#kontakt">
-              Bli en del av vårt gäng
+            <p className="eyebrow">{teamPageHero.eyebrow}</p>
+            <h1>{teamPageHero.title}</h1>
+            <p className="lede">{teamPageHero.lede}</p>
+            <a className="button primary" href={teamPageHero.primaryCta.href}>
+              {teamPageHero.primaryCta.label}
             </a>
           </div>
         </section>

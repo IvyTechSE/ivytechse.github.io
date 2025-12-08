@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems } from '../content';
+import { contact, navItems } from '../content';
 import Image from "next/image";
 
 export function Footer() {
@@ -26,7 +26,7 @@ export function Footer() {
           ))}
         </div>
         <div className="footer-contact">
-          <a href="mailto:hello@ivytech.se">hello@ivytech.se</a>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
         </div>
       </div>
     </footer>

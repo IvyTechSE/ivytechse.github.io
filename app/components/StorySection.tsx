@@ -1,15 +1,12 @@
-import { story } from "../content";
+import { story, storyIntro } from "../content";
 
 export function StorySection() {
   return (
     <section id="story" className="section story reveal-on-scroll" aria-labelledby="story-title">
       <div className="container stack">
-        <p className="eyebrow">Resan</p>
-        <h2 id="story-title">Från idé till trygg drift</h2>
-        <p className="lede">
-          En lugn, mänsklig process som ger fart utan att tappa kontrollen. Vi håller ihop helheten så att ni kan vara
-          trygga i varje steg.
-        </p>
+        <p className="eyebrow">{storyIntro.eyebrow}</p>
+        <h2 id="story-title">{storyIntro.title}</h2>
+        <p className="lede">{storyIntro.lede}</p>
         <div className="timeline">
           {story.map((item, index) => (
             <article

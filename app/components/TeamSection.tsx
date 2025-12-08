@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { team } from '../content';
+import { team, teamIntro } from '../content';
 
 export function TeamSection() {
   return (
@@ -10,14 +10,9 @@ export function TeamSection() {
     >
       <div className="container stack">
         <div className="stack">
-          <p className="eyebrow">Vårt gäng</p>
-          <h2 id="om-title">Människorna bakom lösningarna</h2>
-          <p className="lede">
-            Vi är människor som håller ihop och värnar om ett arbetssätt där
-            välmående, utveckling och kvalitet får ta plats. Hos oss hittar du
-            en trygg gemenskap där nyfikenhet och omtanke skapar förutsättningar
-            för riktigt bra arbete.
-          </p>
+          <p className="eyebrow">{teamIntro.eyebrow}</p>
+          <h2 id="om-title">{teamIntro.title}</h2>
+          <p className="lede">{teamIntro.lede}</p>
         </div>
         <div className="grid team-grid">
           {team.map((person, index) => (
@@ -67,8 +62,8 @@ export function TeamSection() {
           ))}
         </div>
         <p className="join-us">
-          Nyfiken på att bli en del av teamet? Hör av dig till{" "}
-          <a href="mailto:anna.funke@ivytech.se">anna.funke@ivytech.se</a>.
+          {teamIntro.joinUs.text}{" "}
+          <a href={`mailto:${teamIntro.joinUs.email}`}>{teamIntro.joinUs.email}</a>.
         </p>
       </div>
     </section>

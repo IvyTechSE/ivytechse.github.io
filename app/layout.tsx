@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Sora } from "next/font/google";
 import { RevealInitializer } from './components/RevealInitializer';
+import { siteNotice } from "./content";
 
 const sora = Sora({ subsets: ["latin"], display: "swap" });
 
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${sora.className}`}>
         {process.env.NODE_ENV === "production" && (
           <div className="under-construction" role="status" aria-live="polite">
-            🚧 Webbplatsen är under uppbyggnad. Vissa delar är tillfälliga.
+            {siteNotice}
           </div>
         )}
         <a className="skip-link" href="#main">

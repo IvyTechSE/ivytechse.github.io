@@ -1,4 +1,4 @@
-import { steps } from '../content';
+import { approachIntro, steps } from '../content';
 
 export function ApproachSection() {
   return (
@@ -8,12 +8,9 @@ export function ApproachSection() {
       aria-labelledby="arbetssatt-title"
     >
       <div className="container stack">
-        <p className="eyebrow">Arbetssätt</p>
-        <h2 id="arbetssatt-title">Så jobbar vi</h2>
-        <p className="lede">
-          Vi tror på balans, frihet och utveckling. När vi mår bra gör vi vårt
-          bästa jobb – och det märks i resultaten vi skapar tillsammans med er.
-        </p>
+        <p className="eyebrow">{approachIntro.eyebrow}</p>
+        <h2 id="arbetssatt-title">{approachIntro.title}</h2>
+        <p className="lede">{approachIntro.lede}</p>
         <div className="steps">
           {steps.map((step, index) => (
             <article

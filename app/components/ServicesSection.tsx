@@ -23,7 +23,7 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <article
               key={service.title}
-              className="card lift service-card reveal-on-scroll"
+              className="card service-card reveal-on-scroll"
               style={{ ["--delay" as string]: `${index * 80}ms` }}
               aria-labelledby={`${service.title}-title`}
             >

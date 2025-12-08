@@ -20,8 +20,8 @@ export const services = [
     href: "/tjanster/systemarkitektur",
   },
   {
-    title: "Systemutveckling – frontend och backend",
-    body: "Vi bygger moderna gränssnitt och robusta tjänster, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.",
+    title: "Systemutveckling",
+    body: "Vi bygger moderna gränssnitt och robusta tjänster i både frontend- och backend, vana vid komplexa miljöer och både ny- och vidareutveckling. Tillgänglighet är en självklar del av arbetet.",
     icon: "💻",
     alt: "Ikon för systemutveckling",
     href: "/tjanster/systemutveckling",

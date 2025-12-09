@@ -1,8 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Sora } from "next/font/google";
-import { RevealInitializer } from './components/RevealInitializer';
-import { siteNotice } from "./content";
+import { RevealInitializer } from "./components/RevealInitializer";
 
 const sora = Sora({ subsets: ["latin"], display: "swap" });
 
@@ -11,7 +10,7 @@ const organizationLd = {
   "@type": "Organization",
   name: "Ivy Technology",
   url: "https://ivytechse.github.io",
-  logo: "https://ivytechse.github.io/images/logo.svg",
+  logo: "https://ivytechse.github.io/images/ivy-logo-black.svg",
   email: "hello@ivytech.se",
   address: {
     "@type": "PostalAddress",
@@ -26,27 +25,26 @@ export const metadata: Metadata = {
     "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
   metadataBase: new URL("https://ivytechse.github.io"),
   openGraph: {
-    title: "Ivy Technology | Tillgängliga digitala lösningar",
+    title: "Ivy Technology | Digitala lösningar",
     description:
       "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
     url: "https://ivytechse.github.io",
     siteName: "Ivy Technology",
-    images: ["/images/og-image.svg"],
+    images: ["/images/ivy-og-image.png"],
     locale: "sv_SE",
     type: "website",
   },
   alternates: { canonical: "https://ivytechse.github.io" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="sv">
       <body className={`${sora.className}`}>
-        {process.env.NODE_ENV === "production" && (
-          <div className="under-construction" role="status" aria-live="polite">
-            {siteNotice}
-          </div>
-        )}
         <a className="skip-link" href="#main">
           Hoppa till innehåll
         </a>
@@ -59,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           async
           src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>  
+        ></script>
       </body>
     </html>
   );

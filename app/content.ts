@@ -6,7 +6,7 @@ export const navItems = [
 export const hero = {
   eyebrow: "Göteborg · Digitala produkter · Tillgänglighet",
   title: "Kompetens bygger lösningar, människor bygger värde",
-  body: "Vi är nyfikna systemutvecklare som älskar teknik – men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.",
+  body: "Vi är nyfikna systemutvecklare som älskar teknik, men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.",
   primaryCta: { label: "Kontakta oss", href: "#kontakt" },
   secondaryCta: { label: "Mejla oss", href: "mailto:hello@ivytech.se" },
 };
@@ -14,15 +14,13 @@ export const hero = {
 export const servicesSectionIntro = {
   eyebrow: "Våra tjänster",
   title: "Vi tar ansvar från idé till drift",
-  lede:
-    "Vi kliver in där ni behöver oss som mest: struktur i arkitekturen, fart i utvecklingen och praktiskt stöd med AI. Alltid nära era team.",
+  lede: "Vi kliver in där ni behöver oss som mest: struktur i arkitekturen, fart i utvecklingen och praktiskt stöd med AI. Alltid nära era team.",
 };
 
 export const servicesPageHero = {
   eyebrow: "Våra tjänster",
   title: "Erfarna konsulter. Människor du vill jobba med.",
-  lede:
-    "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller – för organisationen och för användarna.",
+  lede: "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller – för organisationen och för användarna.",
   primaryCta: { label: "Kontakta oss", href: "#kontakt" },
 };
 
@@ -170,8 +168,7 @@ export const steps = [
 export const approachIntro = {
   eyebrow: "Arbetssätt",
   title: "Så jobbar vi",
-  lede:
-    "Vi tror på balans, frihet och utveckling. När vi mår bra gör vi vårt bästa jobb – och det märks i resultaten vi skapar tillsammans med er.",
+  lede: "Vi tror på balans, frihet och utveckling. När vi mår bra gör vi vårt bästa jobb och det märks i resultaten vi skapar tillsammans med er.",
 };
 
 export const story = [
@@ -192,35 +189,7 @@ export const story = [
 export const storyIntro = {
   eyebrow: "Resan",
   title: "Från idé till trygg drift",
-  lede:
-    "En lugn, mänsklig process som ger fart utan att tappa kontrollen. Vi håller ihop helheten så att ni kan vara trygga i varje steg.",
-};
-
-export const cases = [
-  {
-    title: "Systemarkitektur i skala",
-    body: "Tydliga strukturer och riktning för teamen, med skalbara lösningar som håller över tid.",
-    tags: ["Arkitektur", "Ledarskap", "Skalbarhet"],
-  },
-  {
-    title: "Tillgängliga upplevelser",
-    body: "Responsiva gränssnitt, WCAG 2.2 i praktiken och tydliga flöden som fler kan använda.",
-    tags: ["Frontend", "Tillgänglighet", "UX"],
-  },
-  {
-    title: "AI i vardagen",
-    body: "Automatisering, analys och kodstöd där AI förstärker människan – inte ersätter den.",
-    tags: ["AI", "Produktivitet", "Automation"],
-  },
-];
-
-export const casesIntro = {
-  eyebrow: "Kundcase",
-  title: "Riktiga projekt. Riktiga resultat.",
-  lede:
-    "Vi hjälper företag och organisationer att skapa smarta digitala lösningar som är tillgängliga, högpresterande och användarvänliga för alla.",
-  readMoreLabel: "Läs mer",
-  cta: { label: "Utforska fler kundcase", href: "#kontakt" },
+  lede: "En lugn, mänsklig process som ger fart utan att tappa kontrollen. Vi håller ihop helheten så att ni kan vara trygga i varje steg.",
 };
 
 export const team = [
@@ -283,8 +252,7 @@ export const team = [
 export const teamIntro = {
   eyebrow: "Vårt gäng",
   title: "Människorna bakom lösningarna",
-  lede:
-    "Vi är människor som håller ihop och värnar om ett arbetssätt där välmående, utveckling och kvalitet får ta plats. Hos oss hittar du en trygg gemenskap där nyfikenhet och omtanke skapar förutsättningar för riktigt bra arbete.",
+  lede: "Vi är människor som håller ihop och värnar om ett arbetssätt där välmående, utveckling och kvalitet får ta plats. Hos oss hittar du en trygg gemenskap där nyfikenhet och omtanke skapar förutsättningar för riktigt bra arbete.",
   joinUs: {
     text: "Nyfiken på att bli en del av teamet? Hör av dig till",
     email: "anna.funke@ivytech.se",
@@ -292,25 +260,25 @@ export const teamIntro = {
 };
 
 export const workShowcase = {
-  eyebrow: "Vardagen på Ivy",
-  title: "Så här jobbar vi på riktigt",
-  body: "Vi är nära varandra och våra kunder – med tydliga ritualer, gemensamma demos och en kultur som gör det lätt att säga vad man tycker. Här är ett axplock från vår vardag.",
+  eyebrow: "Vardagen med Ivy-konsulter",
+  title: "Så här gör vi skillnad i era team",
+  body: "När en Ivy-konsult kliver in i ett uppdrag handlar det inte bara om att skriva kod. Vi stärker team, skapar riktning och höjer kvaliteten genom tydliga arbetssätt och ett samarbetsfokus som smittar av sig. Här är exempel på vad vi faktiskt bidrar med i praktiken.",
   cta: { label: "Möt vårt gäng", href: "/om-ivy" },
   cards: [
     {
-      title: "Bygger tillsammans",
-      meta: "Parprogrammering, mobbning och gemensamma code reviews",
+      title: "Stärker teamen vi går in i",
+      meta: "Struktur, tydlighet och hög teknisk kvalitet",
       detail:
-        "Vi sitter tätt med design, produkt och test för att lösa problemen ihop.",
+        "Vi bidrar med ordning och riktning i komplexa projekt. Genom pragmata arkitekturval, systematiska reviews och nära dialog med design och produkt får teamet fart, stabilitet och ett gemensamt språk.",
       image:
         "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
       tone: "stone",
     },
     {
-      title: "Lyfter varandra",
-      meta: "Veckovisa kunskapsdelningar och retros varje sprint",
+      title: "Höjer nivån över tid",
+      meta: "Ledarskap i vardagen och kunskap in i teamet",
       detail:
-        "Vi investerar tid i lärande, mentorskapspar och öppna demo-pass.",
+        "Vi delar med oss av metoder, tillgänglighetstänk och moderna frontendmönster som gör att teamet utvecklas även efter att vi lämnat. Målet är alltid att kunden ska stå starkare än när vi kom in.",
       image:
         "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=1600&q=80",
       tone: "stone",
@@ -332,18 +300,13 @@ export const contact = {
 export const approachPageHero = {
   eyebrow: "Arbetssätt",
   title: "Balans, frihet och utveckling.",
-  lede:
-    "Vi jobbar nära era team, tar beslut tillsammans och skapar hållbara lösningar som känns lugna och förutsägbara – även när tempot är högt.",
+  lede: "Vi jobbar nära era team, tar beslut tillsammans och skapar hållbara lösningar som känns lugna och förutsägbara – även när tempot är högt.",
   primaryCta: { label: "Kontakta oss", href: "#kontakt" },
 };
 
 export const teamPageHero = {
   eyebrow: "Vårt gäng",
   title: "Teamet som gör skillnad.",
-  lede:
-    "Vi grundades i Göteborg och kombinerar teknik med människofokus. Vi växer hållbart för att behålla kultur, kvalitet och närhet till våra kunder.",
+  lede: "Vi grundades i Göteborg och kombinerar teknik med människofokus. Vi växer hållbart för att behålla kultur, kvalitet och närhet till våra kunder.",
   primaryCta: { label: "Bli en del av vårt gäng", href: "#kontakt" },
 };
-
-export const siteNotice =
-  "🚧 Webbplatsen är under uppbyggnad. Vissa delar är tillfälliga.";

@@ -59,22 +59,22 @@ export const serviceDetails: Record<
   systemarkitektur: {
     title: "Systemarkitektur",
     intro:
-      "Vi designar skalbara, hållbara system som håller över tid – både tekniskt och organisatoriskt. Våra arkitekter har förmågan att se helheten, sätta struktur och skapa lösningar som är tydliga att bygga vidare på.",
+      "Vi designar skalbara, hållbara system som håller över tid, både tekniskt och organisatoriskt. Våra arkitekter har förmågan att se helheten, sätta struktur och skapa lösningar som är tydliga att bygga vidare på.",
     sections: [
       {
         heading: "Teknik och människor",
-        body: "För oss handlar arkitektur inte bara om teknik, utan också om människor. I rollen ingår ofta att leda andra utvecklare, driva tekniska beslut framåt och skapa samsyn mellan team, verksamhet och ledning. Vi är vana att ta ansvar – och skapa riktning.",
+        body: "För oss handlar arkitektur inte bara om teknik, utan också om människor. I rollen ingår ofta att leda andra utvecklare, driva tekniska beslut framåt och skapa samsyn mellan team, verksamhet och ledning. Vi är vana att ta ansvar och skapa riktning.",
       },
     ],
   },
   systemutveckling: {
     title: "Systemutveckling – frontend och backend",
     intro:
-      "Vi bygger stabila, moderna lösningar i hela stacken – från responsiva gränssnitt till robusta backendtjänster. Våra utvecklare är vana att jobba i komplexa miljöer, med både nyutveckling och vidareutveckling av befintliga system.",
+      "Vi bygger stabila, moderna lösningar i hela stacken från responsiva gränssnitt till robusta backendtjänster. Våra utvecklare är vana att jobba i komplexa miljöer, med både nyutveckling och vidareutveckling av befintliga system.",
     sections: [
       {
         heading: "Tillgänglighet och kvalitet",
-        body: "Inom frontend har vi särskild kompetens inom tillgänglighet. Vi ser till att det vi bygger kan användas av alla, oavsett förutsättningar – för oss är det inte ett tillval, utan en självklar del av god utveckling.",
+        body: "Inom frontend har vi särskild kompetens inom tillgänglighet. Vi ser till att det vi bygger kan användas av alla, oavsett förutsättningar och för oss är det inte ett tillval, utan en självklar del av god utveckling.",
       },
       {
         heading: "Arbetssätt som håller",
@@ -85,11 +85,11 @@ export const serviceDetails: Record<
   "ai-i-praktiken": {
     title: "AI i praktiken",
     intro:
-      "Vi följer utvecklingen inom AI med stort intresse – men ännu viktigare, vi använder det aktivt. Många av våra konsulter har redan integrerat AI som ett naturligt verktyg i sitt dagliga arbete: för analys, automatisering, testning, kodstöd och mycket mer.",
+      "Vi följer utvecklingen inom AI med stort intresse men ännu viktigare, vi använder det aktivt. Många av våra konsulter har redan integrerat AI som ett naturligt verktyg i sitt dagliga arbete: för analys, automatisering, testning, kodstöd och mycket mer.",
     sections: [
       {
         heading: "Praktisk nytta",
-        body: "Vi hjälper gärna våra kunder att utforska vad AI kan göra i praktiken – på riktigt. Inte bara i teorin. Det handlar inte om att byta ut människor – utan om att förstärka dem.",
+        body: "Vi hjälper gärna våra kunder att utforska vad AI kan göra i praktiken. Inte bara i teorin. Det handlar inte om att byta ut människor, utan om att förstärka dem.",
       },
     ],
   },

@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: { canonical: "https://ivytechse.github.io" },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

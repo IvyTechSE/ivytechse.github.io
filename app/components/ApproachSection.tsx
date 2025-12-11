@@ -10,7 +10,7 @@ export function ApproachSection() {
     >
       <div>
         <Image
-          src="/images/Standing.png"
+          src="/images/Standing.svg"
           alt="Två personer från Ivy Technology står tillsammans"
           width={800}
           height={960}

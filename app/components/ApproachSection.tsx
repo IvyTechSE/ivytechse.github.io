@@ -1,4 +1,5 @@
-import { approachIntro, steps } from '../content';
+import Image from "next/image";
+import { approachIntro, steps } from "../content";
 
 export function ApproachSection() {
   return (
@@ -7,7 +8,17 @@ export function ApproachSection() {
       className="section approach reveal-on-scroll"
       aria-labelledby="arbetssatt-title"
     >
-      <div className="container stack">
+      <div>
+        <Image
+          src="/images/Standing.png"
+          alt="Två personer från Ivy Technology står tillsammans"
+          width={800}
+          height={960}
+          sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
+          loading="lazy"
+        />
+      </div>
+      <div className="stack">
         <p className="eyebrow">{approachIntro.eyebrow}</p>
         <h2 id="arbetssatt-title">{approachIntro.title}</h2>
         <p className="lede">{approachIntro.lede}</p>

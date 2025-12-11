@@ -587,12 +587,11 @@ nav[aria-label="Huvudmeny"] {
 
 .steps {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.5rem;
 }
-
 .step-card {
   display: grid;
+  width: 100%;
   grid-template-columns: auto 1fr;
   gap: 0.9rem 1rem;
   align-items: start;
@@ -848,4 +847,20 @@ nav[aria-label="Huvudmeny"] {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.approach {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.full-bleed {
+  position: relative;
+}
+.container > .full-bleed {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  padding-inline: min(4vw, 2rem);
 }

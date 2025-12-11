@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Sora } from "next/font/google";
 import { RevealInitializer } from "./components/RevealInitializer";
+import { HeaderNav } from "./components/HeaderNav";
+import { Footer } from "./components/Footer";
 
 const sora = Sora({ subsets: ["latin"], display: "swap" });
 
@@ -52,7 +54,11 @@ export default function RootLayout({
           Hoppa till innehåll
         </a>
         <RevealInitializer />
-        {children}
+        <HeaderNav />
+        <main id="main" className="container">
+          {children}
+        </main>
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}

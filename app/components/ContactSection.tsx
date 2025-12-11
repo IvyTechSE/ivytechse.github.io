@@ -5,7 +5,7 @@ export function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="section contact reveal-on-scroll"
+      className="section contact reveal-on-scroll full-bleed"
       aria-labelledby="kontakt-title"
     >
       <div className="container contact">

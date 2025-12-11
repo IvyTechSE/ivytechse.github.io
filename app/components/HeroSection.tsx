@@ -6,19 +6,19 @@ import { hero, team } from "../content";
 
 export function HeroSection() {
   const heroShots = useMemo(() => {
-    return team
-      .filter((person) => person.photo)
-      .slice(0, 4)
-      .map((person) => ({
-        src: person.photo as string,
-        alt: `${person.name} – ${person.role}`,
-      }));
+    const withPhotos = team.filter((person) => person.photo);
+    const shuffled = [...withPhotos].sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, 4).map((person) => ({
+      src: person.photo as string,
+      alt: `${person.name} – ${person.role}`,
+    }));
   }, []);
 
   return (
     <section
       id="hero"
-      className="section hero reveal-on-scroll"
+      className="section hero reveal-on-scroll full-bleed"
       aria-labelledby="hero-title"
     >
       <div className="container hero-grid">

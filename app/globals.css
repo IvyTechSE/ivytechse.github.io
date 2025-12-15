@@ -8,16 +8,21 @@
   --onyx: #1C1C1B;
   --stone: #E2E2DE;
   --white: #ffffff;
+  --link-color: var(--forest);
+  --link-hover: var(--midnight);
+  --focus-bg: var(--stone);
+  --focus-text: var(--onyx);
+  --button-bg: var(--forest);
+  --button-hover-bg: color-mix(in srgb, var(--button-bg) 85%, black);
   --forest-rgb: 89, 110, 92;
   --sand-rgb: 252, 248, 240;
   --midnight-rgb: 46, 51, 58;
   --onyx-rgb: 28, 28, 27;
   --stone-rgb: 226, 226, 222;
   --white-rgb: 255, 255, 255;
-  --black-rgb: 0, 0, 0;
   --radius: 18px;
-  --shadow: 0 12px 28px rgba(var(--black-rgb), 0.08);
-  --shadow-strong: 0 18px 44px rgba(var(--black-rgb), 0.14);
+  --shadow: 0 12px 28px rgba(var(--onyx-rgb), 0.08);
+  --shadow-strong: 0 18px 44px rgba(var(--onyx-rgb), 0.14);
 }
 
 *,
@@ -108,14 +113,25 @@ p {
 }
 
 a {
-  color: var(--midnight);
+  color: var(--link-color);
   font-weight: 700;
-  text-decoration-color: rgba(var(--midnight-rgb), 0.35);
+  text-decoration: none;
+  transition: none;
 }
 
 a:hover {
-  color: var(--forest);
-  text-decoration-color: var(--forest);
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  background: var(--focus-bg);
+  color: var(--focus-text);
+  outline-color: var(--focus-text);
+  text-decoration: none;
 }
 
 ::selection {
@@ -124,24 +140,32 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--onyx);
-  outline-offset: 3px;
+  outline: 3px solid var(--focus-bg);
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .skip-link {
   position: absolute;
-  left: -999px;
-  top: 0;
-  padding: 0.75rem 1rem;
-  background: var(--forest);
-  color: var(--sand);
-  border-radius: var(--radius);
+  inset: 10px auto auto 10px;
+  padding: 0.85rem 1.05rem;
+  background: var(--focus-bg);
+  color: var(--focus-text);
+  text-decoration: none;
+  font-weight: 700;
+  border: 3px solid transparent;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: auto;
+  height: auto;
+  overflow: hidden;
   z-index: 1000;
-  box-shadow: var(--shadow);
 }
 
 .skip-link:focus-visible {
-  left: 1rem;
+  clip: auto;
+  overflow: visible;
+  outline: 3px solid var(--focus-text);
+  outline-offset: 0;
 }
 
 .container {
@@ -228,37 +252,44 @@ section {
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  border-radius: 999px;
-  padding: 0.95rem 1.35rem;
+  border-radius: 2px;
+  padding: 0.85rem 1.4rem;
   font-weight: 800;
-  border: 1px solid rgba(var(--black-rgb), 0.12);
-  background: var(--white);
-  color: var(--onyx);
+  border: 2px solid transparent;
+  background: var(--button-bg);
+  color: var(--white);
   cursor: pointer;
-  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease,
-    color 150ms ease, border-color 150ms ease;
+  transition: none;
   text-decoration: none;
+  box-shadow: none;
+  line-height: 1.2;
 }
 
 .button.primary {
-  background: var(--forest);
+  background: var(--button-bg);
   color: var(--white);
-  border-color: var(--forest);
-  box-shadow: 0 14px 30px rgba(var(--forest-rgb), 0.28);
 }
 
 .button.ghost {
-  background: var(--sand);
-  border-color: rgba(var(--black-rgb), 0.12);
+  background: transparent;
+  color: var(--button-bg);
+  border-color: var(--button-bg);
 }
 
 .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(var(--midnight-rgb), 0.16);
+  background: var(--button-hover-bg);
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
 }
 
 .button:focus-visible {
-  box-shadow: 0 0 0 4px rgba(var(--onyx-rgb), 0.3);
+  outline: 3px solid var(--focus-bg);
+  outline-offset: 0;
+  background: var(--focus-bg);
+  border-color: var(--focus-text);
+  color: var(--focus-text);
 }
 
 .site-header {
@@ -306,13 +337,23 @@ section {
   gap: 0.4rem;
   padding: 0.6rem 0.95rem;
   font-weight: 700;
-  color: var(--onyx);
+  color: var(--link-color);
+  text-decoration: none;
+  transition: none;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
 }
 
 .nav-list a.active,
 .nav-list a:focus-visible {
-  background: var(--stone);
-  border-color: rgba(var(--black-rgb), 0.12);
+  background: var(--focus-bg);
+  color: var(--focus-text);
+  outline: 3px solid var(--focus-text);
+  outline-offset: 0;
 }
 
 .nav-contact {
@@ -670,16 +711,16 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .profile-links a:not(.linkedin-icon) {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
   font-weight: 700;
-  transition: color 150ms ease, text-decoration-color 150ms ease,
-    transform 150ms ease;
-  color: var(--onyx);
+  transition: none;
+  color: var(--link-color);
 }
 
 .profile-links a:not(.linkedin-icon):hover {
-  color: var(--forest);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
 }
 
 .linkedin-icon {
@@ -693,18 +734,15 @@ nav[aria-label="Huvudmeny"] {
   color: var(--onyx);
   font-weight: 800;
   text-decoration: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition: none;
   border: 1px solid rgba(var(--black-rgb), 0.08);
 }
 
-.linkedin-icon:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(var(--midnight-rgb), 0.2);
-}
-
 .linkedin-icon:focus-visible {
-  outline: 3px solid var(--forest);
-  outline-offset: 3px;
+  background: var(--focus-bg);
+  color: var(--focus-text);
+  outline: 3px solid var(--focus-text);
+  outline-offset: 0;
 }
 
 .join-us {
@@ -739,15 +777,17 @@ nav[aria-label="Huvudmeny"] {
 }
 
 .contact-button {
-  background: var(--stone);
-  color: var(--onyx);
-  border-color: var(--stone);
+  background: var(--white);
+  color: var(--forest);
+  border-color: var(--white);
   max-width: fit-content;
   padding-inline: 4em;
 }
 
 .contact-button:hover {
-  background: var(--white);
+  background: var(--stone);
+  color: var(--forest);
+  border-color: var(--stone);
 }
 
 .contact-media {
@@ -805,6 +845,15 @@ nav[aria-label="Huvudmeny"] {
 .footer a {
   color: var(--sand);
   font-weight: 700;
+  text-decoration: none;
+  transition: none;
+}
+
+.footer a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
 }
 
 .footer-grid {

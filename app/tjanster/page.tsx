@@ -1,7 +1,5 @@
 import Image from "next/image";
 import { ContactSection } from "../components/ContactSection";
-import { Footer } from "../components/Footer";
-import { HeaderNav } from "../components/HeaderNav";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
 import { servicesPageHero, workShowcase } from "../content";

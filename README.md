@@ -16,7 +16,11 @@ npm run build
 # places the export in out/ (using output: export)
 ```
 
-Deploy `out/` with GitHub Pages (see workflow in `.github/workflows` if you add it).
+## Deploy (GitHub Pages)
+
+Push to `main` to trigger `.github/workflows/deploy.yml`, which builds the static export and deploys `out/` to the `gh-pages` branch.
+
+For pull requests, `.github/workflows/preview.yml` publishes a per-PR preview (and cleans it up when the PR closes).
 
 ## Key colors
 - Forest `#596e5c` (primary)

@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
-
 import { hero, team } from "../content";
+import { ResponsiveImage } from "./ResponsiveImage";
 
 export function HeroSection() {
-  const withPhotos = team.filter((person) => person.photo);
+  const withPhotos = team.filter((person) => person.photoBase);
   const shuffled = [...withPhotos].sort(() => Math.random() - 0.5);
   const heroShots = shuffled.slice(0, 4).map((person) => ({
-    src: person.photo as string,
+    baseSrc: person.photoBase as string,
     alt: `${person.name} – ${person.role}`,
   }));
   return (
@@ -31,14 +30,14 @@ export function HeroSection() {
           <div className="hero-collage">
             {heroShots.map((shot, index) => (
               <figure
-                key={shot.src}
+                key={shot.baseSrc}
                 className={`collage-item collage-${index + 1}`}
               >
-                <Image
-                  src={shot.src}
+                <ResponsiveImage
+                  baseSrc={shot.baseSrc}
                   alt={shot.alt}
-                  width={320}
-                  height={420}
+                  width={640}
+                  height={640}
                   sizes="(min-width: 1100px) 320px, (min-width: 768px) 50vw, 90vw"
                   priority={index === 0}
                 />

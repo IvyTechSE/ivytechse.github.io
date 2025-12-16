@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { team, teamIntro } from '../content';
+import { ResponsiveImage } from "./ResponsiveImage";
 
 export function TeamSection() {
   return (
@@ -23,12 +23,12 @@ export function TeamSection() {
               aria-label={`${person.name}, ${person.role}`}
             >
               <div className="profile-photo">
-                {person.photo ? (
-                  <Image
-                    src={person.photo}
+                {person.photoBase ? (
+                  <ResponsiveImage
+                    baseSrc={person.photoBase}
                     alt={`${person.name}, ${person.role}`}
-                    width={300}
-                    height={480}
+                    width={640}
+                    height={640}
                     className="profile-photo-img"
                     sizes="(min-width: 1100px) 320px, (min-width: 768px) 50vw, 100vw"
                     priority={index < 2}

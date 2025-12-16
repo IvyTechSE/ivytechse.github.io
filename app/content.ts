@@ -200,7 +200,7 @@ export const team = [
       "Designar hållbara, skalbara system med fokus på både teknik och människor.",
     email: "jesper.dahlbeck@ivytech.se",
     linkedin: "https://www.linkedin.com/in/jesper-dahlbeck-1b598b24/",
-    photo: "/images/jesper-dahlbeck.png",
+    photoBase: "/images/team/jesper-dahlbeck",
   },
   {
     name: "Joel Karlsson",
@@ -209,7 +209,7 @@ export const team = [
       "Bygger hållbara, skalbara system med fokus på kvalitet och användarupplevelse.",
     email: "joel.karlsson@ivytech.se",
     linkedin: "https://www.linkedin.com/in/joel-karlsson-2a51181b/",
-    photo: "/images/joel-karlsson.png",
+    photoBase: "/images/team/joel-karlsson",
   },
   {
     name: "Anna Funke",
@@ -218,7 +218,7 @@ export const team = [
       "Driver företaget med fokus på människor, kultur och hållbara samarbeten.",
     email: "anna.funke@ivytech.se",
     linkedin: "https://www.linkedin.com/in/anna-funke-88482995/",
-    photo: "/images/anna-funke.png",
+    photoBase: "/images/team/anna-funke",
   },
   {
     name: "Oscar Berntsson",
@@ -227,7 +227,7 @@ export const team = [
       "Designar skalbara, hållbara system med fokus på både teknik och team.",
     email: "oscar.berntsson@ivytech.se",
     linkedin: "https://www.linkedin.com/in/oscar-berntsson-80b01885/",
-    photo: "/images/oscar-berntsson.png",
+    photoBase: "/images/team/oscar-berntsson",
   },
   {
     name: "Ylva Pyykkö",
@@ -236,7 +236,7 @@ export const team = [
       "Bygger robusta, skalbara system med fokus på hållbarhet och kvalitet i varje steg.",
     email: "ylva.pyykko@ivytech.se",
     linkedin: "https://www.linkedin.com/in/ylva-pyykk%C3%B6-105ba32/",
-    photo: "/images/ylva-pyykko.png",
+    photoBase: "/images/team/ylva-pyykko",
   },
   {
     name: "Joakim Larsson",
@@ -245,7 +245,7 @@ export const team = [
       "Bygger tillgängliga, responsiva gränssnitt med fokus på användarupplevelse och WCAG.",
     email: "joakim.larsson@ivytech.se",
     linkedin: "https://www.linkedin.com/in/joakimlarsson92/",
-    photo: "/images/joakim-larsson.png",
+    photoBase: "/images/team/joakim-larsson",
   },
 ];
 
@@ -292,7 +292,7 @@ export const contact = {
   cta: { label: "Säg hej", href: "mailto:hello@ivytech.se" },
   email: "hello@ivytech.se",
   image: {
-    src: "/images/anna-funke.png",
+    baseSrc: "/images/team/anna-funke",
     alt: "Anna Funke, VD på Ivy Technology",
   },
 };

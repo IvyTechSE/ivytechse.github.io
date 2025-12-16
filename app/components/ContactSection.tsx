@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { contact } from '../content';
+import { ResponsiveImage } from "./ResponsiveImage";
 
 export function ContactSection() {
   return (
@@ -24,12 +24,12 @@ export function ContactSection() {
             </a>
           </div>
           <div className="contact-media">
-            {contact.image?.src ? (
-              <Image
-                src={contact.image.src}
+            {contact.image?.baseSrc ? (
+              <ResponsiveImage
+                baseSrc={contact.image.baseSrc}
                 alt={contact.image.alt}
-                width={220}
-                height={220}
+                width={320}
+                height={320}
                 className="contact-image"
                 sizes="(min-width: 900px) 200px, 38vw"
                 priority

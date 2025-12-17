@@ -28,10 +28,10 @@ export function ContactSection() {
               <ResponsiveImage
                 baseSrc={contact.image.baseSrc}
                 alt={contact.image.alt}
-                width={320}
-                height={320}
+                width={240}
+                height={240}
                 className="contact-image"
-                sizes="(min-width: 900px) 200px, 38vw"
+                sizes="(min-width: 900px) 180px, 34vw"
                 priority
               />
             ) : (

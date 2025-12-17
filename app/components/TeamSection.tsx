@@ -42,7 +42,6 @@ export function TeamSection() {
                   <h3>{person.name}</h3>
                   <p className="eyebrow">{person.role}</p>
                 </div>
-                <p>{person.intro}</p>
                 <div className="profile-links">
                   <a href={`mailto:${person.email}`}>{person.email}</a>
                   {person.linkedin && (
@@ -63,7 +62,10 @@ export function TeamSection() {
         </div>
         <p className="join-us">
           {teamIntro.joinUs.text}{" "}
-          <a href={`mailto:${teamIntro.joinUs.email}`}>{teamIntro.joinUs.email}</a>.
+          <a href={`mailto:${teamIntro.joinUs.email}`}>
+            {teamIntro.joinUs.email}
+          </a>
+          .
         </p>
       </div>
     </section>

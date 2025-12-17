@@ -25,6 +25,8 @@
   align-items: center;
   gap: 0.6rem;
   color: var(--onyx);
+  border-radius: 6px;
+  transition: transform 180ms ease;
 }
 
 .logo img {
@@ -51,7 +53,9 @@
   font-weight: 700;
   color: var(--link-color);
   text-decoration: none;
-  transition: none;
+  border-radius: 999px;
+  transition:
+    transform 180ms ease;
 }
 
 .nav-list a:hover {
@@ -81,6 +85,7 @@
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
   font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 nav[aria-label="Huvudmeny"] {
@@ -154,5 +159,20 @@ nav[aria-label="Huvudmeny"] {
   .contact-nav-button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo:hover {
+    transform: translateY(-1px);
+  }
+
+  .nav-list a:hover {
+    transform: translateY(-1px);
+  }
+
+  .menu-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
   }
 }

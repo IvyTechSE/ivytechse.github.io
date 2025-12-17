@@ -54,7 +54,7 @@
   background: var(--button-bg);
   color: var(--white);
   cursor: pointer;
-  transition: none;
+  transition: box-shadow 180ms ease, transform 180ms ease;
   text-decoration: none;
   box-shadow: none;
   line-height: 1.2;
@@ -84,3 +84,13 @@
   text-decoration: none;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .button:active {
+    transform: translateY(-1px);
+  }
+}

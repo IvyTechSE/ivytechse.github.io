@@ -13,6 +13,8 @@
   background: var(--stone);
   border: 1px solid rgba(var(--onyx-rgb), 0.08);
   box-shadow: none;
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease;
 }
 
 .service-card:nth-of-type(2n) {
@@ -83,6 +85,7 @@
   overflow: hidden;
   width: min(520px, 100%);
   z-index: 1;
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .work-card.stone {
@@ -152,6 +155,7 @@
   align-items: start;
   background: var(--white);
   border: 1px solid rgba(var(--onyx-rgb), 0.08);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .step-number {
@@ -174,6 +178,7 @@
   color: var(--onyx);
   border: 1px solid rgba(var(--onyx-rgb), 0.08);
   box-shadow: var(--shadow);
+  transition: transform 220ms ease, box-shadow 220ms ease;
 }
 
 .profile-photo {
@@ -224,7 +229,8 @@
   a:not(.linkedin-icon) {
     text-decoration: none;
     font-weight: 700;
-    transition: none;
+    transition:
+      transform 180ms ease;
     color: var(--link-color);
 
     &:hover {
@@ -246,7 +252,7 @@
   color: var(--onyx);
   font-weight: 800;
   text-decoration: none;
-  transition: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
   border: 1px solid rgba(var(--onyx-rgb), 0.08);
 }
 
@@ -323,6 +329,29 @@
   place-items: center;
   font-weight: 800;
   font-size: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-card:hover,
+  .step-card:hover,
+  .profile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .work-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  .profile-links a:not(.linkedin-icon):hover {
+    transform: translateY(-1px);
+  }
+
+  .linkedin-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
 }
 
 .footer {

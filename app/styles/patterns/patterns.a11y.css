@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+*:where(:focus-visible) {
+  outline: var(--focus-outline-size) solid var(--focus-text);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--focus-box-shadow-size) rgba(var(--sand-rgb), 0.85);
+}
+
+:where([tabindex="-1"]):focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+a:focus-visible {
+  text-decoration: none;
+}
+
+.skip-link {
+  position: absolute;
+  inset: 10px auto auto 10px;
+  padding: 0.85rem 1.05rem;
+  background: var(--focus-bg);
+  color: var(--focus-text);
+  text-decoration: none;
+  font-weight: 700;
+  border: 3px solid transparent;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.skip-link:focus-visible {
+  clip: auto;
+  overflow: visible;
+  outline: 3px solid var(--focus-text);
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.sr-only:not(:focus):not(:active),
+.visually-hidden:not(:focus):not(:active),
+.g-accessibly-hidden:not(:focus):not(:active) {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.focus-outline:focus-within {
+  outline: var(--focus-outline-size) solid var(--focus-text);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 var(--focus-box-shadow-size) rgba(var(--sand-rgb), 0.85);
+}
+
+.focus-outline-none:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+

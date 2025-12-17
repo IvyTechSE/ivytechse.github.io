@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Reveal on scroll
+   ========================================================================== */
+
+.reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: var(--delay, 0ms);
+}
+
+.reveal-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

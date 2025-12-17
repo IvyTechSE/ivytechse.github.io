@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Primitives
+   ========================================================================== */
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--midnight);
+}
+
+.lede {
+  font-size: 1.18rem;
+  color: var(--onyx);
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid rgba(var(--onyx-rgb), 0.08);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.lift {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+
+.tag {
+  background: var(--stone);
+  color: var(--onyx);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.92rem;
+  border: 1px solid rgba(var(--onyx-rgb), 0.08);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 2px;
+  padding: 0.85rem 1.4rem;
+  font: inherit;
+  font-weight: 800;
+  border: 2px solid transparent;
+  background: var(--button-bg);
+  color: var(--white);
+  cursor: pointer;
+  transition: none;
+  text-decoration: none;
+  box-shadow: none;
+  line-height: 1.2;
+}
+
+.button.primary {
+  background: var(--button-bg);
+  color: var(--white);
+}
+
+.button.ghost {
+  background: transparent;
+  color: var(--button-bg);
+  border-color: var(--button-bg);
+}
+
+.button:hover {
+  background: var(--button-hover-bg);
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.14em;
+}
+
+.button:focus-visible {
+  border-color: var(--focus-text);
+  text-decoration: none;
+}
+

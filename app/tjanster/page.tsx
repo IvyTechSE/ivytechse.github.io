@@ -43,7 +43,7 @@ export default function ServicesPage() {
                 <div className="work-card-image">
                   <ResponsiveImage
                     baseSrc={card.photoBase}
-                    alt={card.title}
+                    alt={card.altText}
                     width={640}
                     height={640}
                     sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"

@@ -2,11 +2,7 @@ import { services, servicesSectionIntro } from '../content';
 
 export function ServicesSection() {
   return (
-    <section
-      id="tjanster"
-      className="section services reveal-on-scroll"
-      aria-labelledby="tjanster-title"
-    >
+    <section id="tjanster" className="section services reveal-on-scroll">
       <div className="stack">
         <div className="stack">
           <p className="eyebrow">{servicesSectionIntro.eyebrow}</p>
@@ -19,7 +15,6 @@ export function ServicesSection() {
               key={service.title}
               className="card service-card reveal-on-scroll"
               style={{ ["--delay" as string]: `${index * 80}ms` }}
-              aria-labelledby={`${service.title}-title`}
             >
               <div className="service-body">
                 <h3 id={`${service.title}-title`}>{service.title}</h3>

@@ -25,20 +25,20 @@ export const hero = {
 export const servicesSectionIntro = {
   eyebrow: "Våra tjänster",
   title: "Vi tar ansvar från idé till drift",
-  lede: "Vi kliver in där ni behöver oss som mest: struktur i arkitekturen, fart i utvecklingen och praktiskt stöd med AI. Alltid nära era team.",
+  lede: "Vi kliver in där det gör verklig skillnad. När arkitekturen behöver bli tydlig, utvecklingen behöver tempo eller när AI ska användas på riktigt i vardagen. Vi tar ansvar hela vägen, från första beslut till stabil drift, alltid i nära samarbete med era team.",
 };
 
 export const servicesPageHero = {
   eyebrow: "Våra tjänster",
   title: "Erfarna konsulter. Människor du vill jobba med.",
-  lede: "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller – för organisationen och för användarna.",
+  lede: "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller organisationen och för användarna.",
   primaryCta: { label: "Kontakta oss", href: "#kontakt" },
 };
 
 export const services = [
   {
     title: "Systemarkitektur",
-    body: "Vi designar skalbara, hållbara system som håller över tid – tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.",
+    body: "Vi designar skalbara, hållbara system som håller över tid både tekniskt och organisatoriskt. Vi skapar struktur och riktning som teamen kan bygga vidare på.",
     icon: "🏗️",
     alt: "Ikon för systemarkitektur",
     href: "/tjanster/systemarkitektur",
@@ -150,23 +150,27 @@ export const teamIntro = {
 export const workShowcase = {
   eyebrow: "Vardagen med Ivy-konsulter",
   title: "Så här gör vi skillnad i era team",
-  body: "När en Ivy-konsult kliver in i ett uppdrag handlar det inte bara om att skriva kod. Vi stärker team, skapar riktning och höjer kvaliteten genom tydliga arbetssätt och ett samarbetsfokus som smittar av sig. Här är exempel på vad vi faktiskt bidrar med i praktiken.",
+  body: "När en Ivy-konsult kliver in i ett uppdrag handlar det om ansvar, inte bara leverans. Vi tar ägarskap för struktur, tempo och kvalitet i det dagliga arbetet. Där det finns osäkerhet skapar vi riktning, där det finns komplexitet skapar vi ordning. ",
   cta: { label: "Möt vårt gäng", href: "/om-ivy" },
   cards: [
     {
-      title: "Stärker teamen vi går in i",
+      title: "Vi stärker teamen vi går in i",
       meta: "Struktur, tydlighet och hög teknisk kvalitet",
       detail:
-        "Vi bidrar med ordning och riktning i komplexa projekt. Genom pragmata arkitekturval, systematiska reviews och nära dialog med design och produkt får teamet fart, stabilitet och ett gemensamt språk.",
+        "Genom tydliga arkitekturval och gemensamma arbetssätt skapar vi struktur och samsyn i teamet. Det ger stabilitet, riktning och bättre förutsättningar för utveckling över tid.",
       photoBase: "/images/context/IMG_1307",
+      altText:
+        "Personer arbetar vid skrivbord med datorer i ett modernt kontorslandskap med stora fönster och dagsljus.",
       tone: "stone",
     },
     {
       title: "Höjer nivån över tid",
       meta: "Ledarskap i vardagen och kunskap in i teamet",
       detail:
-        "Vi delar med oss av metoder, tillgänglighetstänk och moderna frontendmönster som gör att teamet utvecklas även efter att vi lämnat. Målet är alltid att kunden ska stå starkare än när vi kom in.",
+        "Vi delar aktivt med oss av hur vi arbetar, från arkitekturval och systemutveckling till tillgänglighet, moderna frontendmönster och hur AI används som ett praktiskt stöd i det dagliga arbetet.",
       photoBase: "/images/context/IMG_1328",
+      altText:
+        "Två personer står vid ett bord och arbetar tillsammans vid en bärbar dator i en ljus kontorsmiljö.",
       tone: "stone",
     },
   ],

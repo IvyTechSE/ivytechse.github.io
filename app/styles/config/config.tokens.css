@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Tokens
+   ========================================================================== */
+
+:root {
+  --scrollbar-width: calc(100vw - 100%);
+
+  --forest: #596e5c;
+  --sand: #fcf8f0;
+  --midnight: #2e333a;
+  --onyx: #1c1c1b;
+  --stone: #e2e2de;
+  --white: #ffffff;
+
+  --link-color: var(--forest);
+  --link-hover: var(--midnight);
+
+  --focus-bg: var(--stone);
+  --focus-text: var(--onyx);
+  --focus-outline-size: 3px;
+  --focus-box-shadow-size: 6px;
+
+  --button-bg: var(--forest);
+  --button-hover-bg: color-mix(in srgb, var(--button-bg) 85%, black);
+
+  --forest-rgb: 89, 110, 92;
+  --sand-rgb: 252, 248, 240;
+  --midnight-rgb: 46, 51, 58;
+  --onyx-rgb: 28, 28, 27;
+  --stone-rgb: 226, 226, 222;
+  --white-rgb: 255, 255, 255;
+
+  --radius: 18px;
+  --shadow: 0 12px 28px rgba(var(--onyx-rgb), 0.08);
+  --shadow-strong: 0 18px 44px rgba(var(--onyx-rgb), 0.14);
+}

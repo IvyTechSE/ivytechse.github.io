@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  background: rgba(var(--sand-rgb), 0.8);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.8rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.hero-copy {
+  h1,
+  p,
+  .eyebrow,
+  .lede {
+    color: var(--onyx);
+  }
+}
+
+.hero-visual {
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.page-hero {
+  background: rgba(var(--sand-rgb), 0.8);
+
+  .button {
+    width: fit-content;
+  }
+}
+
+.hero-collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 0.9rem;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+}
+
+.collage-item {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--stone);
+  box-shadow: var(--shadow);
+  aspect-ratio: 3 / 4;
+
+  picture {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.collage-1 {
+  grid-row: 1 / 3;
+  aspect-ratio: 2 / 3;
+}
+
+.collage-2 {
+  grid-row: 2 / 4;
+  aspect-ratio: 2 / 3;
+}
+
+.collage-3 {
+  grid-row: 1 / 2;
+}
+
+.collage-4 {
+  grid-row: 3 / 4;
+}

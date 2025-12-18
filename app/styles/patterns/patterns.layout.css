@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+html {
+  container-type: inline-size;
+}
+
+.container {
+  --container-max: 1180px;
+  --container-min-margin: 3vw;
+  --_m: max(var(--container-min-margin), 50cqw - (var(--container-max) / 2));
+  margin-inline: var(--_m);
+}
+
+.container.contact {
+  --container-max: 50em;
+  --container-min-margin: 3vw;
+}
+
+.section {
+  padding: clamp(4rem, 6vw, 6.5rem) 0;
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3.3rem 0;
+  }
+}
+
+.stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cluster {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.full-bleed {
+  position: relative;
+  margin-inline: calc(-1 * var(--_m));
+}

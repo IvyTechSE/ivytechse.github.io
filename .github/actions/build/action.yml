@@ -1,0 +1,16 @@
+name: Build site
+description: Checkout, install, lint, and build the static site
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: npm
+    - run: npm install
+      shell: bash
+    - run: npm run lint
+      shell: bash
+    - run: npm run build
+      shell: bash

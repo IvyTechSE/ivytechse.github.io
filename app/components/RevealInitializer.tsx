@@ -26,7 +26,7 @@ export function RevealInitializer() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px 100px 0px" }
     );
 
     revealElements.forEach((el) => revealObserver.observe(el));

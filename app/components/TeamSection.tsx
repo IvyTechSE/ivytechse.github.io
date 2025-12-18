@@ -8,7 +8,7 @@ export function TeamSection() {
       className="section team reveal-on-scroll"
       aria-labelledby="om-title"
     >
-      <div className="container stack">
+      <div className="stack">
         <div className="stack">
           <p className="eyebrow">{teamIntro.eyebrow}</p>
           <h2 id="om-title">{teamIntro.title}</h2>

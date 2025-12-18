@@ -7,7 +7,7 @@ export function ServicesSection() {
       className="section services reveal-on-scroll"
       aria-labelledby="tjanster-title"
     >
-      <div className="container stack">
+      <div className="stack">
         <div className="stack">
           <p className="eyebrow">{servicesSectionIntro.eyebrow}</p>
           <h2 id="tjanster-title">{servicesSectionIntro.title}</h2>

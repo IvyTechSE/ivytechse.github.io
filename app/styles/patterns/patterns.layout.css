@@ -2,13 +2,20 @@
    Layout
    ========================================================================== */
 
+html {
+  container-type: inline-size;
+}
+
 .container {
-  width: min(1180px, 94vw);
-  margin: 0 auto;
+  --container-max: 1180px;
+  --container-min-margin: 3vw;
+  --_m: max(var(--container-min-margin), 50cqw - (var(--container-max) / 2));
+  margin-inline: var(--_m);
 }
 
 .container.contact {
-  max-width: 50em;
+  --container-max: 50em;
+  --container-min-margin: 3vw;
 }
 
 .section {
@@ -46,17 +53,5 @@
 
 .full-bleed {
   position: relative;
-}
-
-.container > .full-bleed {
-  max-width: none;
-  width: calc(100vw - var(--scrollbar-width));
-  margin-inline: calc(50% - 50vw + (var(--scrollbar-width) / 2));
-}
-
-@supports (width: 100dvw) {
-  .container > .full-bleed {
-    width: 100dvw;
-    margin-inline: calc(50% - 50dvw);
-  }
+  margin-inline: calc(-1 * var(--_m));
 }

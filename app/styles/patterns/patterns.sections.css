@@ -395,6 +395,12 @@
   gap: 0.4rem;
 }
 
+.footer-address {
+  font-style: normal;
+  line-height: 1.35;
+  margin-top: 0.6rem;
+}
+
 @media (max-width: 720px) {
   .contact-card {
     grid-template-columns: 1fr;

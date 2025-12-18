@@ -3,6 +3,8 @@
    ========================================================================== */
 
 :root {
+  --scrollbar-width: calc(100vw - 100%);
+
   --forest: #596e5c;
   --sand: #fcf8f0;
   --midnight: #2e333a;
@@ -32,4 +34,3 @@
   --shadow: 0 12px 28px rgba(var(--onyx-rgb), 0.08);
   --shadow-strong: 0 18px 44px rgba(var(--onyx-rgb), 0.14);
 }
-

@@ -3,6 +3,7 @@ import { ContactSection } from "../components/ContactSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
 import { servicesPageHero, workShowcase } from "../content";
+import { ResponsiveImage } from "../components/ResponsiveImage";
 
 export default function ServicesPage() {
   return (
@@ -41,13 +42,13 @@ export default function ServicesPage() {
                 aria-label={card.title}
               >
                 <div className="work-card-image">
-                  <Image
-                    src={card.image}
+                  <ResponsiveImage
+                    baseSrc={card.photoBase}
                     alt={card.title}
                     width={800}
                     height={960}
                     sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
-                    loading="lazy"
+                    priority={index < 2}
                   />
                 </div>
                 <div className="work-card-body">

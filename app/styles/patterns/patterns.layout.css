@@ -49,8 +49,14 @@
 }
 
 .container > .full-bleed {
-  width: 100vw;
   max-width: none;
-  margin-left: calc(50% - 50vw);
-  padding-inline: min(4vw, 2rem);
+  width: calc(100vw - var(--scrollbar-width));
+  margin-inline: calc(50% - 50vw + (var(--scrollbar-width) / 2));
+}
+
+@supports (width: 100dvw) {
+  .container > .full-bleed {
+    width: 100dvw;
+    margin-inline: calc(50% - 50dvw);
+  }
 }

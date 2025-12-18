@@ -147,8 +147,7 @@ export const workShowcase = {
       meta: "Struktur, tydlighet och hög teknisk kvalitet",
       detail:
         "Vi bidrar med ordning och riktning i komplexa projekt. Genom pragmata arkitekturval, systematiska reviews och nära dialog med design och produkt får teamet fart, stabilitet och ett gemensamt språk.",
-      image:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
+      photoBase: "/images/context/IMG_1307",
       tone: "stone",
     },
     {
@@ -156,8 +155,7 @@ export const workShowcase = {
       meta: "Ledarskap i vardagen och kunskap in i teamet",
       detail:
         "Vi delar med oss av metoder, tillgänglighetstänk och moderna frontendmönster som gör att teamet utvecklas även efter att vi lämnat. Målet är alltid att kunden ska stå starkare än när vi kom in.",
-      image:
-        "https://images.unsplash.com/photo-1552960562-daf630e9278b?auto=format&fit=crop&w=1600&q=80",
+      photoBase: "/images/context/IMG_1328",
       tone: "stone",
     },
   ],

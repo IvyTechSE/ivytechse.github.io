@@ -6,7 +6,8 @@
     "dev": "next dev",
     "lint": "next lint",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "images:variants": "bash scripts/generate-image-variants.sh"
   },
   "dependencies": {
     "modern-normalize": "^2.0.0",

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ContactSection } from "../components/ContactSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
@@ -45,10 +44,10 @@ export default function ServicesPage() {
                   <ResponsiveImage
                     baseSrc={card.photoBase}
                     alt={card.title}
-                    width={800}
-                    height={960}
+                    width={640}
+                    height={640}
                     sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
-                    priority={index < 2n}
+                    priority={index < 2}
                   />
                 </div>
                 <div className="work-card-body">

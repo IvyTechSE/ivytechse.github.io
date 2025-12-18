@@ -4,15 +4,16 @@ import { Sora } from "next/font/google";
 import { RevealInitializer } from "./components/RevealInitializer";
 import { HeaderNav } from "./components/HeaderNav";
 import { Footer } from "./components/Footer";
+import { site } from "./content";
 
 const sora = Sora({ subsets: ["latin"], display: "swap" });
 
 const organizationLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Ivy Technology",
-  url: "https://ivytechse.github.io",
-  logo: "https://ivytechse.github.io/images/ivy-logo-black.svg",
+  name: site.name,
+  url: site.url,
+  logo: `${site.url}/images/ivy-logo-black.svg`,
   email: "hello@ivytech.se",
   address: {
     "@type": "PostalAddress",
@@ -22,21 +23,25 @@ const organizationLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Ivy Technology | Tillgängliga digitala lösningar",
-  description:
-    "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
-  metadataBase: new URL("https://ivytechse.github.io"),
+  title: { default: site.name, template: `%s | ${site.name}` },
+  description: site.description,
+  metadataBase: new URL(site.url),
   openGraph: {
-    title: "Ivy Technology | Digitala lösningar",
-    description:
-      "Ivy Technology bygger snabba, tillgängliga och inkluderande webbapplikationer för beslutsfattare i Göteborg och Sverige.",
-    url: "https://ivytechse.github.io",
-    siteName: "Ivy Technology",
-    images: ["/images/ivy-og-image.png"],
+    title: site.name,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: site.ogImage.url, alt: site.ogImage.alt }],
     locale: "sv_SE",
     type: "website",
   },
-  alternates: { canonical: "https://ivytechse.github.io" },
+  alternates: { canonical: site.url },
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: [site.ogImage.url],
+  },
   icons: {
     icon: "/favicon.ico",
   },

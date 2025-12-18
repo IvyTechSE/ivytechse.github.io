@@ -3,6 +3,17 @@ export const navItems = [
   { href: "/om-ivy", label: "Vårt gäng" },
 ];
 
+export const site = {
+  name: "Ivy Technology",
+  url: "https://ivytech.se",
+  description:
+    "Ivy Technology bygger digitala produkter från idé till drift – strategi, design och engineering med stark kompetens inom systemarkitektur, systemutveckling och tillgänglighet.",
+  ogImage: {
+    url: "/images/ivy-og-image.png",
+    alt: "Ivy Technology",
+  },
+};
+
 export const hero = {
   eyebrow: "Göteborg · Digitala produkter · Tillgänglighet",
   title: "Kompetens bygger lösningar, människor bygger värde",
@@ -41,7 +52,7 @@ export const services = [
   },
   {
     title: "AI i praktiken",
-    body: "Vi använder AI som verktyg i vardagen – för analys, automatisering, test och kodstöd – och hjälper er att göra detsamma på riktigt, inte bara i teorin.",
+    body: "Vi använder AI som verktyg i vardagen för analys, automatisering, test och kodstöd och hjälper er att göra detsamma på riktigt, inte bara i teorin.",
     icon: "🤖",
     alt: "Ikon för AI",
     href: "/tjanster/ai-i-praktiken",

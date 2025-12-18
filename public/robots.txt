@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ivytechse.github.io/sitemap.xml
+Sitemap: https://ivytech.se/sitemap.xml

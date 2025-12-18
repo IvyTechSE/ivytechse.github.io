@@ -350,17 +350,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .service-card:hover,
-  .step-card:hover,
-  .profile:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-strong);
-  }
-
-  .work-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-strong);
-  }
 
   .profile-links a:not(.linkedin-icon):hover {
     transform: translateY(-1px);

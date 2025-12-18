@@ -21,9 +21,6 @@ export function ServicesSection() {
               style={{ ["--delay" as string]: `${index * 80}ms` }}
               aria-labelledby={`${service.title}-title`}
             >
-              <div className="service-icon" role="img" aria-label={service.alt}>
-                {service.icon}
-              </div>
               <div className="service-body">
                 <h3 id={`${service.title}-title`}>{service.title}</h3>
                 <p>{service.body}</p>

@@ -48,7 +48,7 @@ export default function ServicesPage() {
                     width={800}
                     height={960}
                     sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
-                    priority={index < 2}
+                    priority={index < 2n}
                   />
                 </div>
                 <div className="work-card-body">

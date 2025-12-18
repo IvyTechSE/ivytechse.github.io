@@ -88,21 +88,13 @@
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-nav[aria-label="Huvudmeny"] {
+.nav-top {
   display: flex;
   width: 100%;
   justify-content: flex-end;
 }
 
-.nav-disclosure--mobile {
-  display: none;
-}
-
-.nav-disclosure > summary {
-  list-style: none;
-}
-
-.nav-disclosure > summary::-webkit-details-marker {
+.nav-list--mobile {
   display: none;
 }
 
@@ -126,29 +118,30 @@ nav[aria-label="Huvudmeny"] {
     display: none;
   }
 
-  .nav-disclosure--mobile {
-    display: block;
-  }
-
   .nav-list--mobile {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.5rem 0;
-    display: none;
-    gap: 0.4rem;
-  }
-
-  .nav-disclosure[open] .nav-list--mobile {
+    padding: 0.6rem;
     display: flex;
-    width: 100%;
+    gap: 0.4rem;
     position: absolute;
+    left: 0;
     right: 0;
+    width: 100%;
+    box-sizing: border-box;
     top: 100%;
     z-index: 999;
     background: rgba(var(--sand-rgb), 0.98);
     border: 1px solid rgba(var(--onyx-rgb), 0.08);
-    padding: 0.6rem;
     box-shadow: var(--shadow);
+  }
+
+  .nav-list--mobile[hidden] {
+    display: none;
+  }
+
+  .nav-top {
+    position: static;
   }
 
   .nav-contact {

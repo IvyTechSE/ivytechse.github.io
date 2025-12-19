@@ -35,7 +35,12 @@ export const metadata: Metadata = {
     locale: "sv_SE",
     type: "website",
   },
-  alternates: { canonical: site.url },
+  alternates: { 
+    canonical: site.url,
+    types: {
+      'application/rss+xml': `${site.url}/feed.xml`,
+    },
+  },
   twitter: {
     card: "summary_large_image",
     title: site.name,

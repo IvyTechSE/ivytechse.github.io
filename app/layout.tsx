@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     types: {
       'application/rss+xml': [
         {
-          url: `${site.url}/feed.xml`,
+          url: `${site.url}/feed.rss`,
           title: `${site.name} RSS Feed`,
         },
       ],

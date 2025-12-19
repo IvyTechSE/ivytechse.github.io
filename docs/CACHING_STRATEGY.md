@@ -47,6 +47,8 @@ A `_headers` file is included in the `public/` directory for Netlify and Cloudfl
 
 The GitHub Pages CDN does provide some caching benefits, but it's not configurable through repository files.
 
+**For detailed information about GitHub Pages limitations and migration options, see [GITHUB_PAGES_LIMITATIONS.md](GITHUB_PAGES_LIMITATIONS.md).**
+
 ## Cache Control Strategy
 
 ### Static Assets (Images, Fonts, etc.)

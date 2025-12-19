@@ -13,8 +13,10 @@ const nextConfig = {
   trailingSlash: true,
   
   // Cache control headers for static assets
-  // Note: These headers won't apply to GitHub Pages (which uses its own CDN)
-  // but will work if deployed to Vercel, Netlify, or Cloudflare Pages
+  // IMPORTANT: These headers are included for future compatibility but DO NOT work with
+  // GitHub Pages static exports (output: 'export'). They will be effective when/if the
+  // site is deployed to Vercel, Netlify, or Cloudflare Pages.
+  // See docs/CACHING_STRATEGY.md for more information.
   async headers() {
     return [
       {

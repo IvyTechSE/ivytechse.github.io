@@ -20,7 +20,10 @@ npm run build
 
 Push to `main` to trigger `.github/workflows/deploy.yml`, which builds the static export and deploys `out/` to the `gh-pages` branch.
 
-For pull requests, `.github/workflows/preview.yml` publishes a per-PR preview (and cleans it up when the PR closes).
+For pull requests, `.github/workflows/preview.yml`:
+- Builds and deploys a full preview to `https://ivytech.se/pr-preview/pr-{number}/` when the PR is opened or updated
+- Posts a comment with the preview URL on the pull request
+- Automatically removes the preview directory from `gh-pages` when the PR is closed
 
 ## Key colors
 - Forest `#596e5c` (primary)

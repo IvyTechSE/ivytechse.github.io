@@ -1,10 +1,10 @@
-# Security Contact Information
-# This file follows RFC 9116: https://www.rfc-editor.org/rfc/rfc9116.html
-
+# Our security address
 Contact: mailto:hello@ivytech.se
-Expires: 2026-12-19T23:59:59Z
-Preferred-Languages: sv, en
 
-# Security Policy
-# Please report security vulnerabilities responsibly by contacting us at the email above.
-# We will acknowledge receipt within 48 hours and provide updates on the resolution.
+# Preferred language is Swedish, but English is also okay
+Preferred-Languages: sv
+
+# Yes, this is the security.txt of ivytech.se
+Canonical: https://ivytech.se/security.txt
+
+Expires: Sat, 31 Dec 2026 12:00:00 +0100

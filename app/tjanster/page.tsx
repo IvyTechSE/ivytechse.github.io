@@ -9,16 +9,6 @@ export default function ServicesPage() {
     <>
       <section className="section page-hero full-bleed">
         <div className="container page-hero-grid">
-          <div className="page-hero-media">
-            <ResponsiveImage
-              baseSrc={servicesPageHero.photoBase}
-              alt={servicesPageHero.altText}
-              width={640}
-              height={640}
-              sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
-              priority={true}
-            />
-          </div>
           <div className="stack page-hero-copy">
             <p className="eyebrow">{servicesPageHero.eyebrow}</p>
             <h1>{servicesPageHero.title}</h1>
@@ -29,6 +19,16 @@ export default function ServicesPage() {
             >
               {servicesPageHero.primaryCta.label}
             </a>
+          </div>
+          <div className="page-hero-media">
+            <ResponsiveImage
+              baseSrc={servicesPageHero.photoBase}
+              alt={servicesPageHero.altText}
+              width={640}
+              height={640}
+              sizes="(min-width: 1200px) 360px, (min-width: 768px) 50vw, 90vw"
+              priority={true}
+            />
           </div>
         </div>
       </section>

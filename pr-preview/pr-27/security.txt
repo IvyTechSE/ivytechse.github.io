@@ -1,3 +1,0 @@
-Contact: mailto:hello@ivytech.se
-Expires: 2026-12-31T22:59:00.000Z
-Preferred-Languages: en

@@ -33,6 +33,9 @@ export const servicesPageHero = {
   title: "Erfarna konsulter. Människor du vill jobba med.",
   lede: "Strategi, design och engineering i samma gäng. Vi bygger lösningar som håller organisationen och för användarna.",
   primaryCta: { label: "Kontakta oss", href: "#kontakt" },
+  photoBase: "/images/context/IMG_1319",
+  altText:
+    "Sex personer sitter vid ett bord och diskuterar arbete vid sina bärbara datorer i ett mötesrum på ett kontor.",
 };
 
 export const services = [

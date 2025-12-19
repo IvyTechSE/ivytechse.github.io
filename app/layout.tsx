@@ -38,7 +38,12 @@ export const metadata: Metadata = {
   alternates: { 
     canonical: site.url,
     types: {
-      'application/rss+xml': `${site.url}/feed.xml`,
+      'application/rss+xml': [
+        {
+          url: `${site.url}/feed.rss`,
+          title: `${site.name} RSS Feed`,
+        },
+      ],
     },
   },
   twitter: {
@@ -73,10 +78,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
-        <script
-          async
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>
       </body>
     </html>
   );

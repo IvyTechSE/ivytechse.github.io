@@ -1,3 +1,10 @@
+# Our security address
 Contact: mailto:hello@ivytech.se
-Expires: 2026-12-31T22:59:00.000Z
-Preferred-Languages: en
+
+# Preferred language is Swedish, but English is also okay
+Preferred-Languages: sv
+
+# Yes, this is the security.txt of ivytech.se
+Canonical: https://ivytech.se/security.txt
+
+Expires: Sat, 31 Dec 2026 12:00:00 +0100

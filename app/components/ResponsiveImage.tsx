@@ -18,9 +18,10 @@ export function ResponsiveImage({
   priority,
 }: ResponsiveImageProps) {
   // Include full-size variants in srcset for better image quality on larger screens
-  const avifSrcSet = `${baseSrc}-320.avif 320w, ${baseSrc}-640.avif 640w, ${baseSrc}.avif ${width}w`;
-  const webpSrcSet = `${baseSrc}-320.webp 320w, ${baseSrc}-640.webp 640w, ${baseSrc}.webp ${width}w`;
-  const jpgSrcSet = `${baseSrc}-320.jpg 320w, ${baseSrc}-640.jpg 640w, ${baseSrc}.jpg ${width}w`;
+  // Using 1280w as a reasonable max width for full-size variants to support high-DPI displays
+  const avifSrcSet = `${baseSrc}-320.avif 320w, ${baseSrc}-640.avif 640w, ${baseSrc}.avif 1280w`;
+  const webpSrcSet = `${baseSrc}-320.webp 320w, ${baseSrc}-640.webp 640w, ${baseSrc}.webp 1280w`;
+  const jpgSrcSet = `${baseSrc}-320.jpg 320w, ${baseSrc}-640.jpg 640w, ${baseSrc}.jpg 1280w`;
 
   return (
     <picture>

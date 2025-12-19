@@ -37,6 +37,12 @@ For pull requests, `.github/workflows/preview.yml`:
 - Forms with labels, inline errors, and `aria-live`
 - Respects `prefers-reduced-motion`
 
+## Performance & Caching
+
+The site implements cache control headers for static assets to improve performance. See [docs/CACHING_STRATEGY.md](docs/CACHING_STRATEGY.md) for details.
+
+**Note**: GitHub Pages has limited support for custom cache headers. For full caching benefits, consider deploying to Vercel, Netlify, or Cloudflare Pages.
+
 ## Next steps
 - Add real images (use `next/image`) and update alt text.
 - Refine copy and add more case studies.

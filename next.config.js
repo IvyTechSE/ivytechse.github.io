@@ -10,7 +10,68 @@ const nextConfig = {
       },
     ],
   },
-  trailingSlash: true
+  trailingSlash: true,
+  
+  // Cache control headers for static assets
+  // IMPORTANT: These headers are included for future compatibility but DO NOT work with
+  // GitHub Pages static exports (output: 'export'). They will be effective when/if the
+  // site is deployed to Vercel, Netlify, or Cloudflare Pages.
+  // See docs/CACHING_STRATEGY.md for more information.
+  async headers() {
+    return [
+      {
+        // Cache static assets (images, fonts, etc.) for 1 year with immutability
+        source: '/images/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache Next.js static files (JS, CSS) for 1 year with immutability
+        // These have content hashes in filenames
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache favicon and other root assets for 1 day
+        source: '/:file(favicon.ico|robots.txt|sitemap.xml|feed.xml)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, must-revalidate',
+          },
+        ],
+      },
+      {
+        // HTML pages should be revalidated
+        source: '/:path*.html',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+        ],
+      },
+      {
+        // Well-known files should be cached briefly
+        source: '/.well-known/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

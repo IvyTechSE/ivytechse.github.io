@@ -17,16 +17,17 @@ export function ResponsiveImage({
   height,
   priority,
 }: ResponsiveImageProps) {
-  const avifSrcSet = `${baseSrc}-320.avif 320w, ${baseSrc}-640.avif 640w`;
-  const webpSrcSet = `${baseSrc}-320.webp 320w, ${baseSrc}-640.webp 640w`;
-  const jpgSrcSet = `${baseSrc}-320.jpg 320w, ${baseSrc}-640.jpg 640w`;
+  // Include full-size variants in srcset for better image quality on larger screens
+  const avifSrcSet = `${baseSrc}-320.avif 320w, ${baseSrc}-640.avif 640w, ${baseSrc}.avif ${width}w`;
+  const webpSrcSet = `${baseSrc}-320.webp 320w, ${baseSrc}-640.webp 640w, ${baseSrc}.webp ${width}w`;
+  const jpgSrcSet = `${baseSrc}-320.jpg 320w, ${baseSrc}-640.jpg 640w, ${baseSrc}.jpg ${width}w`;
 
   return (
     <picture>
       <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
       <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
       <img
-        src={`${baseSrc}-640.jpg`}
+        src={`${baseSrc}.jpg`}
         srcSet={jpgSrcSet}
         sizes={sizes}
         alt={alt}

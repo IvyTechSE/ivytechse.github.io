@@ -151,15 +151,15 @@ The `_headers` file also includes security headers:
 ```
 X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
-X-XSS-Protection: 1; mode=block
 Referrer-Policy: strict-origin-when-cross-origin
 ```
 
 These headers improve security by:
 - Preventing MIME type sniffing
 - Preventing clickjacking
-- Enabling XSS protection
 - Controlling referrer information
+
+Note: The deprecated `X-XSS-Protection` header is intentionally omitted as modern browsers have more effective built-in XSS protection.
 
 ## Next.js Built-in Optimizations
 

@@ -61,16 +61,6 @@ const nextConfig = {
         ],
       },
       {
-        // SVG images with longer cache
-        source: '/images/:path*.svg',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         // Well-known files should be cached briefly
         source: '/.well-known/:path*',
         headers: [

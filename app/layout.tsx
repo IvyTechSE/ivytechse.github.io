@@ -78,10 +78,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
-        <script
-          async
-          src="https://scripts.simpleanalyticscdn.com/latest.js"
-        ></script>
       </body>
     </html>
   );

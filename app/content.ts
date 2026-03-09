@@ -138,6 +138,15 @@ export const team = [
     linkedin: "https://www.linkedin.com/in/joakimlarsson92/",
     photoBase: "/images/team/joakim-larsson",
   },
+  {
+    name: "Mikael Tornered",
+    role: "Systemutvecklare",
+    intro:
+      "Utvecklar robusta och hållbara lösningar med fokus på kvalitet och samarbete.",
+    email: "mikael.tornered@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/mikael-tornered/",
+    photoBase: "/images/team/mikael-tornered",
+  },
 ];
 
 export const teamIntro = {

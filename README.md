@@ -37,6 +37,36 @@ For pull requests, `.github/workflows/preview.yml`:
 - Forms with labels, inline errors, and `aria-live`
 - Respects `prefers-reduced-motion`
 
+## Adding a new team member
+
+1. **Add the portrait image**
+   Save a high-resolution `.jpg` portrait to `public/images/team/<firstname-lastname>.jpg` (e.g., `public/images/team/mikael-tornered.jpg`).
+
+2. **Generate responsive image variants**
+   Run the image-variant script to create optimized sizes (320 px & 640 px) in `.jpg`, `.webp`, and `.avif`:
+   ```bash
+   npm run images:variants
+   # or directly:
+   bash scripts/generate-image-variants.sh
+   ```
+   The script requires **ffmpeg** and processes every `.jpg`/`.jpeg` in `public/images/`. Generated files follow the naming convention `<firstname-lastname>-<size>.<format>` (e.g., `mikael-tornered-320.webp`).
+
+3. **Add the profile entry**
+   Open `app/content.ts` and append a new object to the `team` array:
+   ```ts
+   {
+     name: "First Last",
+     role: "Role title",
+     intro: "Short intro in Swedish.",
+     email: "first.last@ivytech.se",
+     linkedin: "https://www.linkedin.com/in/first-last/",
+     photoBase: "/images/team/first-last",
+   }
+   ```
+
+4. **Verify**
+   Run `npm run dev` and open the "Om oss" page to confirm the new profile displays correctly with the photo, name, role, intro, email, and LinkedIn link.
+
 ## Next steps
 - Add real images (use `next/image`) and update alt text.
 - Refine copy and add more case studies.

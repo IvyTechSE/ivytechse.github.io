@@ -78,6 +78,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="2a1d90c8-a4e0-43f3-b520-7f191b687b30"
+        />
       </body>
     </html>
   );

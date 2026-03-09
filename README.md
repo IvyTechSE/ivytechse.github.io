@@ -25,6 +25,21 @@ For pull requests, `.github/workflows/preview.yml`:
 - Posts a comment with the preview URL on the pull request
 - Automatically removes the preview directory from `gh-pages` when the PR is closed
 
+## Analytics (Umami Cloud)
+
+The site uses Umami Cloud for anonymous, cookie-free analytics.
+
+- Script source: `https://cloud.umami.is/script.js`
+- Website ID: `2a1d90c8-a4e0-43f3-b520-7f191b687b30`
+- Script is included globally in `app/layout.tsx` before `</body>`, so it is present on all pages.
+- The Website ID is intentionally public for client-side analytics loading.
+
+References:
+- https://umami.is/docs
+- https://cloud.umami.is/share/2a1d90c8-a4e0-43f3-b520-7f191b687b30
+
+> Note: The share link above is intentionally public and only for publicly viewable analytics.
+
 ## Key colors
 - Forest `#596e5c` (primary)
 - Sand `#F1EADA` (light background/highlight)

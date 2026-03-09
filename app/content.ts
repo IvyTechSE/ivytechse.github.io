@@ -144,7 +144,7 @@ export const team = [
     intro:
       "Utvecklar robusta och hållbara lösningar med fokus på kvalitet och samarbete.",
     email: "mikael.tornered@ivytech.se",
-    linkedin: "https://www.linkedin.com/in/mikael-tornered/",
+    linkedin: "https://www.linkedin.com/in/mikael-t%C3%B6rnered-b56b4b13/",
     photoBase: "/images/team/mikael-tornered",
   },
 ];

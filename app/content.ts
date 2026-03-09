@@ -139,7 +139,7 @@ export const team = [
     photoBase: "/images/team/joakim-larsson",
   },
   {
-    name: "Mikael Tornered",
+    name: "Mikael Törnered",
     role: "Systemutvecklare",
     intro:
       "Utvecklar robusta och hållbara lösningar med fokus på kvalitet och samarbete.",

@@ -17,16 +17,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    if: github.event.action != 'closed'
+    uses: ./.github/workflows/build.yml
+    with:
+      base-path: /pr-preview/pr-${{ github.event.pull_request.number }}
+
   deploy-preview:
     if: github.event.action != 'closed'
+    needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Install and build
-        uses: ./.github/actions/build
+      - uses: actions/checkout@v4  # Required by JamesIves/github-pages-deploy-action for git context
+      - uses: actions/download-artifact@v4
         with:
-          base-path: /pr-preview/pr-${{ github.event.pull_request.number }}
+          name: site-build
+          path: out/
       - name: Deploy preview
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -75,6 +84,9 @@ jobs:
   cleanup-preview:
     if: github.event.action == 'closed'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4

@@ -1,12 +1,42 @@
 import { ContactSection } from "../components/ContactSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
-import { servicesPageHero, workShowcase } from "../content";
+import { servicesPageHero, workShowcase, services, site } from "../content";
 import { ResponsiveImage } from "../components/ResponsiveImage";
+
+const servicesPageLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: servicesPageHero.title,
+  description: servicesPageHero.lede,
+  url: `${site.url}/tjanster`,
+  provider: {
+    "@type": "Organization",
+    name: site.name,
+    url: site.url,
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Våra tjänster",
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.body,
+        url: `${site.url}${service.href}`,
+      },
+    })),
+  },
+};
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesPageLd) }}
+      />
       <section className="section page-hero full-bleed">
         <div className="container page-hero-grid">
           <div className="stack page-hero-copy">

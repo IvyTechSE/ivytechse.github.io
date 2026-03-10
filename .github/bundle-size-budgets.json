@@ -1,0 +1,8 @@
+{
+  "_comment": "Bundle size budgets for JS and CSS output assets. All sizes are in bytes. Adjust thresholds after reviewing baseline measurements on the main branch. Current limits: maxTotalJS=800 kB, maxTotalCSS=150 kB, maxTotalAssets=1 MB, maxJSDelta=50 kB/PR, maxCSSDelta=10 kB/PR.",
+  "maxTotalJS": 819200,
+  "maxTotalCSS": 153600,
+  "maxTotalAssets": 1048576,
+  "maxJSDelta": 51200,
+  "maxCSSDelta": 10240
+}

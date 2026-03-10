@@ -1,5 +1,8 @@
 name: Build site
-description: Checkout, install, lint, and build the static site
+description: >
+  Install dependencies, lint, and build the static site.
+  The repository must already be checked out before calling this action
+  (required when referencing local composite actions).
 inputs:
   base-path:
     description: 'Base path for the site (e.g. /pr-preview/pr-42). Leave empty for production builds.'
@@ -8,7 +11,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: '22'

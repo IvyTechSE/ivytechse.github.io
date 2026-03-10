@@ -4,6 +4,7 @@ module.exports = {
     collect: {
       staticDistDir: './out',
       numberOfRuns: 3,
+      autodiscoverUrlBlocklist: [/\/404\.html$/, /\/404\/index\.html$/],
     },
     assert: {
       assertions: {

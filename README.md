@@ -82,7 +82,35 @@ References:
 4. **Verify**
    Run `npm run dev` and open the "Om oss" page to confirm the new profile displays correctly with the photo, name, role, intro, email, and LinkedIn link.
 
+## Dependency security & updates
+
+### Automated tooling
+
+| Tool | File | Purpose |
+|---|---|---|
+| Dependabot | `.github/dependabot.yml` | Weekly PRs for npm and GitHub Actions updates |
+| Dependency Review | `.github/workflows/dependency-review.yml` | Blocks PRs that introduce high-severity vulnerabilities |
+| CodeQL | `.github/workflows/codeql.yml` | Static analysis for JavaScript/TypeScript (runs on push, PRs, and weekly) |
+
+### Update policy
+
+**Security updates** (opened by Dependabot with the `security-updates` label)
+- Review and merge as soon as possible, ideally within 48 hours.
+- These are kept in individual PRs so they can be fast-tracked through QA.
+
+**Routine version updates** (opened by Dependabot with the `version-updates` label)
+- Grouped into a single weekly PR per ecosystem to reduce noise.
+- Review during the normal sprint cycle; merge before the next release cut.
+- Run `npm install` locally and smoke-test after merging.
+
+**Dependency Review failures on PRs**
+- Any PR that introduces a dependency with a _high_ or _critical_ severity advisory will be blocked automatically.
+- To unblock: replace the vulnerable package, or open an issue documenting the accepted risk and obtain approval from a maintainer.
+
+**CodeQL alerts**
+- Critical/high alerts must be resolved before the next production deploy.
+- Medium/low alerts are tracked as issues and triaged in the regular sprint.
+
 ## Next steps
 - Add real images (use `next/image`) and update alt text.
 - Refine copy and add more case studies.
-- Add GitHub Actions for Pages deploy (e.g., `actions/upload-pages-artifact` + `deploy-pages`).

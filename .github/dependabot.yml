@@ -1,0 +1,38 @@
+version: 2
+updates:
+  # Keep npm dependencies up to date
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: Europe/Stockholm
+    open-pull-requests-limit: 10
+    groups:
+      # Group all routine npm version updates into a single weekly PR.
+      # Security updates are always opened as individual PRs by Dependabot.
+      npm-non-security:
+        applies-to: version-updates
+        patterns:
+          - "*"
+    labels:
+      - dependencies
+
+  # Keep GitHub Actions up to date
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: Europe/Stockholm
+    open-pull-requests-limit: 5
+    groups:
+      actions-non-security:
+        applies-to: version-updates
+        patterns:
+          - "*"
+    labels:
+      - dependencies
+      - github-actions

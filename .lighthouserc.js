@@ -4,7 +4,11 @@ module.exports = {
     collect: {
       staticDistDir: './out',
       numberOfRuns: 3,
-      autodiscoverUrlBlocklist: [/\/404\.html$/, /\/404\/index\.html$/],
+      url: [
+        'http://localhost/index.html',
+        'http://localhost/om-ivy/index.html',
+        'http://localhost/tjanster/index.html',
+      ],
     },
     assert: {
       assertions: {

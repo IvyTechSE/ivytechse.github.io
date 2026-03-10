@@ -1,12 +1,35 @@
 import { ContactSection } from "../components/ContactSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
-import { servicesPageHero, workShowcase } from "../content";
+import { servicesPageHero, workShowcase, site } from "../content";
 import { ResponsiveImage } from "../components/ResponsiveImage";
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Hem",
+      item: site.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Vad vi gör",
+      item: `${site.url}/tjanster`,
+    },
+  ],
+};
 
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <section className="section page-hero full-bleed">
         <div className="container page-hero-grid">
           <div className="stack page-hero-copy">

@@ -1,5 +1,10 @@
 name: Build site
 description: Checkout, install, lint, and build the static site
+inputs:
+  base-path:
+    description: 'Base path for the site (e.g. /pr-preview/pr-42). Leave empty for production builds.'
+    required: false
+    default: ''
 runs:
   using: composite
   steps:
@@ -14,3 +19,5 @@ runs:
       shell: bash
     - run: npm run build
       shell: bash
+      env:
+        NEXT_PUBLIC_BASE_PATH: ${{ inputs.base-path }}

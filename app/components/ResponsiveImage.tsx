@@ -1,3 +1,5 @@
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 type ResponsiveImageProps = {
   baseSrc: string;
   alt: string;
@@ -17,16 +19,17 @@ export function ResponsiveImage({
   height,
   priority,
 }: ResponsiveImageProps) {
-  const avifSrcSet = `${baseSrc}-320.avif 320w, ${baseSrc}-640.avif 640w`;
-  const webpSrcSet = `${baseSrc}-320.webp 320w, ${baseSrc}-640.webp 640w`;
-  const jpgSrcSet = `${baseSrc}-320.jpg 320w, ${baseSrc}-640.jpg 640w`;
+  const fullBaseSrc = `${BASE_PATH}${baseSrc}`;
+  const avifSrcSet = `${fullBaseSrc}-320.avif 320w, ${fullBaseSrc}-640.avif 640w`;
+  const webpSrcSet = `${fullBaseSrc}-320.webp 320w, ${fullBaseSrc}-640.webp 640w`;
+  const jpgSrcSet = `${fullBaseSrc}-320.jpg 320w, ${fullBaseSrc}-640.jpg 640w`;
 
   return (
     <picture>
       <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
       <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
       <img
-        src={`${baseSrc}-640.jpg`}
+        src={`${fullBaseSrc}-640.jpg`}
         srcSet={jpgSrcSet}
         sizes={sizes}
         alt={alt}

@@ -3,6 +3,18 @@ name: Deploy to Github Pages
 on:
   push:
     branches: [main]
+    paths:
+      - 'app/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.js'
+      - 'tsconfig.json'
+      - 'postcss.config.js'
+      - '.eslintrc.json'
+      - '.github/workflows/**'
+      - '.github/actions/**'
   workflow_dispatch:
 
 permissions:
@@ -11,7 +23,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

@@ -11,16 +11,21 @@ export function ServicesSection() {
         </div>
         <div className="grid service-grid">
           {services.map((service, index) => (
-            <article
-              key={service.title}
+            <a
+              key={service.href}
+              href={service.href}
               className="card service-card reveal-on-scroll"
-              style={{ ["--delay" as string]: `${index * 80}ms` }}
+              style={{
+                ["--delay" as string]: `${index * 80}ms`,
+                textDecoration: "none",
+                color: "inherit",
+              }}
             >
               <div className="service-body">
                 <h3 id={`${service.title}-title`}>{service.title}</h3>
                 <p>{service.body}</p>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>

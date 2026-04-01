@@ -25,6 +25,21 @@ For pull requests, `.github/workflows/preview.yml`:
 - Posts a comment with the preview URL on the pull request
 - Automatically removes the preview directory from `gh-pages` when the PR is closed
 
+## Analytics (Umami Cloud)
+
+The site uses Umami Cloud for anonymous, cookie-free analytics.
+
+- Script source: `https://cloud.umami.is/script.js`
+- Website ID: `2a1d90c8-a4e0-43f3-b520-7f191b687b30`
+- Script is included globally in `app/layout.tsx` before `</body>`, so it is present on all pages.
+- The Website ID is intentionally public for client-side analytics loading.
+
+References:
+- https://umami.is/docs
+- https://cloud.umami.is/share/2a1d90c8-a4e0-43f3-b520-7f191b687b30
+
+> Note: The share link above is intentionally public and only for publicly viewable analytics.
+
 ## Key colors
 - Forest `#596e5c` (primary)
 - Sand `#F1EADA` (light background/highlight)
@@ -36,6 +51,36 @@ For pull requests, `.github/workflows/preview.yml`:
 - Visible focus states, keyboard-navigable mobile menu
 - Forms with labels, inline errors, and `aria-live`
 - Respects `prefers-reduced-motion`
+
+## Adding a new team member
+
+1. **Add the portrait image**
+   Save a high-resolution `.jpg` portrait to `public/images/team/<firstname-lastname>.jpg` (e.g., `public/images/team/mikael-tornered.jpg`).
+
+2. **Generate responsive image variants**
+   Run the image-variant script to create optimized sizes (320 px & 640 px) in `.jpg`, `.webp`, and `.avif`:
+   ```bash
+   npm run images:variants
+   # or directly:
+   bash scripts/generate-image-variants.sh
+   ```
+   The script requires **ffmpeg** and processes every `.jpg`/`.jpeg` in `public/images/`. Generated files follow the naming convention `<firstname-lastname>-<size>.<format>` (e.g., `mikael-tornered-320.webp`).
+
+3. **Add the profile entry**
+   Open `app/content.ts` and append a new object to the `team` array:
+   ```ts
+   {
+     name: "First Last",
+     role: "Role title",
+     intro: "Short intro in Swedish.",
+     email: "first.last@ivytech.se",
+     linkedin: "https://www.linkedin.com/in/first-last/",
+     photoBase: "/images/team/first-last",
+   }
+   ```
+
+4. **Verify**
+   Run `npm run dev` and open the "Om oss" page to confirm the new profile displays correctly with the photo, name, role, intro, email, and LinkedIn link.
 
 ## Next steps
 - Add real images (use `next/image`) and update alt text.

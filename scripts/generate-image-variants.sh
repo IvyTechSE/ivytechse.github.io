@@ -32,7 +32,7 @@ while IFS= read -r -d '' input; do
     webp_out="${base}-${size}.webp"
     avif_out="${base}-${size}.avif"
 
-    scale_filter="scale=${size}:${size}:force_original_aspect_ratio=increase,crop=${size}:${size}"
+    scale_filter="scale=${size}:-2"
 
     ffmpeg -hide_banner -loglevel error -nostdin -y \
       -i "$input" \

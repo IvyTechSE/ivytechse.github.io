@@ -1,0 +1,101 @@
+name: Test & Coverage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests with coverage
+        run: npm run test:coverage -- --ci
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 14
+
+      - name: Post coverage summary to PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summaryPath = 'coverage/coverage-summary.json';
+
+            if (!fs.existsSync(summaryPath)) {
+              console.log('No coverage summary found, skipping comment.');
+              return;
+            }
+
+            const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8')).total;
+
+            const pct = (metric) => `${metric.pct.toFixed(1)}%`;
+            const icon = (pct) => pct >= 80 ? '🟢' : pct >= 50 ? '🟡' : '🔴';
+
+            const rows = [
+              ['Statements', summary.statements],
+              ['Branches',   summary.branches],
+              ['Functions',  summary.functions],
+              ['Lines',      summary.lines],
+            ]
+              .map(([label, m]) =>
+                `| ${label} | ${icon(m.pct)} ${pct(m)} | ${m.covered} / ${m.total} |`
+              )
+              .join('\n');
+
+            const body = [
+              '## 📊 Test Coverage Report',
+              '',
+              '| Metric | Coverage | Covered / Total |',
+              '|--------|----------|-----------------|',
+              rows,
+              '',
+              '_Coverage thresholds: statements ≥ 50 %, branches ≥ 30 %, functions ≥ 40 %, lines ≥ 50 %._',
+              '_See [docs/COVERAGE.md](./docs/COVERAGE.md) for the full policy._',
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+            });
+
+            const existing = comments.find(
+              (c) => c.user.type === 'Bot' && c.body.includes('Test Coverage Report')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body,
+              });
+            }

@@ -11,6 +11,7 @@ module.exports = {
       ],
     },
     assert: {
+      includePassedAssertions: true,
       assertions: {
         'categories:performance':    ['error', { minScore: 0.85 }],
         'categories:accessibility':  ['error', { minScore: 0.95 }],

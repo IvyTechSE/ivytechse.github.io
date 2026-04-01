@@ -73,7 +73,8 @@ jobs:
               .map(url => `[📊 View full Lighthouse report](${url})`)
               .join('\n');
 
-            const headline = assertionResults.length === 0
+            const lighthouseRan = Object.keys(links).length > 0;
+            const headline = !lighthouseRan && assertionResults.length === 0
               ? '⚠️ Lighthouse results unavailable.'
               : allPassed
                 ? '✅ All Lighthouse budget thresholds passed!'

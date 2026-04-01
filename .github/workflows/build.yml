@@ -1,0 +1,28 @@
+name: Build
+
+# Reusable workflow: call with `uses: ./.github/workflows/build.yml`
+# Builds the site and uploads the output as the `site-build` artifact.
+on:
+  workflow_call:
+    inputs:
+      base-path:
+        description: 'Base path for the site (e.g. /pr-preview/pr-42). Leave empty for production builds.'
+        type: string
+        required: false
+        default: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build
+        with:
+          base-path: ${{ inputs.base-path }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: out/
+          retention-days: 1

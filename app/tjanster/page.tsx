@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import { ContactSection } from "../components/ContactSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { ApproachSection } from "../components/ApproachSection";
-import { servicesPageHero, workShowcase } from "../content";
+import { servicesPageHero, workShowcase, site } from "../content";
 import { ResponsiveImage } from "../components/ResponsiveImage";
+
+export const metadata: Metadata = {
+  title: servicesPageHero.eyebrow,
+  description: servicesPageHero.lede,
+  openGraph: {
+    title: servicesPageHero.title,
+    description: servicesPageHero.lede,
+    url: `${site.url}/tjanster`,
+  },
+  alternates: {
+    canonical: `${site.url}/tjanster`,
+  },
+};
 
 export default function ServicesPage() {
   return (

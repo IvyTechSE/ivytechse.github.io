@@ -19,18 +19,20 @@ export function ResponsiveImage({
   height,
   priority,
 }: ResponsiveImageProps) {
+  // Include full-size variants in srcset for better image quality on larger screens
+  // Using 1280w as the max width to support up to 640px display size on 2x DPR (Retina) displays
+  // This covers the largest display size used in the app (360px) with headroom for high-DPI screens
   const fullBaseSrc = `${BASE_PATH}${baseSrc}`;
-  const avifSrcSet = `${fullBaseSrc}-320.avif 320w, ${fullBaseSrc}-640.avif 640w`;
-  const webpSrcSet = `${fullBaseSrc}-320.webp 320w, ${fullBaseSrc}-640.webp 640w`;
-  const jpgSrcSet = `${fullBaseSrc}-320.jpg 320w, ${fullBaseSrc}-640.jpg 640w`;
+  const createSrcSet = (ext: string) =>
+    `${fullBaseSrc}-320.${ext} 320w, ${fullBaseSrc}-640.${ext} 640w, ${fullBaseSrc}.${ext} 1280w`;
 
   return (
     <picture>
-      <source type="image/avif" srcSet={avifSrcSet} sizes={sizes} />
-      <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
+      <source type="image/avif" srcSet={createSrcSet("avif")} sizes={sizes} />
+      <source type="image/webp" srcSet={createSrcSet("webp")} sizes={sizes} />
       <img
-        src={`${fullBaseSrc}-640.jpg`}
-        srcSet={jpgSrcSet}
+        src={`${fullBaseSrc}.jpg`}
+        srcSet={createSrcSet("jpg")}
         sizes={sizes}
         alt={alt}
         width={width}

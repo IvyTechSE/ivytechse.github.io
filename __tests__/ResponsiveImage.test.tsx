@@ -53,4 +53,25 @@ describe("ResponsiveImage", () => {
     render(<ResponsiveImage {...defaultProps} className="my-class" />);
     expect(screen.getByRole("img")).toHaveClass("my-class");
   });
+
+  it("includes 320w, 640w, and 1280w variants in srcset", () => {
+    const { container } = render(<ResponsiveImage {...defaultProps} />);
+    const img = container.querySelector("img");
+    const srcSet = img?.getAttribute("srcset");
+    expect(srcSet).toContain("320w");
+    expect(srcSet).toContain("640w");
+    expect(srcSet).toContain("1280w");
+  });
+
+  it("includes full-size variants (no size suffix) in srcset for high-DPI displays", () => {
+    const { container } = render(
+      <ResponsiveImage {...defaultProps} baseSrc="/images/test" />,
+    );
+    const sources = container.querySelectorAll("source");
+    const avifSource = Array.from(sources).find(
+      (s) => s.getAttribute("type") === "image/avif",
+    );
+    const srcSet = avifSource?.getAttribute("srcset");
+    expect(srcSet).toContain("/images/test.avif 1280w");
+  });
 });

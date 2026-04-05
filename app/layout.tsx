@@ -10,15 +10,37 @@ const sora = Sora({ subsets: ["latin"], display: "swap" });
 
 const organizationLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   name: site.name,
   url: site.url,
   logo: `${site.url}/images/ivy-logo-black.svg`,
   email: "hello@ivytech.se",
+  sameAs: [
+    "https://www.linkedin.com/company/ivy-technology-se",
+    "https://github.com/IvyTechSE",
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Göteborg",
-    addressCountry: "Sverige",
+    addressRegion: "Västra Götaland",
+    addressCountry: "SE",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Sweden",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@ivytech.se",
+    contactType: "customer service",
+  },
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Göteborg",
+      addressCountry: "SE",
+    },
   },
 };
 

@@ -15,11 +15,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/build
+      - uses: actions/checkout@v4  # Required by JamesIves/github-pages-deploy-action for git context
+      - uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: out/
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages

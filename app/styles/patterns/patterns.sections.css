@@ -450,4 +450,10 @@
   .nav-list a {
     padding: 0.55rem 0.75rem;
   }
+
+  .contact-button {
+    max-width: none;
+    width: 100%;
+    padding-inline: 1.6rem;
+  }
 }

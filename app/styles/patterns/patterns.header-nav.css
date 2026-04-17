@@ -85,6 +85,7 @@
   border-radius: 999px;
   padding: 0.55rem 0.9rem;
   font-weight: 700;
+  white-space: nowrap;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -129,11 +130,14 @@
     right: 0;
     width: 100%;
     box-sizing: border-box;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     z-index: 999;
     background: rgba(var(--sand-rgb), 0.98);
     border: 1px solid rgba(var(--onyx-rgb), 0.08);
     box-shadow: var(--shadow);
+    max-height: calc(100dvh - 6rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .nav-list--mobile[hidden] {
@@ -141,7 +145,7 @@
   }
 
   .nav-top {
-    position: static;
+    position: relative;
   }
 
   .nav-contact {
@@ -152,6 +156,21 @@
   .contact-nav-button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .nav-top {
+    justify-content: flex-start;
+  }
+
+  .menu-toggle {
+    justify-self: start;
   }
 }
 

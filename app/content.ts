@@ -121,24 +121,6 @@ export const team = [
     photoBase: "/images/team/oscar-berntsson",
   },
   {
-    name: "Ylva Pyykkö",
-    role: "Systemutvecklare",
-    intro:
-      "Bygger robusta, skalbara system med fokus på hållbarhet och kvalitet i varje steg.",
-    email: "ylva.pyykko@ivytech.se",
-    linkedin: "https://www.linkedin.com/in/ylva-pyykk%C3%B6-105ba32/",
-    photoBase: "/images/team/ylva-pyykko",
-  },
-  {
-    name: "Joakim Larsson",
-    role: "Frontendutvecklare & Tillgänglighetsexpert",
-    intro:
-      "Bygger tillgängliga, responsiva gränssnitt med fokus på användarupplevelse och WCAG.",
-    email: "joakim.larsson@ivytech.se",
-    linkedin: "https://www.linkedin.com/in/joakimlarsson92/",
-    photoBase: "/images/team/joakim-larsson",
-  },
-  {
     name: "Mikael Törnered",
     role: "Systemutvecklare",
     intro:
@@ -146,6 +128,15 @@ export const team = [
     email: "mikael.tornered@ivytech.se",
     linkedin: "https://www.linkedin.com/in/mikael-t%C3%B6rnered-b56b4b13/",
     photoBase: "/images/team/mikael-tornered",
+  },
+  {
+    name: "Ylva Pyykkö",
+    role: "Systemutvecklare",
+    intro:
+      "Bygger robusta, skalbara system med fokus på hållbarhet och kvalitet i varje steg.",
+    email: "ylva.pyykko@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/ylva-pyykk%C3%B6-105ba32/",
+    photoBase: "/images/team/ylva-pyykko",
   },
 ];
 

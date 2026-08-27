@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Överlämning — ivytech.se</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Tokens ─────────────────────────────────────────────────────────────
+   Färgerna är sajtens egna (README "Key colors"). --forest-lift är en
+   framtagen ljusare ton av Forest, enbart för text mot mörk botten där
+   #596e5c inte når kontrastkravet. */
+:root{
+  --onyx:#1C1C1B;
+  --midnight:#2E333A;
+  --sand:#F1EADA;
+  --stone:#E2E2DE;
+  --forest:#596e5c;
+  --forest-ink:#4a5c4d;
+  --forest-lift:#9cb39e;
+
+  --ink:var(--midnight);
+  --ink-soft:#5d646d;
+  --rule:#d8cfbc;
+  --rule-strong:#857b6d;
+  --paper:var(--sand);
+  --card:#e9e0cd;
+
+  --rail:300px;
+  --measure:44rem;
+
+  --sora:'Sora',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sora);
+  font-weight:300;
+  font-size:clamp(.98rem,.42vw + .88rem,1.06rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ─── Rail ─────────────────────────────────────────────────────────────── */
+.rail{
+  position:fixed;
+  inset:0 auto 0 0;
+  width:var(--rail);
+  background:var(--onyx);
+  color:var(--stone);
+  padding:2.6rem 1.9rem;
+  display:flex;
+  flex-direction:column;
+  gap:2.2rem;
+  overflow-y:auto;
+  z-index:10;
+}
+.rail-mark{
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--forest-lift);
+}
+.rail-repo{
+  margin:.75rem 0 0;
+  font-family:var(--mono);
+  font-size:.72rem;
+  line-height:1.5;
+  color:#8d8a84;
+  word-break:break-all;
+}
+.rail-nav{display:flex;flex-direction:column;gap:.1rem}
+.rail-link{
+  display:flex;
+  align-items:baseline;
+  gap:.7rem;
+  padding:.42rem 0;
+  color:#a8a5a0;
+  text-decoration:none;
+  font-size:.86rem;
+  border-bottom:1px solid rgba(241,234,218,.07);
+  transition:color .18s ease;
+}
+.rail-link:last-child{border-bottom:0}
+.rail-link:hover{color:var(--sand)}
+.rail-link.is-here{color:var(--sand);font-weight:600}
+.rail-link.is-here .rail-dot{background:var(--forest-lift);transform:scale(1)}
+.rail-dot{
+  flex:0 0 auto;
+  width:5px;height:5px;
+  margin-bottom:.15em;
+  border-radius:50%;
+  background:#767268;
+  transform:scale(.7);
+  transition:background .18s ease,transform .18s ease;
+}
+.rail-foot{
+  margin-top:auto;
+  font-size:.72rem;
+  line-height:1.6;
+  color:#9a968f;
+}
+.rail-foot strong{color:var(--stone);font-weight:600}
+
+/* ─── Field ────────────────────────────────────────────────────────────── */
+.field{margin-left:var(--rail);padding:0 clamp(1.5rem,5vw,5.5rem)}
+.wrap{max-width:var(--measure);margin:0 auto}
+
+/* ─── Hero ─────────────────────────────────────────────────────────────── */
+.hero{padding:clamp(4rem,11vh,8.5rem) 0 clamp(3rem,7vh,5rem)}
+.eyebrow{
+  margin:0;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--forest-ink);
+}
+.hero-title{
+  margin:1.4rem 0 0;
+  font-size:clamp(2.9rem,7.5vw,5.1rem);
+  font-weight:200;
+  line-height:.98;
+  letter-spacing:-.035em;
+}
+.hero-title em{font-style:normal;font-weight:600;color:var(--forest)}
+.hero-lede{
+  margin:1.9rem 0 0;
+  max-width:34rem;
+  font-size:clamp(1.05rem,.6vw + .95rem,1.22rem);
+  line-height:1.55;
+  color:var(--ink-soft);
+}
+.hero-meta{
+  margin:2.6rem 0 0;
+  padding-top:1.2rem;
+  border-top:1px solid var(--rule);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem 2.2rem;
+  font-family:var(--mono);
+  font-size:.75rem;
+  color:var(--ink-soft);
+}
+
+/* ─── Diff (signaturkort i hero) ───────────────────────────────────────── */
+.diff{
+  margin:2.8rem 0 0;
+  background:var(--onyx);
+  border-radius:3px;
+  overflow:hidden;
+  font-family:var(--mono);
+  font-size:.76rem;
+  line-height:1.85;
+}
+.diff-bar{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.7rem 1.1rem;
+  background:#141413;
+  color:#8d8a84;
+  font-size:.7rem;
+  letter-spacing:.04em;
+}
+.diff-body{padding:.9rem 0;overflow-x:auto}
+.diff-row{padding:0 1.1rem;color:#8d8a84;white-space:pre}
+.diff-row.is-out{background:rgba(241,234,218,.05);color:#8f8c86}
+.diff-row.is-in{background:rgba(89,110,92,.26);color:var(--sand)}
+.diff-sign{display:inline-block;width:1.1em;color:var(--forest-lift);text-decoration:none}
+.is-out .diff-sign{color:#9a968f}
+
+/* ─── Sections ─────────────────────────────────────────────────────────── */
+.sec{padding:clamp(3rem,7vh,5rem) 0;border-top:1px solid var(--rule)}
+.sec-head{margin:0 0 2rem}
+.sec-title{
+  margin:.8rem 0 0;
+  font-size:clamp(1.6rem,2.6vw,2.15rem);
+  font-weight:300;
+  line-height:1.15;
+  letter-spacing:-.022em;
+}
+.sec-sub{margin:.85rem 0 0;max-width:36rem;color:var(--ink-soft)}
+.sec p{margin:0 0 1.1rem}
+.sec p:last-child{margin-bottom:0}
+.sec a{color:var(--forest-ink);text-decoration-thickness:1px;text-underline-offset:.18em}
+
+code{
+  font-family:var(--mono);
+  font-size:.86em;
+  background:var(--card);
+  padding:.12em .38em;
+  border-radius:2px;
+  word-break:break-word;
+}
+.code-plain{background:none;color:inherit;padding:0}
+strong{font-weight:600}
+
+/* ─── Facts ────────────────────────────────────────────────────────────── */
+.facts{margin:0;display:grid;gap:0}
+.fact{
+  display:grid;
+  grid-template-columns:9.5rem minmax(0,1fr);
+  gap:.4rem 1.4rem;
+  padding:.85rem 0;
+  border-bottom:1px solid var(--rule);
+}
+.fact:first-child{border-top:1px solid var(--rule)}
+.fact-key{
+  font-size:.7rem;
+  font-weight:700;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  color:var(--forest-ink);
+  padding-top:.28em;
+}
+.fact-val{margin:0}
+.fact-val small{display:block;margin-top:.2rem;font-size:.82rem;color:var(--ink-soft)}
+
+/* ─── Callout ──────────────────────────────────────────────────────────── */
+.note{
+  margin:1.8rem 0;
+  padding:1.25rem 1.4rem;
+  background:var(--card);
+  border-left:3px solid var(--forest);
+  border-radius:0 3px 3px 0;
+}
+.note-tag{
+  margin:0 0 .5rem;
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--forest-ink);
+}
+.note p{margin:0 0 .7rem}
+.note p:last-child{margin-bottom:0}
+.note:last-child{margin-bottom:0}
+
+/* ─── Branchdiagram (signatur) ─────────────────────────────────────────── */
+.branches{margin:1.8rem 0 0;display:flex;flex-direction:column;gap:.2rem}
+.branch{
+  display:grid;
+  grid-template-columns:5.2rem minmax(0,1fr) auto;
+  align-items:center;
+  gap:.9rem;
+  padding:.7rem 0;
+}
+.branch-name{
+  font-family:var(--mono);
+  font-size:.8rem;
+  color:var(--ink);
+}
+.branch-track{height:1.55rem;display:flex;align-items:center}
+.branch-line{
+  height:2px;
+  background:var(--rule-strong);
+  border-radius:2px;
+  position:relative;
+}
+.branch-line::after{
+  content:"";
+  position:absolute;
+  right:-4px;top:50%;
+  width:9px;height:9px;
+  margin-top:-4.5px;
+  border-radius:50%;
+  background:var(--paper);
+  border:2px solid var(--rule-strong);
+}
+.branch-tag{
+  font-family:var(--mono);
+  font-size:.7rem;
+  color:var(--ink-soft);
+  text-align:right;
+}
+.branch.is-live .branch-name{font-weight:600;color:var(--forest-ink)}
+.branch.is-live .branch-line{background:var(--forest);height:3px}
+.branch.is-live .branch-line::after{background:var(--forest);border-color:var(--forest-ink);width:11px;height:11px;margin-top:-5.5px}
+.branch.is-live .branch-tag{color:var(--forest-ink);font-weight:600}
+.branch-scale{
+  margin:.5rem 0 0;
+  padding-left:6.1rem;
+  font-family:var(--mono);
+  font-size:.68rem;
+  color:var(--ink-soft);
+}
+
+/* ─── Flow ─────────────────────────────────────────────────────────────── */
+.flow{margin:1.6rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.flow-step{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:.9rem;
+  align-items:baseline;
+  padding:.7rem 1rem;
+  background:var(--card);
+  border-radius:3px;
+  font-size:.92rem;
+}
+.flow-step code{background:rgba(28,28,27,.07)}
+.flow-arrow{
+  font-family:var(--mono);
+  color:var(--forest-ink);
+  font-size:.85rem;
+}
+
+/* ─── Ordered runbook (numrering bär information här) ──────────────────── */
+.run{margin:1.6rem 0 0;padding:0;list-style:none;counter-reset:run}
+.run > li{
+  counter-increment:run;
+  display:grid;
+  grid-template-columns:2.4rem minmax(0,1fr);
+  gap:.3rem 1rem;
+  padding:1.05rem 0;
+  border-top:1px solid var(--rule);
+}
+.run > li:last-child{border-bottom:1px solid var(--rule)}
+.run > li::before{
+  content:counter(run,decimal-leading-zero);
+  font-family:var(--mono);
+  font-size:.78rem;
+  font-weight:400;
+  color:var(--forest-ink);
+  padding-top:.22em;
+}
+.run > li > div{min-width:0}
+.run-title{margin:0 0 .35rem;font-weight:600;font-size:1rem}
+.run-body{margin:0;font-size:.94rem;color:var(--ink-soft)}
+.run-body + .run-body{margin-top:.5rem}
+
+pre{
+  margin:.8rem 0 0;
+  padding:.95rem 1.1rem;
+  background:var(--onyx);
+  color:var(--stone);
+  border-radius:3px;
+  font-family:var(--mono);
+  font-size:.76rem;
+  line-height:1.75;
+  overflow-x:auto;
+  white-space:pre;
+}
+pre .cmt{color:#93908a}
+pre .out{color:var(--forest-lift)}
+
+/* ─── Tasks ────────────────────────────────────────────────────────────── */
+.tasks{margin:1.6rem 0 0;padding:0;list-style:none;display:grid;gap:.5rem}
+.tasks li{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:.85rem;
+  align-items:start;
+  padding:.8rem 1rem;
+  border:1px solid var(--rule);
+  border-radius:3px;
+  font-size:.94rem;
+}
+.tasks li::before{
+  content:"";
+  width:.85rem;height:.85rem;
+  margin-top:.36em;
+  border:1.5px solid var(--forest);
+  border-radius:2px;
+}
+
+/* ─── Close ────────────────────────────────────────────────────────────── */
+.close{
+  margin-left:var(--rail);
+  padding:clamp(3rem,7vh,4.5rem) clamp(1.5rem,5vw,5.5rem);
+  background:var(--onyx);
+  color:var(--stone);
+}
+.close .wrap{max-width:var(--measure)}
+.close-title{
+  margin:.9rem 0 0;
+  font-size:clamp(1.5rem,2.4vw,2rem);
+  font-weight:200;
+  letter-spacing:-.02em;
+  color:var(--sand);
+}
+.close p{margin:1rem 0 0;color:#a8a5a0;max-width:34rem}
+.close .eyebrow{color:var(--forest-lift)}
+.close code{background:rgba(241,234,218,.1);color:var(--sand)}
+
+/* ─── Reveal ───────────────────────────────────────────────────────────── */
+.rise{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;transition-delay:var(--delay,0ms)}
+.rise.is-in{opacity:1;transform:none}
+
+:focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:2px}
+.rail :focus-visible{outline-color:var(--forest-lift)}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;padding:.6rem 1rem;background:var(--sand);color:var(--onyx);border-radius:3px}
+
+/* ─── Mobil ────────────────────────────────────────────────────────────── */
+@media (max-width:900px){
+  :root{--rail:0px}
+  .rail{
+    position:static;
+    width:auto;
+    padding:1.8rem 1.5rem;
+    gap:1.2rem;
+    overflow:visible;
+  }
+  .rail-foot{margin-top:0}
+  .rail-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:0 1.2rem}
+  .field,.close{margin-left:0}
+  .fact{grid-template-columns:1fr}
+  .fact-key{padding-top:0}
+  .branch{grid-template-columns:1fr;gap:.3rem}
+  .branch-scale{padding-left:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .rise{opacity:1;transform:none;transition:none}
+  *{scroll-behavior:auto!important}
+}
+
+@media print{
+  .rail{position:static;width:auto}
+  .field,.close{margin-left:0}
+  .close{background:#fff;color:#000}
+  .rise{opacity:1;transform:none}
+  .sec{break-inside:avoid}
+  body{background:#fff;font-size:10pt}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#innehall">Hoppa till innehållet</a>
+
+<nav class="rail" aria-label="Innehåll">
+  <div>
+    <p class="rail-mark">Överlämning</p>
+    <p class="rail-repo">IvyTechSE/<wbr>ivytechse.github.io</p>
+  </div>
+
+  <div class="rail-nav">
+    <a class="rail-link" href="#vad"><span class="rail-dot" aria-hidden="true"></span>Vad det är</a>
+    <a class="rail-link" href="#content"><span class="rail-dot" aria-hidden="true"></span>content.ts</a>
+    <a class="rail-link" href="#bilder"><span class="rail-dot" aria-hidden="true"></span>Bilder</a>
+    <a class="rail-link" href="#brancher"><span class="rail-dot" aria-hidden="true"></span>Branch-läget</a>
+    <a class="rail-link" href="#cicd"><span class="rail-dot" aria-hidden="true"></span>Bygg och deploy</a>
+    <a class="rail-link" href="#oppet"><span class="rail-dot" aria-hidden="true"></span>Öppet arbete</a>
+    <a class="rail-link" href="#agande"><span class="rail-dot" aria-hidden="true"></span>Ägande utanför koden</a>
+    <a class="rail-link" href="#vecka"><span class="rail-dot" aria-hidden="true"></span>Första veckan</a>
+    <a class="rail-link" href="#runbook"><span class="rail-dot" aria-hidden="true"></span>Runbook: byta person</a>
+  </div>
+
+  <div class="rail-foot">
+    <strong>Läget 2026-08-26.</strong><br>
+    <code class="code-plain">main</code> senast rörd 2026-04-01.
+  </div>
+</nav>
+
+<main class="field" id="innehall" tabindex="-1">
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow rise">ivytech.se · statisk Next.js-export</p>
+      <h1 class="hero-title rise" style="--delay:70ms">Sajten är<br>en <em>fil</em>.</h1>
+      <p class="hero-lede rise" style="--delay:140ms">
+        Nästan all text, alla tjänster och hela teamet bor i <code>app/content.ts</code>.
+        Komponenterna renderar bara det som står där. Förstår ni den filen har ni förstått
+        90&nbsp;% av sajten — och den här överlämningen börjar bokstavligen som en ändring i den.
+      </p>
+
+      <div class="diff rise" style="--delay:210ms" role="figure" aria-label="Diff i app/content.ts som tar bort en teammedlem och lägger till en ny">
+        <div class="diff-bar">
+          <span>app/content.ts</span>
+          <span>team[]</span>
+        </div>
+        <div class="diff-body">
+<div class="diff-row"><span class="diff-sign" aria-hidden="true"> </span>export const team = [</div>
+<div class="diff-row"><span class="diff-sign" aria-hidden="true"> </span>  …</div>
+<div class="diff-row is-out"><span class="diff-sign">-</span>  { name: "Joakim Larsson",</div>
+<div class="diff-row is-out"><span class="diff-sign">-</span>    role: "Frontendutvecklare &amp; Tillgänglighetsexpert",</div>
+<div class="diff-row is-out"><span class="diff-sign">-</span>    photoBase: "/images/team/joakim-larsson" },</div>
+<div class="diff-row is-in"><span class="diff-sign">+</span>  { name: "Ny kollega",</div>
+<div class="diff-row is-in"><span class="diff-sign">+</span>    role: "…",</div>
+<div class="diff-row is-in"><span class="diff-sign">+</span>    photoBase: "/images/team/…" },</div>
+<div class="diff-row"><span class="diff-sign" aria-hidden="true"> </span>];</div>
+        </div>
+      </div>
+
+      <p class="hero-meta rise" style="--delay:280ms">
+        <span>Next.js 14.2.35</span>
+        <span>React 18.3.1</span>
+        <span>GitHub Pages</span>
+        <span>7 personer i teamet</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="sec" id="vad" aria-labelledby="vad-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Orientering</p>
+        <h2 class="sec-title" id="vad-t">Vad det är</h2>
+        <p class="sec-sub">
+          En statisk sajt utan server, utan databas och utan runtime att övervaka.
+          Det som kan gå sönder är bygget eller deployen — aldrig sajten mitt i natten.
+        </p>
+      </div>
+
+      <dl class="facts rise" style="--delay:70ms">
+        <div class="fact">
+          <dt class="fact-key">Sajt</dt>
+          <dd class="fact-val">ivytech.se — publik marknadssajt, en startsida plus <code>/tjanster/</code> och <code>/om-ivy/</code>
+          <small>Domänen pekas mot GitHub Pages. <code>CNAME</code> och <code>public/CNAME</code> i repot måste båda innehålla domänen.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">Ramverk</dt>
+          <dd class="fact-val">Next.js 14 App Router med <code>output: 'export'</code>
+          <small>Bygget spottar ut ren HTML i <code>out/</code>. Inga serverkomponenter med runtime, inga API-routes, ingen ISR.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">Hosting</dt>
+          <dd class="fact-val">GitHub Pages från branchen <code>gh-pages</code>
+          <small><code>gh-pages</code> är en byggartefakt. Committa aldrig dit för hand.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">CSS</dt>
+          <dd class="fact-val">Egen CSS i <code>app/styles/</code>, inget ramverk
+          <small>Lagerindelad: <code>config/</code> (tokens, media queries) → <code>base/</code> → <code>elements/</code> → <code>patterns/</code>. Lägg nya sektionsstilar i <code>patterns/</code>.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">Bilder</dt>
+          <dd class="fact-val">Egen <code>ResponsiveImage</code>, inte <code>next/image</code>
+          <small><code>images.unoptimized: true</code> — statisk export kan inte optimera bilder. Varianter genereras i förväg med ffmpeg.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">Test</dt>
+          <dd class="fact-val">Jest + Testing Library i <code>__tests__/</code>
+          <small><code>npm test</code>. Testerna är strukturella — de kontrollerar att fält finns, inte vilka namn eller hur många.</small></dd>
+        </div>
+        <div class="fact">
+          <dt class="fact-key">Tillgänglighet</dt>
+          <dd class="fact-val">Uttalat mål: WCAG 2.2 AA
+          <small><code>eslint-plugin-jsx-a11y</code> i linten, Lighthouse i CI, <code>prefers-reduced-motion</code> respekteras. Det här är en säljpunkt för Ivy — låt det inte glida.</small></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="content" aria-labelledby="content-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Den enda filen som spelar roll</p>
+        <h2 class="sec-title" id="content-t">app/content.ts</h2>
+        <p class="sec-sub">
+          Allt innehåll ligger som exporterade objekt och arrayer. Komponenterna importerar
+          och renderar. Ingen text är hårdkodad i JSX.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <p>
+          Exporterna är <code>navItems</code>, <code>site</code>, <code>hero</code>,
+          <code>servicesSectionIntro</code>, <code>servicesPageHero</code>, <code>services</code>,
+          <code>steps</code>, <code>approachIntro</code>, <code>team</code>, <code>teamIntro</code>,
+          <code>workShowcase</code>, <code>contact</code> och <code>teamPageHero</code>.
+        </p>
+        <p>
+          Praktisk konsekvens: <strong>nästan varje förfrågan från Anna eller en kollega — ny formulering,
+          ny tjänst, ny person, ändrad mejladress — är en ändring i den här filen och inget annat.</strong>
+          Det gör sajten ovanligt lätt att underhålla, och det är den viktigaste enskilda saken att
+          ta med sig från den här överlämningen.
+        </p>
+
+        <div class="note">
+          <p class="note-tag">Att känna till</p>
+          <p><code>TeamSection</code> använder <code>person.email</code> som React-nyckel.
+          Mejladressen måste finnas och vara unik, annars får ni renderingsfel.</p>
+          <p>De två första korten i <code>team</code>-arrayen får <code>priority</code> och laddas
+          eagert. Ordningen i arrayen påverkar alltså både laddning och den förskjutna
+          reveal-animationen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="bilder" aria-labelledby="bilder-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Pipeline</p>
+        <h2 class="sec-title" id="bilder-t">Bilder genereras lokalt och committas in</h2>
+        <p class="sec-sub">
+          Det finns ingen bildtjänst. Varianterna skapas på din maskin med ffmpeg och checkas in
+          i repot tillsammans med originalet.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <p>
+          <code>npm run images:variants</code> kör <code>scripts/generate-image-variants.sh</code>,
+          som center-croppar till kvadrat och skriver 320&nbsp;px och 640&nbsp;px i jpg, webp och avif.
+          <code>ResponsiveImage</code> bygger sedan ut <code>photoBase</code> till en
+          <code>&lt;picture&gt;</code> med avif före webp före jpg.
+        </p>
+
+        <ol class="flow" role="list">
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">01</span><span>Lägg <code>fornamn-efternamn.jpg</code> i <code>public/images/team/</code> — gemener, bindestreck, inga å/ä/ö</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">02</span><span><code>npm run images:variants</code> — kräver <code>ffmpeg</code> i PATH</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">03</span><span>Sätt <code>photoBase: "/images/team/fornamn-efternamn"</code> — utan storlek och utan filändelse</span></li>
+        </ol>
+
+        <div class="note">
+          <p class="note-tag">Fällan</p>
+          <p>
+            Skriptet går igenom <strong>alla</strong> jpg-filer under <code>public/images/</code> och
+            skriver över varianterna för hela teamet, inte bara den nya personen. Sist någon lade till
+            en kollega fick det städas upp i efterhand i commit <code>a22c94d</code>.
+          </p>
+          <p>
+            Gör därför alltid <code>git add</code> på bara den nya personens filer och kasta resten med
+            <code>git checkout -- public/images</code>. Sanity-check: en <code>-320.jpg</code> ska
+            ligga runt 15–30&nbsp;kB. Är den 1–2&nbsp;kB har något gått fel i genereringen.
+          </p>
+        </div>
+
+        <p>
+          Namngivningen translittererar bort svenska tecken: <code>Pyykkö</code> blir
+          <code>ylva-pyykko</code>, <code>Törnered</code> blir <code>mikael-tornered</code>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="brancher" aria-labelledby="brancher-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Den viktigaste varningen</p>
+        <h2 class="sec-title" id="brancher-t">Branch-läget ljuger för er</h2>
+        <p class="sec-sub">
+          Det finns tre långlivade brancher. Bara en av dem är levande. Avståndet nedan är
+          uppmätt i faktiska commits efter <code>main</code>.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <div class="branches" role="figure" aria-label="main är default- och deploybranch. develop ligger 46 commits efter main. master ligger 118 commits efter main.">
+          <div class="branch is-live">
+            <span class="branch-name">main</span>
+            <span class="branch-track"><span class="branch-line" style="width:100%"></span></span>
+            <span class="branch-tag">default · deployar</span>
+          </div>
+          <div class="branch">
+            <span class="branch-name">develop</span>
+            <span class="branch-track"><span class="branch-line" style="width:61%"></span></span>
+            <span class="branch-tag">46 commits efter</span>
+          </div>
+          <div class="branch">
+            <span class="branch-name">master</span>
+            <span class="branch-track"><span class="branch-line" style="width:8%"></span></span>
+            <span class="branch-tag">118 commits efter</span>
+          </div>
+        </div>
+        <p class="branch-scale">stapelns längd = hur aktuell branchen är · <code class="code-plain">main</code> = 2026-04-01</p>
+
+        <div class="note">
+          <p class="note-tag">Varför det här biter</p>
+          <p>
+            <code>master</code> och <code>develop</code> är döda kvarlevor men ligger kvar på origin.
+            I en gammal klon kan <code>origin/HEAD</code> dessutom fortfarande peka på
+            <code>master</code>, så <code>git status</code> hälsar med
+            <em>„main branch: master”</em> och verktyg föreslår PR:er mot fel bas.
+          </p>
+          <p>
+            <strong>Åtgärd nu:</strong> radera <code>master</code> och <code>develop</code> på origin.
+            Att låta dem ligga kvar „för säkerhets skull” har inget värde — deras historik finns redan i
+            <code>main</code>, som är en superset av båda.
+          </p>
+        </div>
+
+        <pre><span class="cmt"># fixa den felaktiga pekaren i din egen klon</span>
+git remote set-head origin -a
+
+<span class="cmt"># städa origin när ni är överens</span>
+git push origin --delete master develop</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cicd" aria-labelledby="cicd-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Automatik</p>
+        <h2 class="sec-title" id="cicd-t">Bygg och deploy</h2>
+        <p class="sec-sub">
+          Sex workflows i <code>.github/workflows/</code>. Alla delar samma composite action
+          <code>.github/actions/build</code> som kör Node 22, <code>npm install</code>, lint och build.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <ul class="flow" role="list">
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">→</span><span><strong>deploy.yml</strong> — push till <code>main</code> bygger och publicerar <code>out/</code> till <code>gh-pages</code>. Använder <code>clean-exclude: pr-preview</code> så öppna previews inte raderas.</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">→</span><span><strong>preview.yml</strong> — varje PR får en full preview på <code>ivytech.se/pr-preview/pr-{nr}/</code> och en botkommentar med länken. Katalogen städas automatiskt när PR:en stängs.</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">→</span><span><strong>ci.yml</strong> och <strong>test.yml</strong> — lint, build och Jest på PR.</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">→</span><span><strong>codeql.yml</strong> — säkerhetsanalys av JS/TS.</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">→</span><span><strong>lighthouse.yml</strong> — prestanda och tillgänglighet enligt <code>.lighthouserc.js</code>.</span></li>
+        </ul>
+
+        <p style="margin-top:1.6rem">
+          Previewfunktionen är den bästa vanan i det här repot: <strong>merga aldrig en
+          innehållsändring utan att ha tittat på previewen först.</strong> Det kostar två minuter och
+          fångar felstavade namn, trasiga bilder och sneda croppar innan de går live.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="oppet" aria-labelledby="oppet-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Läget i backloggen</p>
+        <h2 class="sec-title" id="oppet-t">14 öppna PR:er — alla från bottar</h2>
+        <p class="sec-sub">
+          Tolv från GitHubs Copilot-agent och två från Dependabot. Noll från människor.
+          Dessutom tolv öppna issues, i stort sett parvis kopplade till Copilot-PR:erna.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <p>
+          Copilot-PR:erna handlar mest om SEO och infrastruktur: JSON-LD för
+          <code>Organization</code>, <code>Service</code>, <code>Person</code> och
+          <code>BreadcrumbList</code>, saknade tjänsteundersidor, härdade Actions-permissions,
+          branch protection och bundle-size-checkar. Flera är gamla nog att ha konflikter.
+        </p>
+
+        <div class="note">
+          <p class="note-tag">Rekommendation</p>
+          <p>
+            Beta av eller stäng hela högen tidigt. En PR-lista med fjorton oöverblickbara
+            bot-PR:er leder till att ingen tittar på PR-listan alls — och då missar ni den dagen en
+            riktig PR dyker upp.
+          </p>
+          <p>
+            <strong>PR #77 bumpar Next 14.2.35 → 15.5.18.</strong> Det är en major-uppgradering som
+            någon måste äga aktivt, inte bara godkänna. Bestäm vem av er två som gör den, och gör den
+            som ett eget spår med preview och Lighthouse-jämförelse.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="agande" aria-labelledby="agande-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Det som inte är kod</p>
+        <h2 class="sec-title" id="agande-t">Ägande som måste byta händer</h2>
+        <p class="sec-sub">
+          Koden är det enkla. Det här är sådant som bara går att lämna över medan jag fortfarande
+          har åtkomst.
+        </p>
+      </div>
+
+      <ul class="tasks rise" role="list" style="--delay:70ms">
+        <li><span><strong>Domänen ivytech.se</strong> — vem äger registraren, och vem kan ändra DNS-posten som pekar mot GitHub Pages?</span></li>
+        <li><span><strong>GitHub-orgen IvyTechSE</strong> — säkerställ minst två org-owners kvar efter mig. En enda owner är en enskild felkälla för hela sajten.</span></li>
+        <li><span><strong>Umami Cloud</strong> — sajten skickar besöksstatistik till <code>cloud.umami.is</code> (website-ID finns dokumenterat i README). Kontot bakom behöver en ny ägare.</span></li>
+        <li><span><strong><code>public/.well-known/security.txt</code></strong> — har ett utgångsdatum som måste förnyas, annars blir filen ogiltig. Sätt en påminnelse.</span></li>
+        <li><span><strong><code>CLAUDE.md</code> och <code>docs/agents/</code></strong> — finns i dag <em>bara</em> i min lokala klon, ocommittade. Antingen checkas de in innan jag går, eller så försvinner de.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="vecka" aria-labelledby="vecka-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Konkret ordning</p>
+        <h2 class="sec-title" id="vecka-t">Första veckan</h2>
+        <p class="sec-sub">
+          Numreringen är en faktisk sekvens — varje steg gör nästa lättare.
+        </p>
+      </div>
+
+      <ol class="run rise" role="list" style="--delay:70ms">
+        <li>
+          <div>
+            <p class="run-title">Klona färskt och verifiera att ni kan bygga</p>
+            <p class="run-body">Inte en kopia av min klon. <code>npm install && npm run lint && npm test && npm run build</code> ska gå igenom rent hos er båda innan något annat.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="run-title">Städa brancherna</p>
+            <p class="run-body">Radera <code>master</code> och <code>develop</code>. Gör det först — annars kommer varje senare misstag i veckan att gå att skylla på fel bas.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="run-title">Gör en liten ändring hela vägen till produktion</p>
+            <p class="run-body">Rätta en formulering i <code>content.ts</code>, öppna PR, titta på previewen, merga, se den gå live. Nu har ni sett hela kedjan och behöver aldrig gissa hur den fungerar.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="run-title">Säkra åtkomsterna</p>
+            <p class="run-body">Gå igenom listan under <em>Ägande utanför koden</em> med Anna medan jag är kvar och kan svara.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="run-title">Töm PR-högen</p>
+            <p class="run-body">Merga, stäng eller boka in de fjorton bot-PR:erna. Bestäm vem som äger Next 15-uppgraderingen.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class="run-title">Bestäm vem som är förstajour för sajten</p>
+            <p class="run-body">Två utvecklare utan utpekad ägare blir noll utvecklare när Anna behöver en textändring på fredag eftermiddag. Dela upp eller turas om — men bestäm.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="runbook" aria-labelledby="runbook-t">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <p class="eyebrow">Runbook</p>
+        <h2 class="sec-title" id="runbook-t">Byta en person i teamet</h2>
+        <p class="sec-sub">
+          Det första ni kommer att göra: ta bort mig och lägga in den nya kollegan.
+          Gör båda i samma PR, så visar previewen hela nya teamsektionen på en gång.
+        </p>
+      </div>
+
+      <div class="rise" style="--delay:70ms">
+        <p>
+          Bra utgångsläge: jag förekommer <strong>bara i <code>app/content.ts</code></strong> plus mina
+          bildfiler. Testerna är generiska, så inget testfall behöver ändras.
+        </p>
+
+        <ol class="run" role="list">
+          <li>
+            <div>
+              <p class="run-title">Utgå från rätt kod</p>
+              <pre>git fetch origin
+git switch -c team/personbyte origin/main
+npm install</pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">Ta bort profilen</p>
+              <p class="run-body">Radera hela objektet <code>{ name: "Joakim Larsson", … }</code> ur <code>team</code>-arrayen i <code>app/content.ts</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">Ta bort bildfilerna</p>
+              <pre>git rm public/images/team/joakim-larsson*   <span class="out"># 9 filer</span></pre>
+              <p class="run-body">Bilderna finns kvar i git-historiken efteråt. Ska de bort helt krävs en history rewrite på ett publikt repo — separat beslut, inte en del av det här.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">Lägg in porträttet och generera varianter</p>
+              <pre>cp portratt.jpg public/images/team/fornamn-efternamn.jpg
+npm run images:variants
+git add public/images/team/fornamn-efternamn*
+git checkout -- public/images   <span class="cmt"># kasta omgenererat för övriga</span></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">Lägg till profilen</p>
+              <p class="run-body">Nytt objekt sist i <code>team</code> med <code>name</code>, <code>role</code>, <code>intro</code> på svenska, <code>email</code>, <code>linkedin</code> och <code>photoBase</code>.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">Verifiera</p>
+              <pre>npm run lint && npm test && npm run build
+npm run dev   <span class="cmt"># kontrollera /om-ivy/</span></pre>
+            </div>
+          </li>
+          <li>
+            <div>
+              <p class="run-title">PR, preview, merge</p>
+              <p class="run-body">Botten kommenterar preview-URL:en. Granska den, merga till <code>main</code>, och deployen publicerar inom några minuter.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="close">
+  <div class="wrap">
+    <p class="eyebrow">Sista ordet</p>
+    <h2 class="close-title">Sajten är enkel. Håll den så.</h2>
+    <p>
+      Det finns ingen server att vakta och ingen databas att migrera. Frestelsen kommer att vara att
+      lägga till ett CMS, ett komponentbibliotek eller ett designsystem. Låt bli så länge
+      <code>content.ts</code> räcker — och den räcker längre än ni tror.
+    </p>
+    <p>
+      Frågor går till mig så länge jag är kvar. Ta dem hellre nu än i oktober.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Staggered reveal — samma idé som sajtens egna reveal-on-scroll */
+  var rises = document.querySelectorAll('.rise');
+  if (reduce || !('IntersectionObserver' in window)) {
+    rises.forEach(function(el){ el.classList.add('is-in'); });
+  } else {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('is-in'); ro.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    rises.forEach(function(el){ ro.observe(el); });
+  }
+
+  /* Scroll-spy i railen */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail-link'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+
+  function mark(i){
+    links.forEach(function(a, n){
+      var on = n === i;
+      a.classList.toggle('is-here', on);
+      if (on) { a.setAttribute('aria-current','location'); } else { a.removeAttribute('aria-current'); }
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) mark(targets.indexOf(e.target));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    targets.forEach(function(t){ if (t) so.observe(t); });
+  }
+
+  if (!reduce) document.documentElement.style.scrollBehavior = 'smooth';
+})();
+</script>
+
+</body>
+</html>

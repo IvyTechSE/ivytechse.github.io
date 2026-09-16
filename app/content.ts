@@ -94,6 +94,15 @@ export const team = [
     photoBase: "/images/team/jesper-dahlbeck",
   },
   {
+    name: "Joakim Gyllstedt",
+    role: "Systemarkitekt",
+    intro:
+      "Utvecklar robusta, skalbara lösningar med fokus på kvalitet och användarupplevelse.",
+    email: "joakim.gyllstedt@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/joakimgyllstedt/",
+    photoBase: "/images/team/joakim-gyllstedt",
+  },
+  {
     name: "Joel Karlsson",
     role: "Systemutvecklare",
     intro:

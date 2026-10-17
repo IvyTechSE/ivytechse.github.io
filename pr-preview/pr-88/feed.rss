@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ivy Technology</title>
+    <link>https://ivytech.se/</link>
+    <description>Ivy Technology bygger digitala produkter från idé till drift – strategi, design och engineering med stark kompetens inom systemarkitektur, systemutveckling och tillgänglighet.</description>
+    <language>sv</language>
+    <atom:link href="https://ivytech.se/feed.rss" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Ivy Technology - Kompetens bygger lösningar, människor bygger värde</title>
+      <link>https://ivytech.se/</link>
+      <description>Vi är nyfikna systemutvecklare som älskar teknik, men vi gillar människor ännu mer. Vi jobbar nära er, som en del av teamet, för att lösa riktiga problem och skapa smarta digitala lösningar.</description>
+      <guid isPermaLink="true">https://ivytech.se/</guid>
+    </item>
+    
+    <item>
+      <title>Våra tjänster - Vi tar ansvar från idé till drift</title>
+      <link>https://ivytech.se/tjanster/</link>
+      <description>Vi kliver in där det gör verklig skillnad. När arkitekturen behöver bli tydlig, utvecklingen behöver tempo eller när AI ska användas på riktigt i vardagen. Vi tar ansvar hela vägen, från första beslut till stabil drift, alltid i nära samarbete med era team.</description>
+      <guid isPermaLink="true">https://ivytech.se/tjanster/</guid>
+    </item>
+    
+    <item>
+      <title>Vårt gäng - Människorna bakom lösningarna</title>
+      <link>https://ivytech.se/om-ivy/</link>
+      <description>Vi är människor som håller ihop och värnar om ett arbetssätt där välmående, utveckling och kvalitet får ta plats. Hos oss hittar du en trygg gemenskap där nyfikenhet och omtanke skapar förutsättningar för riktigt bra arbete.</description>
+      <guid isPermaLink="true">https://ivytech.se/om-ivy/</guid>
+    </item>
+  </channel>
+</rss>

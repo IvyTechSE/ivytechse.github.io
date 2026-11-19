@@ -1,14 +1,41 @@
 "use client";
 
+import { useSyncExternalStore } from "react";
 import { hero, team } from "../content";
 import { ResponsiveImage } from "./ResponsiveImage";
 
+const withPhotos = team.filter((person) => person.photoBase);
+
+// Prerendered HTML and hydration use the content order; the browser then
+// switches to a random order picked once per page load. Keeping the two
+// separate avoids a hydration mismatch.
+let clientOrder: typeof withPhotos | undefined;
+
+function shuffle<T>(items: readonly T[]): T[] {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+function getClientOrder() {
+  clientOrder ??= shuffle(withPhotos);
+  return clientOrder;
+}
+
+function getServerOrder() {
+  return withPhotos;
+}
+
+function subscribe() {
+  return () => {};
+}
+
 export function HeroSection() {
-  const withPhotos = team.filter((person) => person.photoBase);
-  // TODO: shuffle after mount instead; this renders differently on server and client.
-  // eslint-disable-next-line react-hooks/purity
-  const shuffled = [...withPhotos].sort(() => Math.random() - 0.5);
-  const heroShots = shuffled.slice(0, 4).map((person) => ({
+  const ordered = useSyncExternalStore(subscribe, getClientOrder, getServerOrder);
+  const heroShots = ordered.slice(0, 4).map((person) => ({
     baseSrc: person.photoBase as string,
     alt: `${person.name} – ${person.role}`,
   }));

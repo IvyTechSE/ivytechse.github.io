@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint .",
     "build": "next build",
     "start": "next start",
     "test": "jest",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "modern-normalize": "^3.0.1",
-    "next": "15.5.29",
+    "next": "16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
@@ -25,8 +25,8 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.6.2",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "15.5.29",
+    "eslint": "^10.15.0",
+    "eslint-config-next": "16.4.6",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",

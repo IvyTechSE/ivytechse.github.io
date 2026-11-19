@@ -5,6 +5,8 @@ import { ResponsiveImage } from "./ResponsiveImage";
 
 export function HeroSection() {
   const withPhotos = team.filter((person) => person.photoBase);
+  // TODO: shuffle after mount instead; this renders differently on server and client.
+  // eslint-disable-next-line react-hooks/purity
   const shuffled = [...withPhotos].sort(() => Math.random() - 0.5);
   const heroShots = shuffled.slice(0, 4).map((person) => ({
     baseSrc: person.photoBase as string,

@@ -147,6 +147,15 @@ export const team = [
     linkedin: "https://www.linkedin.com/in/ylva-pyykk%C3%B6-105ba32/",
     photoBase: "/images/team/ylva-pyykko",
   },
+  {
+    name: "Eskil Ganslandt",
+    role: "Systemarkitekt",
+    intro:
+      "Bygger hållbara webblösningar på webbstandarder, med fokus på tillgänglighet och prestanda.",
+    email: "eskil.ganslandt@ivytech.se",
+    linkedin: "https://www.linkedin.com/in/eskil-ganslandt-b5b3a6115/",
+    photoBase: "/images/team/eskil-ganslandt",
+  },
 ];
 
 export const teamIntro = {

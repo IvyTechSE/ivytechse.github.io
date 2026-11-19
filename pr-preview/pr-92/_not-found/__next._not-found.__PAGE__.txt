@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:"/pr-preview/pr-92/_next/static/chunks/33v74l0e3a8v3.js"
+3:"/pr-preview/pr-92/_next/static/chunks/2esvazmqt0m7_.js"
+4:"RevealInitializer"
+5:I[61312,["$2","$3"],"$4"]
+6:I[75696,["$2","$3"],"HeaderNav"]
+7:I[3794,["$2","$3"],"default"]
+8:I[9158,["$2","$3"],"default"]
+9:I[1754,["$2","$3"],""]
+a:I[84757,["$2","$3"],"Image"]
+11:I[64111,["$2","$3"],"OutletBoundary"]
+12:"$Sreact.suspense"
+15:"ViewportBoundary"
+16:I[64111,["$2","$3"],"$15"]
+17:"MetadataBoundary"
+18:I[64111,["$2","$3"],"$17"]
+:HL["/pr-preview/pr-92/_next/static/chunks/3h64h-6ivxyq2.css","style"]
+c:X
+f:X
+f:C
+10:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[["$","section",null,{"className":"section page-hero full-bleed","children":["$","div",null,{"className":"container stack","children":[["$","h1",null,{"children":"Sidan kunde inte hittas"}],["$","p",null,{"className":"lede","children":"Den sida du söker finns tyvärr inte. Den kan ha flyttats eller tagits bort."}],["$","div",null,{"className":"actions cluster","children":["$","$L9",null,{"className":"button primary","href":"/","children":"Tillbaka till startsidan"}]}]]}]}],null,["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}],"p":"$@14","v":null,"s":"$c"}}]]
+d:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@e","v":"$f","s":"$c"},"c":"$Q10"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/pr-preview/pr-92/_next/static/chunks/3h64h-6ivxyq2.css","precedence":"next"}],["$","script","script-0",{"src":"/pr-preview/pr-92/_next/static/chunks/33v74l0e3a8v3.js","async":true}],["$","script","script-1",{"src":"/pr-preview/pr-92/_next/static/chunks/2esvazmqt0m7_.js","async":true}]],["$","html",null,{"lang":"sv","children":["$","body",null,{"className":"hSS5_a_className","children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Hoppa till innehåll"}],["$","$L5",null,{}],["$","$L6",null,{}],["$","main",null,{"id":"main","className":"container","children":["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}],"notFound":[["$","section",null,{"className":"section page-hero full-bleed","children":["$","div",null,{"className":"container stack","children":[["$","h1",null,{"children":"Sidan kunde inte hittas"}],["$","p",null,{"className":"lede","children":"Den sida du söker finns tyvärr inte. Den kan ha flyttats eller tagits bort."}],["$","div",null,{"className":"actions cluster","children":["$","$L9",null,{"className":"button primary","href":"/","children":"Tillbaka till startsidan"}]}]]}]}],[]]}]}],["$","footer",null,{"className":"section footer","aria-label":"Sidfot","children":[["$","div",null,{"className":"container footer-grid","children":[["$","div",null,{"children":["$","$L9",null,{"className":"logo","aria-label":"Ivy Technology","href":"/","children":["$","$La",null,{"src":"/images/ivy-logo-white.svg","alt":"Ivy Technology logotyp","width":48,"height":28,"sizes":"48px","priority":true}]}]}],["$","div",null,{"className":"footer-links","children":[["$","$L9","/tjanster",{"href":"/tjanster","children":"Vad vi gör"}],["$","$L9","/om-ivy",{"href":"/om-ivy","children":"Vårt gäng"}]]}],["$","div",null,{"className":"footer-contact","children":["$","a",null,{"href":"mailto:hello@ivytech.se","children":"hello@ivytech.se"}]}]]}],["$","div",null,{"className":"container","children":["$","address",null,{"className":"footer-address","children":["$","a",null,{"href":"https://www.google.com/maps/search/?api=1&query=G%C3%B6tgatan%2015%2C%20411%2005%20G%C3%B6teborg","target":"_blank","rel":"noreferrer","children":"Götgatan 15, 411 05 Göteborg"}]}]}]]}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Ivy Technology\",\"url\":\"https://ivytech.se\",\"logo\":\"https://ivytech.se/images/ivy-logo-black.svg\",\"email\":\"hello@ivytech.se\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Göteborg\",\"addressCountry\":\"Sverige\"}}"}}],["$","script",null,{"defer":true,"src":"https://cloud.umami.is/script.js","data-website-id":"2a1d90c8-a4e0-43f3-b520-7f191b687b30"}]]}]}]]}],"p":"$@b","v":null,"s":"$c"},"c":"$Qd"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L16",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L18",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$12",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Ivy Technology"}],["$","meta","1",{"name":"description","content":"Ivy Technology bygger digitala produkter från idé till drift – strategi, design och engineering med stark kompetens inom systemarkitektur, systemutveckling och tillgänglighet."}],["$","link","2",{"rel":"canonical","href":"https://ivytech.se/"}],["$","link","3",{"rel":"alternate","type":"application/rss+xml","href":"https://ivytech.se/feed.rss","title":"Ivy Technology RSS Feed"}],["$","meta","4",{"property":"og:title","content":"Ivy Technology"}],["$","meta","5",{"property":"og:description","content":"Ivy Technology bygger digitala produkter från idé till drift – strategi, design och engineering med stark kompetens inom systemarkitektur, systemutveckling och tillgänglighet."}],["$","meta","6",{"property":"og:url","content":"https://ivytech.se/"}],["$","meta","7",{"property":"og:site_name","content":"Ivy Technology"}],["$","meta","8",{"property":"og:locale","content":"sv_SE"}],["$","meta","9",{"property":"og:image","content":"https://ivytech.se/images/ivy-og-image.png"}],["$","meta","10",{"property":"og:image:alt","content":"Ivy Technology"}],["$","meta","11",{"property":"og:type","content":"website"}],["$","meta","12",{"name":"twitter:card","content":"summary_large_image"}],"$L19","$L1a","$L1b","$L1c","$L1d"]}]}],null]}],"$L1e"]}],"p":"$@1f","v":null,"s":"$c"}},"a":"$@20","u":"$@21","b":"osfPVE5-tGwZnOjF0F2c8"}
+22:I[24986,["$2","$3"],"IconMark"]
+13:null
+19:["$","meta","13",{"name":"twitter:title","content":"Ivy Technology"}]
+1a:["$","meta","14",{"name":"twitter:description","content":"Ivy Technology bygger digitala produkter från idé till drift – strategi, design och engineering med stark kompetens inom systemarkitektur, systemutveckling och tillgänglighet."}]
+1b:["$","meta","15",{"name":"twitter:image","content":"https://ivytech.se/images/ivy-og-image.png"}]
+1c:["$","link","16",{"rel":"icon","href":"/favicon.ico"}]
+1d:["$","$L22","17",{}]
+1e:["$","meta",null,{"name":"next-size-adjust","content":""}]
+c:300
+21:true
+c:C
+20:0
+e:"$undefined"
+b:"$undefined"
+1f:"$undefined"
+14:"$undefined"

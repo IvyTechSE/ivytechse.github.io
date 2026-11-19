@@ -542,7 +542,7 @@ pre .out{color:var(--forest-lift)}
         <div class="fact">
           <dt class="fact-key">Test</dt>
           <dd class="fact-val">Jest + Testing Library i <code>__tests__/</code>
-          <small><code>npm test</code>. Testerna är strukturella — de kontrollerar att fält finns, inte vilka namn eller hur många.</small></dd>
+          <small><code>pnpm test</code>. Testerna är strukturella — de kontrollerar att fält finns, inte vilka namn eller hur många.</small></dd>
         </div>
         <div class="fact">
           <dt class="fact-key">Tillgänglighet</dt>
@@ -603,7 +603,7 @@ pre .out{color:var(--forest-lift)}
 
       <div class="rise" style="--delay:70ms">
         <p>
-          <code>npm run images:variants</code> kör <code>scripts/generate-image-variants.sh</code>,
+          <code>pnpm run images:variants</code> kör <code>scripts/generate-image-variants.sh</code>,
           som center-croppar till kvadrat och skriver 320&nbsp;px och 640&nbsp;px i jpg, webp och avif.
           <code>ResponsiveImage</code> bygger sedan ut <code>photoBase</code> till en
           <code>&lt;picture&gt;</code> med avif före webp före jpg.
@@ -611,7 +611,7 @@ pre .out{color:var(--forest-lift)}
 
         <ol class="flow" role="list">
           <li class="flow-step"><span class="flow-arrow" aria-hidden="true">01</span><span>Lägg <code>fornamn-efternamn.jpg</code> i <code>public/images/team/</code> — gemener, bindestreck, inga å/ä/ö</span></li>
-          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">02</span><span><code>npm run images:variants</code> — kräver <code>ffmpeg</code> i PATH</span></li>
+          <li class="flow-step"><span class="flow-arrow" aria-hidden="true">02</span><span><code>pnpm run images:variants</code> — kräver <code>ffmpeg</code> i PATH</span></li>
           <li class="flow-step"><span class="flow-arrow" aria-hidden="true">03</span><span>Sätt <code>photoBase: "/images/team/fornamn-efternamn"</code> — utan storlek och utan filändelse</span></li>
         </ol>
 
@@ -699,7 +699,7 @@ git push origin --delete master develop</pre>
         <h2 class="sec-title" id="cicd-t">Bygg och deploy</h2>
         <p class="sec-sub">
           Sex workflows i <code>.github/workflows/</code>. Alla delar samma composite action
-          <code>.github/actions/build</code> som kör Node 22, <code>npm install</code>, lint och build.
+          <code>.github/actions/build</code> som kör Node 26, <code>pnpm install</code>, lint och build.
         </p>
       </div>
 
@@ -792,7 +792,7 @@ git push origin --delete master develop</pre>
         <li>
           <div>
             <p class="run-title">Klona färskt och verifiera att ni kan bygga</p>
-            <p class="run-body">Inte en kopia av min klon. <code>npm install && npm run lint && npm test && npm run build</code> ska gå igenom rent hos er båda innan något annat.</p>
+            <p class="run-body">Inte en kopia av min klon. <code>pnpm install && pnpm run lint && pnpm test && pnpm run build</code> ska gå igenom rent hos er båda innan något annat.</p>
           </div>
         </li>
         <li>
@@ -852,7 +852,7 @@ git push origin --delete master develop</pre>
               <p class="run-title">Utgå från rätt kod</p>
               <pre>git fetch origin
 git switch -c team/personbyte origin/main
-npm install</pre>
+pnpm install</pre>
             </div>
           </li>
           <li>
@@ -872,7 +872,7 @@ npm install</pre>
             <div>
               <p class="run-title">Lägg in porträttet och generera varianter</p>
               <pre>cp portratt.jpg public/images/team/fornamn-efternamn.jpg
-npm run images:variants
+pnpm run images:variants
 git add public/images/team/fornamn-efternamn*
 git checkout -- public/images   <span class="cmt"># kasta omgenererat för övriga</span></pre>
             </div>
@@ -886,8 +886,8 @@ git checkout -- public/images   <span class="cmt"># kasta omgenererat för övri
           <li>
             <div>
               <p class="run-title">Verifiera</p>
-              <pre>npm run lint && npm test && npm run build
-npm run dev   <span class="cmt"># kontrollera /om-ivy/</span></pre>
+              <pre>pnpm run lint && pnpm test && pnpm run build
+pnpm run dev   <span class="cmt"># kontrollera /om-ivy/</span></pre>
             </div>
           </li>
           <li>

@@ -5,14 +5,14 @@ An accessible one-page site for Ivy Technology. Built with Next.js (app router),
 ## Get started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Build and export for GitHub Pages
 
 ```bash
-npm run build
+pnpm run build
 # places the export in out/ (using output: export)
 ```
 
@@ -60,7 +60,7 @@ References:
 2. **Generate responsive image variants**
    Run the image-variant script to create optimized sizes (320 px & 640 px) in `.jpg`, `.webp`, and `.avif`:
    ```bash
-   npm run images:variants
+   pnpm run images:variants
    # or directly:
    bash scripts/generate-image-variants.sh
    ```
@@ -80,7 +80,7 @@ References:
    ```
 
 4. **Verify**
-   Run `npm run dev` and open the "Om oss" page to confirm the new profile displays correctly with the photo, name, role, intro, email, and LinkedIn link.
+   Run `pnpm run dev` and open the "Om oss" page to confirm the new profile displays correctly with the photo, name, role, intro, email, and LinkedIn link.
 
 ## Next steps
 - Add real images (use `next/image`) and update alt text.

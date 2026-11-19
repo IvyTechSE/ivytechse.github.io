@@ -32,7 +32,7 @@ coverageThreshold: {
 
 The **Test & Coverage** workflow (`.github/workflows/test.yml`) runs on every push and pull request:
 
-1. Executes `npm run test:coverage` (Jest with `--coverage`).
+1. Executes `pnpm run test:coverage` (Jest with `--coverage`).
 2. Uploads the full coverage report as a workflow artifact (`coverage-report`, retained 14 days).
 3. Posts (or updates) a coverage summary comment on the PR.
 4. **Fails** the workflow if any threshold is not met, blocking the merge.
@@ -41,7 +41,7 @@ The **Test & Coverage** workflow (`.github/workflows/test.yml`) runs on every pu
 
 ```bash
 # Run tests and generate a coverage report in ./coverage/
-npm run test:coverage
+pnpm run test:coverage
 
 # Open the HTML report in your browser
 open coverage/lcov-report/index.html

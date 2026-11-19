@@ -12,7 +12,7 @@
     "images:variants": "bash scripts/generate-image-variants.sh"
   },
   "dependencies": {
-    "modern-normalize": "^2.0.0",
+    "modern-normalize": "^3.0.1",
     "next": "14.2.35",
     "react": "18.3.1",
     "react-dom": "18.3.1"
